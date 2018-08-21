@@ -22,7 +22,7 @@ pod 'easydebug'
 
 ## Author
 
-宋炫锐, songhengdsg@sohu.com
+RggComing, songhengdsg@sohu.com
 
 ## License
 
