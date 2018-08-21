@@ -1,0 +1,16 @@
+PODS:
+  - easydebug (0.1.0)
+
+DEPENDENCIES:
+  - easydebug (from `../`)
+
+EXTERNAL SOURCES:
+  easydebug:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  easydebug: ff60a63904bdff24dfe6952ffe425375924e4d24
+
+PODFILE CHECKSUM: 86efe596f8d66c9a477af661269e50e17d89f155
+
+COCOAPODS: 1.5.3
