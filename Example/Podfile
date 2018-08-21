@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'easydebug_Example' do
+  pod 'easydebug', :path => '../'
+
+  target 'easydebug_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
