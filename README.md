@@ -1,6 +1,6 @@
 # easydebug
 
-[![CI Status](https://img.shields.io/travis/宋炫锐/easydebug.svg?style=flat)](https://travis-ci.org/宋炫锐/easydebug)
+[![CI Status](https://img.shields.io/travis/Song/easydebug.svg?style=flat)](https://travis-ci.org/Song/easydebug)
 [![Version](https://img.shields.io/cocoapods/v/easydebug.svg?style=flat)](https://cocoapods.org/pods/easydebug)
 [![License](https://img.shields.io/cocoapods/l/easydebug.svg?style=flat)](https://cocoapods.org/pods/easydebug)
 [![Platform](https://img.shields.io/cocoapods/p/easydebug.svg?style=flat)](https://cocoapods.org/pods/easydebug)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00DB7B832309CCDD004C6DDE /* EZDRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB7B822309CCDD004C6DDE /* EZDRequestAgent.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00DB7B812309CCDD004C6DDE /* EZDRequestAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDRequestAgent.h; sourceTree = "<group>"; };
+		00DB7B822309CCDD004C6DDE /* EZDRequestAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDRequestAgent.m; sourceTree = "<group>"; };
 		429C4E78A5972D9B8DA763E8 /* Pods-easydebug_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easydebug_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easydebug_Tests/Pods-easydebug_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* easydebug_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = easydebug_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00DB7B802309CC75004C6DDE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				00DB7B812309CCDD004C6DDE /* EZDRequestAgent.h */,
+				00DB7B822309CCDD004C6DDE /* EZDRequestAgent.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		4A27B8E5F112F6EC108E9FC2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +155,7 @@
 		6003F593195388D20070C39A /* Example for easydebug */ = {
 			isa = PBXGroup;
 			children = (
+				00DB7B802309CC75004C6DDE /* Helper */,
 				6003F59C195388D20070C39A /* EZDAppDelegate.h */,
 				6003F59D195388D20070C39A /* EZDAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -245,7 +258,7 @@
 			attributes = {
 				CLASSPREFIX = EZD;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "宋炫锐";
+				ORGANIZATIONNAME = Song;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = CDDXT62C7U;
@@ -362,6 +375,7 @@
 				6003F59E195388D20070C39A /* EZDAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* EZDViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				00DB7B832309CCDD004C6DDE /* EZDRequestAgent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

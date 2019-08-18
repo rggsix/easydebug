@@ -2,11 +2,13 @@
 //  EZDViewController.m
 //  easydebug
 //
-//  Created by 宋炫锐 on 08/21/2018.
-//  Copyright (c) 2018 宋炫锐. All rights reserved.
+//  Created by Song on 08/21/2018.
+//  Copyright (c) 2018 Song. All rights reserved.
 //
 
 #import "EZDViewController.h"
+
+#import "EZDRequestAgent.h"
 
 @interface EZDViewController ()
 
@@ -17,7 +19,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    //  send request , EasyDebug shold record request in your request agent.
+    [EZDRequestAgent GetWithParam:@{} url:@"https://getman.cn/echo" callback:^(BOOL result, NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning

@@ -2,8 +2,8 @@
 //  EZDAppDelegate.m
 //  easydebug
 //
-//  Created by 宋炫锐 on 08/21/2018.
-//  Copyright (c) 2018 宋炫锐. All rights reserved.
+//  Created by Song on 08/21/2018.
+//  Copyright (c) 2018 Song. All rights reserved.
 //
 
 #import "EZDAppDelegate.h"
@@ -14,8 +14,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [EasyDebug shareEasyDebug];
+    EZDRecordEvent(@"AppLaunch", @"abstractString, like:[launchOptions description]", launchOptions, [[NSDate date] timeIntervalSince1970]);
+#if EZDEBUG_DEBUGLOG
     return YES;
+#endif
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

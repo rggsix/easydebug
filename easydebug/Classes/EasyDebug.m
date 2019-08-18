@@ -7,6 +7,7 @@
 
 #import "EasyDebug.h"
 #import "EZDDisplayer.h"
+#import "EZDSystemUtil.h"
 
 static EasyDebug *EasyDebugIns;
 

@@ -22,6 +22,7 @@
 #import <Foundation/Foundation.h>
 #import "EZDConfig.h"
 #import "EZDOptions.h"
+#import "EZDDefine.h"
 
 @class EZDDisplayer;
 @class EZDLogger;
