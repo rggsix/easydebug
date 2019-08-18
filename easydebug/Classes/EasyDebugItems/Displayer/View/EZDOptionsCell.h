@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "EZDOptionItem.h"
+
 @interface EZDOptionsCell : UITableViewCell
 
 @property (nonatomic,assign) NSInteger indexOfCell;

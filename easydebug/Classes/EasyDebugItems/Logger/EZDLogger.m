@@ -6,9 +6,12 @@
 //
 
 #import "EZDLogger.h"
+
+#import <WebKit/WebKit.h>
+#import <objc/runtime.h>
+
 #import "EZDDefine.h"
 #import "EasyDebug.h"
-#import <WebKit/WebKit.h>
 
 #import "NSObject+EZDAddition.h"
 
@@ -66,7 +69,7 @@
                                 @"eventName":EZD_NotNullString(eventName),
                                 @"param":EZD_NotNullDict(param),
                                 };
-    NSString *abStr = [NSString stringWithFormat:@"%@->%@",NotNullString(trackerName),NotNullString(eventName)];
+    NSString *abStr = [NSString stringWithFormat:@"%@->%@",EZD_NotNullString(trackerName),EZD_NotNullString(eventName)];
     [self recordEventWithTypeName:kEZDEventTrackType abstractString:abStr parameter:rparameter timeStamp:[[NSDate date] timeIntervalSince1970]];
 }
 
@@ -84,7 +87,7 @@
 
 - (void)recordJSMessageWithMessage:(WKScriptMessage *)message{
 #if EZDEBUG_DEBUGLOG
-    NSString *abStr = NotNullString(message.name);
+    NSString *abStr = EZD_NotNullString(message.name);
     NSString *userAgent = [self.webV stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
     NSDictionary *rparameter = @{
                                  @"targetURL":EZD_NotNullString(message.frameInfo.request.URL.absoluteString),

@@ -44,7 +44,8 @@ static int64_t EZDAPM_memTriggerStep = 50;
     dispatch_once(&onceToken, ^{
         ins = [self new];
         
-        ins.monitor_queue = dispatch_queue_create([[self className] cStringUsingEncoding:(NSUTF8StringEncoding)], DISPATCH_QUEUE_SERIAL);
+        NSString *className = NSStringFromClass([self class]);
+        ins.monitor_queue = dispatch_queue_create([className cStringUsingEncoding:(NSUTF8StringEncoding)], DISPATCH_QUEUE_SERIAL);
         ins.monitor_timer = [[NSTimer alloc] initWithFireDate:[NSDate distantFuture] interval:.1 target:ins selector:@selector(monitorTimer:) userInfo:nil repeats:true];
         ins.nextMemHighTriggerValue = EZDAPM_memMinTriggerValue;
     });

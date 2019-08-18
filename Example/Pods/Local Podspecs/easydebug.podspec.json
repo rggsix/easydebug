@@ -3,20 +3,28 @@
   "version": "0.1.0",
   "summary": "A short description of easydebug.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/宋炫锐/easydebug",
+  "homepage": "https://github.com/RggComing/easydebug",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "宋炫锐": "songhengdsg@sohu.com"
+    "RggComing": "songhengdsg@sohu.com"
   },
   "source": {
-    "git": "https://github.com/宋炫锐/easydebug.git",
+    "git": "https://github.com/RggComing/easydebug.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "easydebug/Classes/**/*"
+  "source_files": "easydebug/Classes/**/*",
+  "dependencies": {
+    "PLCrashReporter": [
+
+    ],
+    "GCDWebServer/WebUploader": [
+
+    ]
+  }
 }

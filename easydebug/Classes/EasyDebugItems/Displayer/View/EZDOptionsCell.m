@@ -7,6 +7,7 @@
 //
 
 #import "EZDOptionsCell.h"
+#import "UIView+EZDAddition_frame.h"
 
 @interface EZDOptionsCell ()
 
@@ -19,8 +20,8 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.swicher = [[UISwitch alloc] init];
-        self.swicher.centerY = self.height *.5;
-        self.swicher.x = kScreenWidth - self.swicher.ezd_width - 18;
+        self.swicher.ezd_centerY = self.ezd_height *.5;
+        self.swicher.ezd_x = [UIScreen mainScreen].bounds.size.width - self.swicher.ezd_width - 18;
         [self.contentView addSubview:self.swicher];
         self.swicher.userInteractionEnabled = false;
         self.swicher.hidden = true;

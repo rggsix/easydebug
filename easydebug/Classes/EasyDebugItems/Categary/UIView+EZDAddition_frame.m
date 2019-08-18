@@ -71,7 +71,7 @@
 
 - (void)setEzd_width:(CGFloat)ezd_width{
     CGRect frame = self.frame;
-    frame.size.ezd_width = ezd_width;
+    frame.size.width = ezd_width;
     self.frame = frame;
 }
 
@@ -86,7 +86,7 @@
 }
 
 - (CGFloat)ezd_width{
-    return self.frame.size.ezd_width;
+    return self.frame.size.width;
 }
 
 - (void)setEzd_size:(CGSize)ezd_size{
