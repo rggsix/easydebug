@@ -83,7 +83,7 @@ static EZDDisplayer *displayer;
     self.displayerSwitch.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.displayerSwitch.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
     self.displayerSwitch.contentHorizontalAlignment = UIControlContentVerticalAlignmentFill;
-    [self.displayerSwitch setImage:[UIImage imageNamed:@"logo_blue_rect"] forState:UIControlStateNormal];
+    [self.displayerSwitch setImage:[UIImage imageNamed:@"tool"] forState:UIControlStateNormal];
     [self.displayerSwitch addTarget:self action:@selector(displayerSwitchClicked) forControlEvents:UIControlEventTouchUpInside];
     self.displayerSwitch.ezd_size = CGSizeMake(60, 60);
 }

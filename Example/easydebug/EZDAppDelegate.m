@@ -7,12 +7,14 @@
 //
 
 #import "EZDAppDelegate.h"
+#import <EasyDebug.h>
 
 @implementation EZDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [EasyDebug shareEasyDebug];
     return YES;
 }
 
