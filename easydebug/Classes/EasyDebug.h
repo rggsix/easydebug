@@ -5,6 +5,11 @@
 //  Created by Song on 2018/8/21.
 //
 
+#import <Foundation/Foundation.h>
+#import "EZDConfig.h"
+#import "EZDOptions.h"
+#import "EZDDefine.h"
+
 #if EZDEBUG_DEBUGLOG
 #define EZDRecordNetRequest(request_,param_,response_) [EasyDebug recordNetRequestWithRequest:request_ parameter:param_ response:response_]
 #define EZDRecordEventTrack(trackerName_,eventName_,param_) [EasyDebug recordEventTrackWithEventTrackerName:trackerName_ eventName:eventName_ param:param_]
@@ -18,11 +23,6 @@
 #define EZDRecordJSMessage(message_) nil
 #define EZDRecordEvent(typeName_,abstractString_,parameter_,timeStamp_) nil
 #endif
-
-#import <Foundation/Foundation.h>
-#import "EZDConfig.h"
-#import "EZDOptions.h"
-#import "EZDDefine.h"
 
 @class EZDDisplayer;
 @class EZDLogger;

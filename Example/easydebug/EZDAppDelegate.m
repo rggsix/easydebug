@@ -16,6 +16,7 @@
     // Override point for customization after application launch.
     EZDRecordEvent(@"AppLaunch", @"abstractString, like:[launchOptions description]", launchOptions, [[NSDate date] timeIntervalSince1970]);
 #if EZDEBUG_DEBUGLOG
+    NSLog(@"EazyDebug on.");
     return YES;
 #endif
 }

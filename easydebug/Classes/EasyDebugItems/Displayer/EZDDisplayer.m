@@ -83,7 +83,11 @@ static EZDDisplayer *displayer;
     self.displayerSwitch.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.displayerSwitch.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
     self.displayerSwitch.contentHorizontalAlignment = UIControlContentVerticalAlignmentFill;
-    [self.displayerSwitch setImage:[UIImage imageNamed:@"tool"] forState:UIControlStateNormal];
+    
+    NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"Source" withExtension:@"bundle"];
+    NSString *iconPath = [[NSBundle bundleWithURL:bundleURL] pathForResource:@"icon.png" ofType:@""];
+    
+    [self.displayerSwitch setImage:[UIImage imageWithContentsOfFile:iconPath] forState:UIControlStateNormal];
     [self.displayerSwitch addTarget:self action:@selector(displayerSwitchClicked) forControlEvents:UIControlEventTouchUpInside];
     self.displayerSwitch.ezd_size = CGSizeMake(60, 60);
 }

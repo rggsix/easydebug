@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = PLCrashReporter;
+			productName = PLCrashReporter;
 		};
 /* End PBXAggregateTarget section */
 
@@ -233,16 +234,17 @@
 
 /* Begin PBXFileReference section */
 		00A8F856ED87D6616791F2E2FEFAEBB8 /* GCDWebServerFileResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFileResponse.m; path = GCDWebServer/Responses/GCDWebServerFileResponse.m; sourceTree = "<group>"; };
+		00DB7B862309D4BD004C6DDE /* Source.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Source.bundle; sourceTree = "<group>"; };
 		035547405E59C0161BC6E9AD5BE6AA5D /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerMultiPartFormRequest.h; path = GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
 		098619902BB7951FF86CC086AE7FDE66 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		09F889E6B93638A53AABE98765A3A53A /* EZDAPMBacktrace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDAPMBacktrace.m; sourceTree = "<group>"; };
 		0AAFF46E14F707299BA2BD363C115AA3 /* EZDLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDLogger.h; sourceTree = "<group>"; };
 		0E5C038609128DBC8A376E0B9AF6C3CC /* EZDAPMBacktrace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDAPMBacktrace.h; sourceTree = "<group>"; };
-		0E5F08242CB9ABA473E406D88D7A4246 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; path = index.html; sourceTree = "<group>"; };
+		0E5F08242CB9ABA473E406D88D7A4246 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		101280681A501D8D7BA8328A24F40D86 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		11981304ED280E68BFAB07FD0F895FB8 /* EZDOptionItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDOptionItem.m; sourceTree = "<group>"; };
 		11F1A116A3071EC9655DCB970FFB0CC7 /* NSDate+EZDAddition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EZDAddition.m"; sourceTree = "<group>"; };
-		12781A7E7526CCD3905B92558ACC2092 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		12781A7E7526CCD3905B92558ACC2092 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		133950A6B3402D69E1E6B9029DC4BAE7 /* GCDWebServerConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerConnection.h; path = GCDWebServer/Core/GCDWebServerConnection.h; sourceTree = "<group>"; };
 		136D58CE25E6327112E43995259D47D2 /* EZDLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDLogger.m; sourceTree = "<group>"; };
 		171F8AF8E158A95C2665DC8B4C528592 /* EZDSystemUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDSystemUtil.m; sourceTree = "<group>"; };
@@ -252,7 +254,7 @@
 		1ACB1370BCA43FE4D824FE2FB82D33B8 /* BSBacktraceLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BSBacktraceLogger.h; sourceTree = "<group>"; };
 		1C9CDE238E9D65AE9234E55E7262E128 /* GCDWebServerFileRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFileRequest.m; path = GCDWebServer/Requests/GCDWebServerFileRequest.m; sourceTree = "<group>"; };
 		1D0F92610EB112F7EEE9126346F760BA /* EZDAppShortInfoLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDAppShortInfoLabel.m; sourceTree = "<group>"; };
-		1E15F5A69A54CE65C4F9D28AD854610D /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; path = index.html; sourceTree = "<group>"; };
+		1E15F5A69A54CE65C4F9D28AD854610D /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		1EB2F047FF996CCF728682B1E0A872FF /* EZDBaseLogInfoController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDBaseLogInfoController.h; sourceTree = "<group>"; };
 		1F7A847A788F496F1BF85C06D885EA88 /* Pods-easydebug_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-easydebug_Tests-dummy.m"; sourceTree = "<group>"; };
 		219E5666D8413CE07D43CB47C7F01795 /* EZDAPMURLSchemeHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDAPMURLSchemeHandler.h; sourceTree = "<group>"; };
@@ -262,11 +264,11 @@
 		25C1079F4E9DC60F21199874341CD6DF /* EZDAPMDeviceConsumptionMonitor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDAPMDeviceConsumptionMonitor.m; sourceTree = "<group>"; };
 		264969D2C14E9AA70E7C8CC9490BC13D /* EZDDebugServerResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDDebugServerResponse.m; sourceTree = "<group>"; };
 		28042243B4990BDCCCDF183B8A0DBC8C /* BSBacktraceLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = BSBacktraceLogger.m; sourceTree = "<group>"; };
-		28B589E6A3BBA17DD49389C906031AB3 /* libPods-easydebug_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-easydebug_Tests.a"; path = "libPods-easydebug_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28B589E6A3BBA17DD49389C906031AB3 /* libPods-easydebug_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-easydebug_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29518D2F5A21E21B28A51C267F5EF8C1 /* EZDLogDisplayCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDLogDisplayCell.h; sourceTree = "<group>"; };
 		2DF611FB88414727AED24DF1A4FB4DB8 /* EZDDisplayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDDisplayer.m; sourceTree = "<group>"; };
 		2ECA1D3124866F98A11A9784AAEAE013 /* GCDWebServerHTTPStatusCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerHTTPStatusCodes.h; path = GCDWebServer/Core/GCDWebServerHTTPStatusCodes.h; sourceTree = "<group>"; };
-		2FA09915858F294483FFF0EC5C7A0B11 /* libPods-easydebug_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-easydebug_Example.a"; path = "libPods-easydebug_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA09915858F294483FFF0EC5C7A0B11 /* libPods-easydebug_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-easydebug_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31509EB70C08CD65F34947AEB35846F7 /* EZDBaseURLNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDBaseURLNode.m; sourceTree = "<group>"; };
 		31E1D489B66DE183C96CA20838CBC026 /* Pods-easydebug_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-easydebug_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		329DEFCE15AF74A59A52855C0B023B85 /* UIViewController+EZDAddition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EZDAddition.h"; sourceTree = "<group>"; };
@@ -278,17 +280,17 @@
 		3DC1ED44A1D6352D91515E35C1CEDB5F /* GCDWebServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServer.h; path = GCDWebServer/Core/GCDWebServer.h; sourceTree = "<group>"; };
 		3F6B053F7F9F25FF057911FA9417291D /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		40CDCB2138CB1DA457B684B035FA8DE9 /* EZDFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDFilter.m; sourceTree = "<group>"; };
-		41BAE46A1610B3EB5CE5644A6873AB01 /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; path = main.js; sourceTree = "<group>"; };
+		41BAE46A1610B3EB5CE5644A6873AB01 /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 		41CF36CE037F0193ED774A6B1DCFC8CE /* EZDMessageHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDMessageHUD.m; sourceTree = "<group>"; };
 		43D826B3CDA7F5E1B6FFFDB0AD1CA744 /* EZDAPMHTTPProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDAPMHTTPProtocol.h; sourceTree = "<group>"; };
 		44DD3AB62B4046CF6E657A694F40D6C7 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
 		45A49FE053DB7B3CB9E0911EE2A08AF4 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
-		46AAA0561B6416C367B13BDCF7FF3D34 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; path = index.html; sourceTree = "<group>"; };
+		46AAA0561B6416C367B13BDCF7FF3D34 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		48540D1490C5DB72EED2C651B7859426 /* Pods-easydebug_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-easydebug_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		488F80F2C9ED6941D9F824F2D89962FA /* EZDImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDImage.m; sourceTree = "<group>"; };
 		4A0C6694CBB11AE9293B468AF4BBD5EB /* GCDWebServerPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerPrivate.h; path = GCDWebServer/Core/GCDWebServerPrivate.h; sourceTree = "<group>"; };
 		4A6FD018841CC66BCF606E91E04B4259 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		4B835A60F3676FFDA1EA7C3C7401373D /* libeasydebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libeasydebug.a; path = libeasydebug.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B835A60F3676FFDA1EA7C3C7401373D /* libeasydebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libeasydebug.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9D3585EC95799E81625BCC3DAD2F8C /* NSObject+EZDAddition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+EZDAddition.h"; sourceTree = "<group>"; };
 		4D4F4D688134668D0FEFE9AC96B03C7B /* EZDAPMUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDAPMUtil.m; sourceTree = "<group>"; };
 		4D8C836EF34F42E3105EAFF7D5F4108D /* EZDDebugServerResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDDebugServerResponse.h; sourceTree = "<group>"; };
@@ -301,7 +303,7 @@
 		56C61778AF8B69EA833D82F402A43821 /* GCDWebUploader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebUploader.h; path = GCDWebUploader/GCDWebUploader.h; sourceTree = "<group>"; };
 		57499D7D36DA0D3CADBEE86836EB999F /* EZDFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDFilter.h; sourceTree = "<group>"; };
 		577E7DBEB4823A70A6114CCC0CB459CD /* PLCrashReporter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PLCrashReporter.xcconfig; sourceTree = "<group>"; };
-		57CD28C0508215500B53E64461D3C075 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		57CD28C0508215500B53E64461D3C075 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		58CE0C67925483BF946EEC409B56EB1D /* EZDDebugServerHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDDebugServerHandler.h; sourceTree = "<group>"; };
 		5DB1BBE4E6807F30EF0350621FCEAD83 /* EZDLoggerModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDLoggerModel.m; sourceTree = "<group>"; };
 		5E2C7236194719C34CE4606D11BE0B88 /* EZDAPMFPSMonitor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDAPMFPSMonitor.m; sourceTree = "<group>"; };
@@ -322,7 +324,7 @@
 		81A2E74CA3AF1F2D2EBFFD93ACE160A6 /* EZDClientAPM.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDClientAPM.h; sourceTree = "<group>"; };
 		828199ED93FA5B0F05EF7A5EC308D235 /* Pods-easydebug_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-easydebug_Example-dummy.m"; sourceTree = "<group>"; };
 		841977A3D97B154CA78A887B844C83C6 /* EZDConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDConfig.h; sourceTree = "<group>"; };
-		84AD84B1CCBCAB628B5933A98AB5BC30 /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; path = main.js; sourceTree = "<group>"; };
+		84AD84B1CCBCAB628B5933A98AB5BC30 /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 		88A22642419A6A5E362D13174CA24F7C /* EZDOptionsController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDOptionsController.m; sourceTree = "<group>"; };
 		897B51B72C1CF6CD0F2E74A23650156E /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		8A7598E0DCEBE113143366A5A0209387 /* EZDOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDOptions.m; sourceTree = "<group>"; };
@@ -338,16 +340,16 @@
 		9B5BFE0173BA878EC0EE1A7D30630A6F /* GCDWebServerResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerResponse.h; path = GCDWebServer/Core/GCDWebServerResponse.h; sourceTree = "<group>"; };
 		9C167A76CB0D521B00AE612D10730040 /* EZDAPMFPSMonitor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDAPMFPSMonitor.h; sourceTree = "<group>"; };
 		9D0C95995784CA4863449B749C0CC91C /* EZDOptionsCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDOptionsCell.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EC5C89C8C32FD29F9AECEA7408EEF1D /* logdetail.html */ = {isa = PBXFileReference; includeInIndex = 1; path = logdetail.html; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EC5C89C8C32FD29F9AECEA7408EEF1D /* logdetail.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = logdetail.html; sourceTree = "<group>"; };
 		9F883650D7064A291FACB6959D74E6B6 /* UIViewController+EZDAddition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EZDAddition.m"; sourceTree = "<group>"; };
 		A0D4C2205C1A69D7F42F8AB271AA1A45 /* easydebug-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "easydebug-prefix.pch"; sourceTree = "<group>"; };
 		A0F4CCA85BAF1A449F17AB688FBFED92 /* easydebug-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "easydebug-dummy.m"; sourceTree = "<group>"; };
 		A245E1CA34F60D5A3970FC766A2AF3B6 /* EZDImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDImage.h; sourceTree = "<group>"; };
 		A30D9C9B988EF14AF5491C78B72F65E5 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		A3FE31E78F6B8C1876E1E2E44F060DB3 /* UIView+EZDAddition_frame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+EZDAddition_frame.h"; sourceTree = "<group>"; };
-		A45D7A6E2DFBFB0F1858B533BE748A5D /* logdetail.js */ = {isa = PBXFileReference; includeInIndex = 1; path = logdetail.js; sourceTree = "<group>"; };
-		A4FA15D44DF6BAC7550EDEED10862AA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAFNetworking.a; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A45D7A6E2DFBFB0F1858B533BE748A5D /* logdetail.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; path = logdetail.js; sourceTree = "<group>"; };
+		A4FA15D44DF6BAC7550EDEED10862AA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A673F64CC64DF93B1167FE94F47E0CAE /* GCDWebServerStreamedResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerStreamedResponse.m; path = GCDWebServer/Responses/GCDWebServerStreamedResponse.m; sourceTree = "<group>"; };
 		A86967786D0CF69C84A7C96940E4BBE9 /* EZDFilterController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDFilterController.m; sourceTree = "<group>"; };
 		A9ADCA4276C3BFB73423C98FAF41B267 /* GCDWebServerFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFunctions.m; path = GCDWebServer/Core/GCDWebServerFunctions.m; sourceTree = "<group>"; };
@@ -363,10 +365,10 @@
 		AF90263387601791FA7A43DB32B39D4D /* GCDWebServerDataRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerDataRequest.m; path = GCDWebServer/Requests/GCDWebServerDataRequest.m; sourceTree = "<group>"; };
 		AF97E3338F29350B8AF5CA773BBFCEE8 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		B46B3A850623B8CFD9B3E3BCF3973124 /* EZDLogDisplayCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDLogDisplayCell.m; sourceTree = "<group>"; };
-		B68C1052A3B51DBCF7D960F898AAFA95 /* libGCDWebServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGCDWebServer.a; path = libGCDWebServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68C1052A3B51DBCF7D960F898AAFA95 /* libGCDWebServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGCDWebServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B73740D87D6680429736B4DD812BCB2D /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
 		B87B5E456FE7F39A2D51155BAA316BC2 /* NSObject+EZDAddition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EZDAddition.m"; sourceTree = "<group>"; };
-		B9136BA2030386455DD180EBE15711B0 /* _404.html */ = {isa = PBXFileReference; includeInIndex = 1; path = _404.html; sourceTree = "<group>"; };
+		B9136BA2030386455DD180EBE15711B0 /* _404.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = _404.html; sourceTree = "<group>"; };
 		BA986412FABBE0CAFD62A1B57AE478CC /* EZDAPMDeviceConsumptionMonitor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDAPMDeviceConsumptionMonitor.h; sourceTree = "<group>"; };
 		BDCEC2AF22FDD59DCC6978D256C4FD7F /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFCompatibilityMacros.h; path = AFNetworking/AFCompatibilityMacros.h; sourceTree = "<group>"; };
 		C03BA1D97D9ACEB2F84621BFC9CA68F3 /* GCDWebServerURLEncodedFormRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerURLEncodedFormRequest.m; path = GCDWebServer/Requests/GCDWebServerURLEncodedFormRequest.m; sourceTree = "<group>"; };
@@ -408,13 +410,13 @@
 		E6D5F3AAD65CBF2F3CA99F04D782BF71 /* EZDURLNodeEasyDebugLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDURLNodeEasyDebugLog.h; sourceTree = "<group>"; };
 		E83B85DD4BA04986DF89CEF4A3111076 /* EZDOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDOptions.h; sourceTree = "<group>"; };
 		EA28B7BADCFCA29A5CDE0CEAB5A9B351 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
-		EA9C8ED20815943AA414DAA0D4292A0B /* easydebug.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = easydebug.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		EA9C8ED20815943AA414DAA0D4292A0B /* easydebug.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = easydebug.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ED431F3FA77DB086ABFF0687E9E6B144 /* EZDDisplayController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDDisplayController.h; sourceTree = "<group>"; };
 		EDCAB21BF5237B360C4ED6A2B80E40BB /* EZDAPMUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDAPMUtil.h; sourceTree = "<group>"; };
 		EE6663BB6987BC30F73A470CDF3DE28F /* EZDAPMReportFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDAPMReportFormatter.m; sourceTree = "<group>"; };
 		EFEFC6EA05621DAA28BA0AC1DC19DDD0 /* GCDWebServerErrorResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerErrorResponse.m; path = GCDWebServer/Responses/GCDWebServerErrorResponse.m; sourceTree = "<group>"; };
 		F0051BA2B0DA39443EDF4A291FE729F3 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		F2527FD4994BDFA83F542BD7933970CB /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; path = main.css; sourceTree = "<group>"; };
+		F2527FD4994BDFA83F542BD7933970CB /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		F4374CE00E2566D732555FC98A047E88 /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFunctions.h; path = GCDWebServer/Core/GCDWebServerFunctions.h; sourceTree = "<group>"; };
 		F5FE2D0957B26E6AC26C959F3A6C2CB5 /* Pods-easydebug_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-easydebug_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F6431BDEF61D4C69EC1168C1E17E7AAE /* Pods-easydebug_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-easydebug_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -487,7 +489,6 @@
 				E83B85DD4BA04986DF89CEF4A3111076 /* EZDOptions.h */,
 				8A7598E0DCEBE113143366A5A0209387 /* EZDOptions.m */,
 			);
-			name = Logger;
 			path = Logger;
 			sourceTree = "<group>";
 		};
@@ -503,7 +504,6 @@
 				D18CFB58038FFDD4814C565634F5DFA8 /* EZDAPMReportFormatter.h */,
 				EE6663BB6987BC30F73A470CDF3DE28F /* EZDAPMReportFormatter.m */,
 			);
-			name = "Log Generate";
 			path = "Log Generate";
 			sourceTree = "<group>";
 		};
@@ -564,7 +564,6 @@
 				2E6A8AD7D3891E7BF9D293878FF0E990 /* easydebuglog */,
 				90F69B530B83EBFF9066A4291E5ED821 /* easydebugoption */,
 			);
-			name = EZDDebugServerResource.bundle;
 			path = EZDDebugServerResource.bundle;
 			sourceTree = "<group>";
 		};
@@ -576,7 +575,6 @@
 				A45D7A6E2DFBFB0F1858B533BE748A5D /* logdetail.js */,
 				41BAE46A1610B3EB5CE5644A6873AB01 /* main.js */,
 			);
-			name = easydebuglog;
 			path = easydebuglog;
 			sourceTree = "<group>";
 		};
@@ -590,7 +588,6 @@
 				DC19A82875CE6890D59C91D8E60D84B6 /* EZDReachability.h */,
 				3BC6BAB3DD1AA6B549983E917CA76E1C /* EZDReachability.m */,
 			);
-			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -606,7 +603,6 @@
 				7431435B5CD6088F3515816CDBF71AF9 /* EZDURLSessionChallengeSender.h */,
 				E5218F32D4A6D10C093C1D3145720BFC /* EZDURLSessionChallengeSender.m */,
 			);
-			name = "Network Monitor";
 			path = "Network Monitor";
 			sourceTree = "<group>";
 		};
@@ -627,7 +623,6 @@
 				E6D5F3AAD65CBF2F3CA99F04D782BF71 /* EZDURLNodeEasyDebugLog.h */,
 				38C2B4ACC88A4C037E420833A61D89DA /* EZDURLNodeEasyDebugLog.m */,
 			);
-			name = URLNodes;
 			path = URLNodes;
 			sourceTree = "<group>";
 		};
@@ -639,7 +634,6 @@
 				9C167A76CB0D521B00AE612D10730040 /* EZDAPMFPSMonitor.h */,
 				5E2C7236194719C34CE4606D11BE0B88 /* EZDAPMFPSMonitor.m */,
 			);
-			name = "Hardware Monitor";
 			path = "Hardware Monitor";
 			sourceTree = "<group>";
 		};
@@ -649,7 +643,6 @@
 				252AF0C7CA55EF9AD9463DAC9EB0EBD7 /* EZDSystemUtil.h */,
 				171F8AF8E158A95C2665DC8B4C528592 /* EZDSystemUtil.m */,
 			);
-			name = Util;
 			path = Util;
 			sourceTree = "<group>";
 		};
@@ -691,7 +684,6 @@
 				A245E1CA34F60D5A3970FC766A2AF3B6 /* EZDImage.h */,
 				488F80F2C9ED6941D9F824F2D89962FA /* EZDImage.m */,
 			);
-			name = ImageCell;
 			path = ImageCell;
 			sourceTree = "<group>";
 		};
@@ -711,7 +703,6 @@
 				0E5F08242CB9ABA473E406D88D7A4246 /* index.html */,
 				84AD84B1CCBCAB628B5933A98AB5BC30 /* main.js */,
 			);
-			name = fontUpload;
 			path = fontUpload;
 			sourceTree = "<group>";
 		};
@@ -720,7 +711,6 @@
 			children = (
 				8F1134A92BF745F9931AE6A64A42C2A3 /* fontUpload */,
 			);
-			name = easydebugoption;
 			path = easydebugoption;
 			sourceTree = "<group>";
 		};
@@ -736,7 +726,6 @@
 				2C13B6348E031CF4D318682C0A6E873B /* EZDDebugServerResource.bundle */,
 				4A5935939B38BF6760D64F7AFC726A2C /* URLNodes */,
 			);
-			name = Server;
 			path = Server;
 			sourceTree = "<group>";
 		};
@@ -842,7 +831,6 @@
 				6A29954466CAA32222700160F7010F46 /* Support Files */,
 				ABDF5504A70E13D3C82B3500169733CC /* WebUploader */,
 			);
-			name = GCDWebServer;
 			path = GCDWebServer;
 			sourceTree = "<group>";
 		};
@@ -857,7 +845,6 @@
 				F56F11D44E72E8697CA4426D2AEBB487 /* Support Files */,
 				EFA31350B96B35A95B481E2D4CF27801 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -866,7 +853,6 @@
 			children = (
 				509755527DCA34E44B95A6A0514F8CFE /* EZDDefine.h */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -894,7 +880,6 @@
 				329DEFCE15AF74A59A52855C0B023B85 /* UIViewController+EZDAddition.h */,
 				9F883650D7064A291FACB6959D74E6B6 /* UIViewController+EZDAddition.m */,
 			);
-			name = Categary;
 			path = Categary;
 			sourceTree = "<group>";
 		};
@@ -923,7 +908,6 @@
 				80BAE177A964DB71EDA17DDF337085F0 /* ImageCell */,
 				F7A53290D9BA6939E8140AA538B71256 /* View */,
 			);
-			name = Displayer;
 			path = Displayer;
 			sourceTree = "<group>";
 		};
@@ -955,7 +939,6 @@
 				8DDD49DF60B4D8170E383A40707BE5D4 /* EZDOptionsController.h */,
 				88A22642419A6A5E362D13174CA24F7C /* EZDOptionsController.m */,
 			);
-			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -1014,6 +997,7 @@
 				17EA2E2CCF5D74CAC42B24F22E53C7A3 /* Logger */,
 				965F02072C1015B9B930DF07FDF563E8 /* Server */,
 				6156BB99D9BA7192E96241DAB5FC1870 /* Util */,
+				00DB7B862309D4BD004C6DDE /* Source.bundle */,
 			);
 			name = EasyDebugItems;
 			path = easydebug/Classes/EasyDebugItems;
@@ -1031,7 +1015,6 @@
 				8E7A8D63A0C7395E872B3F15731C0911 /* EZDOptionsCell.h */,
 				9D0C95995784CA4863449B749C0CC91C /* EZDOptionsCell.m */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -1041,7 +1024,6 @@
 				F57BB47A45BF83525C3DA9A9BB4FBD12 /* Frameworks */,
 				418FE80D8E28D102858F97A1DD6ABBC3 /* Support Files */,
 			);
-			name = PLCrashReporter;
 			path = PLCrashReporter;
 			sourceTree = "<group>";
 		};
@@ -1672,8 +1654,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
