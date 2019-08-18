@@ -84,8 +84,8 @@ static EZDDisplayer *displayer;
     self.displayerSwitch.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
     self.displayerSwitch.contentHorizontalAlignment = UIControlContentVerticalAlignmentFill;
     
-    NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"Source" withExtension:@"bundle"];
-    NSString *iconPath = [[NSBundle bundleWithURL:bundleURL] pathForResource:@"icon.png" ofType:@""];
+    NSURL *bundleURL = [[NSBundle bundleForClass:[self class]] URLForResource:@"Source.bundle" withExtension:@""];
+    NSString *iconPath = bundleURL ? [[NSBundle bundleWithURL:bundleURL] pathForResource:@"icon.png" ofType:@""] : @"";
     
     [self.displayerSwitch setImage:[UIImage imageWithContentsOfFile:iconPath] forState:UIControlStateNormal];
     [self.displayerSwitch addTarget:self action:@selector(displayerSwitchClicked) forControlEvents:UIControlEventTouchUpInside];
