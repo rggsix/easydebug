@@ -355,10 +355,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-easydebug_Example/Pods-easydebug_Example-resources.sh",
 				"${PODS_ROOT}/GCDWebServer/GCDWebUploader/GCDWebUploader.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/easydebug/easydebug.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GCDWebUploader.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/easydebug.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
