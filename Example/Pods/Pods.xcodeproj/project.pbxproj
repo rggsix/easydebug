@@ -7,10 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00CC97BA2309704D003D5A3B /* EasyDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97592309704C003D5A3B /* EasyDebug.h */; };
+		00CC97BB2309704D003D5A3B /* EasyDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC975A2309704C003D5A3B /* EasyDebug.m */; };
+		00CC97BC2309704D003D5A3B /* EZDClientAPM.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC975C2309704D003D5A3B /* EZDClientAPM.h */; };
+		00CC97BD2309704D003D5A3B /* BSBacktraceLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC975E2309704D003D5A3B /* BSBacktraceLogger.h */; };
+		00CC97BE2309704D003D5A3B /* EZDAPMBacktrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC975F2309704D003D5A3B /* EZDAPMBacktrace.h */; };
+		00CC97BF2309704D003D5A3B /* EZDAPMReportFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97602309704D003D5A3B /* EZDAPMReportFormatter.m */; };
+		00CC97C02309704D003D5A3B /* EZDAPMOperationRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97612309704D003D5A3B /* EZDAPMOperationRecorder.m */; };
+		00CC97C12309704D003D5A3B /* BSBacktraceLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97622309704D003D5A3B /* BSBacktraceLogger.m */; };
+		00CC97C22309704D003D5A3B /* EZDAPMBacktrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97632309704D003D5A3B /* EZDAPMBacktrace.m */; };
+		00CC97C32309704D003D5A3B /* EZDAPMReportFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97642309704D003D5A3B /* EZDAPMReportFormatter.h */; };
+		00CC97C42309704D003D5A3B /* EZDAPMOperationRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97652309704D003D5A3B /* EZDAPMOperationRecorder.h */; };
+		00CC97C52309704D003D5A3B /* EZDReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97672309704D003D5A3B /* EZDReachability.h */; };
+		00CC97C62309704D003D5A3B /* EZDAPMUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97682309704D003D5A3B /* EZDAPMUtil.m */; };
+		00CC97C72309704D003D5A3B /* EZDAPMHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97692309704D003D5A3B /* EZDAPMHooker.m */; };
+		00CC97C82309704D003D5A3B /* EZDReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC976A2309704D003D5A3B /* EZDReachability.m */; };
+		00CC97C92309704D003D5A3B /* EZDAPMUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC976B2309704D003D5A3B /* EZDAPMUtil.h */; };
+		00CC97CA2309704D003D5A3B /* EZDAPMHooker.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC976C2309704D003D5A3B /* EZDAPMHooker.h */; };
+		00CC97CB2309704D003D5A3B /* EZDAPMFPSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC976E2309704D003D5A3B /* EZDAPMFPSMonitor.m */; };
+		00CC97CC2309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC976F2309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.m */; };
+		00CC97CD2309704D003D5A3B /* EZDAPMFPSMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97702309704D003D5A3B /* EZDAPMFPSMonitor.h */; };
+		00CC97CE2309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97712309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.h */; };
+		00CC97CF2309704D003D5A3B /* EZDClientAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97722309704D003D5A3B /* EZDClientAPM.m */; };
+		00CC97D02309704D003D5A3B /* EZDAPMSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97742309704D003D5A3B /* EZDAPMSessionManager.m */; };
+		00CC97D12309704D003D5A3B /* EZDURLSessionChallengeSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97752309704D003D5A3B /* EZDURLSessionChallengeSender.m */; };
+		00CC97D22309704D003D5A3B /* EZDAPMHTTPProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97762309704D003D5A3B /* EZDAPMHTTPProtocol.h */; };
+		00CC97D32309704D003D5A3B /* EZDAPMURLSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97772309704D003D5A3B /* EZDAPMURLSchemeHandler.m */; };
+		00CC97D42309704D003D5A3B /* EZDAPMSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97782309704D003D5A3B /* EZDAPMSessionManager.h */; };
+		00CC97D52309704D003D5A3B /* EZDURLSessionChallengeSender.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97792309704D003D5A3B /* EZDURLSessionChallengeSender.h */; };
+		00CC97D62309704D003D5A3B /* EZDAPMURLSchemeHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC977A2309704D003D5A3B /* EZDAPMURLSchemeHandler.h */; };
+		00CC97D72309704D003D5A3B /* EZDAPMHTTPProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC977B2309704D003D5A3B /* EZDAPMHTTPProtocol.m */; };
+		00CC97D82309704D003D5A3B /* EZDConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC977E2309704D003D5A3B /* EZDConfig.h */; };
+		00CC97D92309704D003D5A3B /* EZDOptionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC977F2309704D003D5A3B /* EZDOptionItem.h */; };
+		00CC97DA2309704D003D5A3B /* EZDFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97802309704D003D5A3B /* EZDFilter.m */; };
+		00CC97DB2309704D003D5A3B /* EZDLoggerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97812309704D003D5A3B /* EZDLoggerModel.m */; };
+		00CC97DC2309704D003D5A3B /* EZDOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97822309704D003D5A3B /* EZDOptions.m */; };
+		00CC97DD2309704D003D5A3B /* EZDLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97832309704D003D5A3B /* EZDLogger.m */; };
+		00CC97DE2309704D003D5A3B /* EZDConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97842309704D003D5A3B /* EZDConfig.m */; };
+		00CC97DF2309704D003D5A3B /* EZDOptionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97852309704D003D5A3B /* EZDOptionItem.m */; };
+		00CC97E02309704D003D5A3B /* EZDLoggerModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97862309704D003D5A3B /* EZDLoggerModel.h */; };
+		00CC97E12309704D003D5A3B /* EZDFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97872309704D003D5A3B /* EZDFilter.h */; };
+		00CC97E22309704D003D5A3B /* EZDLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97882309704D003D5A3B /* EZDLogger.h */; };
+		00CC97E32309704D003D5A3B /* EZDOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97892309704D003D5A3B /* EZDOptions.h */; };
+		00CC97E42309704D003D5A3B /* NSDate+EZDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC978B2309704D003D5A3B /* NSDate+EZDAddition.m */; };
+		00CC97E52309704D003D5A3B /* UIViewController+EZDAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC978C2309704D003D5A3B /* UIViewController+EZDAddition.h */; };
+		00CC97E62309704D003D5A3B /* UIView+EZDAddition_frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC978D2309704D003D5A3B /* UIView+EZDAddition_frame.m */; };
+		00CC97E72309704D003D5A3B /* NSObject+EZDAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC978E2309704D003D5A3B /* NSObject+EZDAddition.h */; };
+		00CC97E82309704D003D5A3B /* NSDate+EZDAddition.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC978F2309704D003D5A3B /* NSDate+EZDAddition.h */; };
+		00CC97E92309704D003D5A3B /* UIViewController+EZDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97902309704D003D5A3B /* UIViewController+EZDAddition.m */; };
+		00CC97EA2309704D003D5A3B /* UIView+EZDAddition_frame.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97912309704D003D5A3B /* UIView+EZDAddition_frame.h */; };
+		00CC97EB2309704D003D5A3B /* NSObject+EZDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97922309704D003D5A3B /* NSObject+EZDAddition.m */; };
+		00CC97EC2309704D003D5A3B /* EZDDebugServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97942309704D003D5A3B /* EZDDebugServer.m */; };
+		00CC97ED2309704D003D5A3B /* EZDDebugServerHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97952309704D003D5A3B /* EZDDebugServerHandler.h */; };
+		00CC97EE2309704D003D5A3B /* EZDBaseURLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97972309704D003D5A3B /* EZDBaseURLNode.h */; };
+		00CC97EF2309704D003D5A3B /* EZDURLNodeEasyDebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97982309704D003D5A3B /* EZDURLNodeEasyDebugLog.m */; };
+		00CC97F02309704D003D5A3B /* EZDBaseURLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97992309704D003D5A3B /* EZDBaseURLNode.m */; };
+		00CC97F12309704D003D5A3B /* EZDURLNodeEasyDebugLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC979A2309704D003D5A3B /* EZDURLNodeEasyDebugLog.h */; };
+		00CC97F22309704D003D5A3B /* EZDDebugServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC979C2309704D003D5A3B /* EZDDebugServerResponse.m */; };
+		00CC97F32309704D003D5A3B /* EZDDebugServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC979D2309704D003D5A3B /* EZDDebugServer.h */; };
+		00CC97F42309704D003D5A3B /* EZDDebugServerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC979E2309704D003D5A3B /* EZDDebugServerHandler.m */; };
+		00CC97F52309704D003D5A3B /* EZDDebugServerResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC979F2309704D003D5A3B /* EZDDebugServerResponse.h */; };
+		00CC97F62309704D003D5A3B /* EZDDisplayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97A12309704D003D5A3B /* EZDDisplayer.m */; };
+		00CC97F72309704D003D5A3B /* EZDImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97A32309704D003D5A3B /* EZDImage.m */; };
+		00CC97F82309704D003D5A3B /* EZDImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97A42309704D003D5A3B /* EZDImage.h */; };
+		00CC97F92309704D003D5A3B /* EZDDisplayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97A52309704D003D5A3B /* EZDDisplayer.h */; };
+		00CC97FA2309704D003D5A3B /* EZDOptionsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97A72309704D003D5A3B /* EZDOptionsController.h */; };
+		00CC97FB2309704D003D5A3B /* EZDDisplayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97A82309704D003D5A3B /* EZDDisplayController.h */; };
+		00CC97FC2309704D003D5A3B /* EZDBaseLogInfoController.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97A92309704D003D5A3B /* EZDBaseLogInfoController.h */; };
+		00CC97FD2309704D003D5A3B /* EZDFilterController.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97AA2309704D003D5A3B /* EZDFilterController.h */; };
+		00CC97FE2309704D003D5A3B /* EZDOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97AB2309704D003D5A3B /* EZDOptionsController.m */; };
+		00CC97FF2309704D003D5A3B /* EZDBaseLogInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97AC2309704D003D5A3B /* EZDBaseLogInfoController.m */; };
+		00CC98002309704D003D5A3B /* EZDDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97AD2309704D003D5A3B /* EZDDisplayController.m */; };
+		00CC98012309704D003D5A3B /* EZDFilterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97AE2309704D003D5A3B /* EZDFilterController.m */; };
+		00CC98022309704D003D5A3B /* EZDMessageHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97B02309704D003D5A3B /* EZDMessageHUD.h */; };
+		00CC98032309704D003D5A3B /* EZDAppShortInfoLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97B12309704D003D5A3B /* EZDAppShortInfoLabel.m */; };
+		00CC98042309704D003D5A3B /* EZDOptionsCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97B22309704D003D5A3B /* EZDOptionsCell.h */; };
+		00CC98052309704D003D5A3B /* EZDLogDisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97B32309704D003D5A3B /* EZDLogDisplayCell.m */; };
+		00CC98062309704D003D5A3B /* EZDOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97B42309704D003D5A3B /* EZDOptionsCell.m */; };
+		00CC98072309704D003D5A3B /* EZDMessageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC97B52309704D003D5A3B /* EZDMessageHUD.m */; };
+		00CC98082309704D003D5A3B /* EZDAppShortInfoLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97B62309704D003D5A3B /* EZDAppShortInfoLabel.h */; };
+		00CC98092309704D003D5A3B /* EZDLogDisplayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97B72309704D003D5A3B /* EZDLogDisplayCell.h */; };
+		00CC980A2309704D003D5A3B /* EZDDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC97B92309704D003D5A3B /* EZDDefine.h */; };
+		00CC980D23097134003D5A3B /* EZDSystemUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CC980B23097134003D5A3B /* EZDSystemUtil.h */; };
+		00CC980E23097134003D5A3B /* EZDSystemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC980C23097134003D5A3B /* EZDSystemUtil.m */; };
 		042161869595D65E23519B2852089B07 /* Pods-easydebug_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CF38E734052FA2C619F5E00E8FB440 /* Pods-easydebug_Tests-dummy.m */; };
 		0DA2D50CD4CF227D8697E7E7368E4BF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		1B532F52E180A0D2928599C73ABFE37E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		2927784C14E27E65EC491B27F8241376 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3EF2FD107081767559FDBE8EF97E1 /* ReplaceMe.m */; };
 		7EC1FB9C274979600BCAC7EBC614DF8D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		91AF207984DD7E2ED387C3F6D318CE91 /* Pods-easydebug_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1298982174A777B95DEEB15043333BB /* Pods-easydebug_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB10F9E0C2F4F281139E70EE89675911 /* easydebug-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C7839C3D95E2CE59CD3A901ACAC2D09 /* easydebug-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,17 +119,102 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00CC975623096FC7003D5A3B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		00CC975823096FC7003D5A3B /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		00CC97592309704C003D5A3B /* EasyDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyDebug.h; sourceTree = "<group>"; };
+		00CC975A2309704C003D5A3B /* EasyDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyDebug.m; sourceTree = "<group>"; };
+		00CC975C2309704D003D5A3B /* EZDClientAPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDClientAPM.h; sourceTree = "<group>"; };
+		00CC975E2309704D003D5A3B /* BSBacktraceLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBacktraceLogger.h; sourceTree = "<group>"; };
+		00CC975F2309704D003D5A3B /* EZDAPMBacktrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMBacktrace.h; sourceTree = "<group>"; };
+		00CC97602309704D003D5A3B /* EZDAPMReportFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMReportFormatter.m; sourceTree = "<group>"; };
+		00CC97612309704D003D5A3B /* EZDAPMOperationRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMOperationRecorder.m; sourceTree = "<group>"; };
+		00CC97622309704D003D5A3B /* BSBacktraceLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBacktraceLogger.m; sourceTree = "<group>"; };
+		00CC97632309704D003D5A3B /* EZDAPMBacktrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMBacktrace.m; sourceTree = "<group>"; };
+		00CC97642309704D003D5A3B /* EZDAPMReportFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMReportFormatter.h; sourceTree = "<group>"; };
+		00CC97652309704D003D5A3B /* EZDAPMOperationRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMOperationRecorder.h; sourceTree = "<group>"; };
+		00CC97672309704D003D5A3B /* EZDReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDReachability.h; sourceTree = "<group>"; };
+		00CC97682309704D003D5A3B /* EZDAPMUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMUtil.m; sourceTree = "<group>"; };
+		00CC97692309704D003D5A3B /* EZDAPMHooker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMHooker.m; sourceTree = "<group>"; };
+		00CC976A2309704D003D5A3B /* EZDReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDReachability.m; sourceTree = "<group>"; };
+		00CC976B2309704D003D5A3B /* EZDAPMUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMUtil.h; sourceTree = "<group>"; };
+		00CC976C2309704D003D5A3B /* EZDAPMHooker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMHooker.h; sourceTree = "<group>"; };
+		00CC976E2309704D003D5A3B /* EZDAPMFPSMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMFPSMonitor.m; sourceTree = "<group>"; };
+		00CC976F2309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMDeviceConsumptionMonitor.m; sourceTree = "<group>"; };
+		00CC97702309704D003D5A3B /* EZDAPMFPSMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMFPSMonitor.h; sourceTree = "<group>"; };
+		00CC97712309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMDeviceConsumptionMonitor.h; sourceTree = "<group>"; };
+		00CC97722309704D003D5A3B /* EZDClientAPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDClientAPM.m; sourceTree = "<group>"; };
+		00CC97742309704D003D5A3B /* EZDAPMSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMSessionManager.m; sourceTree = "<group>"; };
+		00CC97752309704D003D5A3B /* EZDURLSessionChallengeSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDURLSessionChallengeSender.m; sourceTree = "<group>"; };
+		00CC97762309704D003D5A3B /* EZDAPMHTTPProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMHTTPProtocol.h; sourceTree = "<group>"; };
+		00CC97772309704D003D5A3B /* EZDAPMURLSchemeHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMURLSchemeHandler.m; sourceTree = "<group>"; };
+		00CC97782309704D003D5A3B /* EZDAPMSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMSessionManager.h; sourceTree = "<group>"; };
+		00CC97792309704D003D5A3B /* EZDURLSessionChallengeSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDURLSessionChallengeSender.h; sourceTree = "<group>"; };
+		00CC977A2309704D003D5A3B /* EZDAPMURLSchemeHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMURLSchemeHandler.h; sourceTree = "<group>"; };
+		00CC977B2309704D003D5A3B /* EZDAPMHTTPProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMHTTPProtocol.m; sourceTree = "<group>"; };
+		00CC977E2309704D003D5A3B /* EZDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDConfig.h; sourceTree = "<group>"; };
+		00CC977F2309704D003D5A3B /* EZDOptionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDOptionItem.h; sourceTree = "<group>"; };
+		00CC97802309704D003D5A3B /* EZDFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDFilter.m; sourceTree = "<group>"; };
+		00CC97812309704D003D5A3B /* EZDLoggerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDLoggerModel.m; sourceTree = "<group>"; };
+		00CC97822309704D003D5A3B /* EZDOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDOptions.m; sourceTree = "<group>"; };
+		00CC97832309704D003D5A3B /* EZDLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDLogger.m; sourceTree = "<group>"; };
+		00CC97842309704D003D5A3B /* EZDConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDConfig.m; sourceTree = "<group>"; };
+		00CC97852309704D003D5A3B /* EZDOptionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDOptionItem.m; sourceTree = "<group>"; };
+		00CC97862309704D003D5A3B /* EZDLoggerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDLoggerModel.h; sourceTree = "<group>"; };
+		00CC97872309704D003D5A3B /* EZDFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDFilter.h; sourceTree = "<group>"; };
+		00CC97882309704D003D5A3B /* EZDLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDLogger.h; sourceTree = "<group>"; };
+		00CC97892309704D003D5A3B /* EZDOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDOptions.h; sourceTree = "<group>"; };
+		00CC978B2309704D003D5A3B /* NSDate+EZDAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EZDAddition.m"; sourceTree = "<group>"; };
+		00CC978C2309704D003D5A3B /* UIViewController+EZDAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EZDAddition.h"; sourceTree = "<group>"; };
+		00CC978D2309704D003D5A3B /* UIView+EZDAddition_frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EZDAddition_frame.m"; sourceTree = "<group>"; };
+		00CC978E2309704D003D5A3B /* NSObject+EZDAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EZDAddition.h"; sourceTree = "<group>"; };
+		00CC978F2309704D003D5A3B /* NSDate+EZDAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EZDAddition.h"; sourceTree = "<group>"; };
+		00CC97902309704D003D5A3B /* UIViewController+EZDAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EZDAddition.m"; sourceTree = "<group>"; };
+		00CC97912309704D003D5A3B /* UIView+EZDAddition_frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EZDAddition_frame.h"; sourceTree = "<group>"; };
+		00CC97922309704D003D5A3B /* NSObject+EZDAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EZDAddition.m"; sourceTree = "<group>"; };
+		00CC97942309704D003D5A3B /* EZDDebugServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDDebugServer.m; sourceTree = "<group>"; };
+		00CC97952309704D003D5A3B /* EZDDebugServerHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDDebugServerHandler.h; sourceTree = "<group>"; };
+		00CC97972309704D003D5A3B /* EZDBaseURLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDBaseURLNode.h; sourceTree = "<group>"; };
+		00CC97982309704D003D5A3B /* EZDURLNodeEasyDebugLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDURLNodeEasyDebugLog.m; sourceTree = "<group>"; };
+		00CC97992309704D003D5A3B /* EZDBaseURLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDBaseURLNode.m; sourceTree = "<group>"; };
+		00CC979A2309704D003D5A3B /* EZDURLNodeEasyDebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDURLNodeEasyDebugLog.h; sourceTree = "<group>"; };
+		00CC979B2309704D003D5A3B /* EZDDebugServerResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EZDDebugServerResource.bundle; sourceTree = "<group>"; };
+		00CC979C2309704D003D5A3B /* EZDDebugServerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDDebugServerResponse.m; sourceTree = "<group>"; };
+		00CC979D2309704D003D5A3B /* EZDDebugServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDDebugServer.h; sourceTree = "<group>"; };
+		00CC979E2309704D003D5A3B /* EZDDebugServerHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDDebugServerHandler.m; sourceTree = "<group>"; };
+		00CC979F2309704D003D5A3B /* EZDDebugServerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDDebugServerResponse.h; sourceTree = "<group>"; };
+		00CC97A12309704D003D5A3B /* EZDDisplayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDDisplayer.m; sourceTree = "<group>"; };
+		00CC97A32309704D003D5A3B /* EZDImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDImage.m; sourceTree = "<group>"; };
+		00CC97A42309704D003D5A3B /* EZDImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDImage.h; sourceTree = "<group>"; };
+		00CC97A52309704D003D5A3B /* EZDDisplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDDisplayer.h; sourceTree = "<group>"; };
+		00CC97A72309704D003D5A3B /* EZDOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDOptionsController.h; sourceTree = "<group>"; };
+		00CC97A82309704D003D5A3B /* EZDDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDDisplayController.h; sourceTree = "<group>"; };
+		00CC97A92309704D003D5A3B /* EZDBaseLogInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDBaseLogInfoController.h; sourceTree = "<group>"; };
+		00CC97AA2309704D003D5A3B /* EZDFilterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDFilterController.h; sourceTree = "<group>"; };
+		00CC97AB2309704D003D5A3B /* EZDOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDOptionsController.m; sourceTree = "<group>"; };
+		00CC97AC2309704D003D5A3B /* EZDBaseLogInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDBaseLogInfoController.m; sourceTree = "<group>"; };
+		00CC97AD2309704D003D5A3B /* EZDDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDDisplayController.m; sourceTree = "<group>"; };
+		00CC97AE2309704D003D5A3B /* EZDFilterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDFilterController.m; sourceTree = "<group>"; };
+		00CC97B02309704D003D5A3B /* EZDMessageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDMessageHUD.h; sourceTree = "<group>"; };
+		00CC97B12309704D003D5A3B /* EZDAppShortInfoLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAppShortInfoLabel.m; sourceTree = "<group>"; };
+		00CC97B22309704D003D5A3B /* EZDOptionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDOptionsCell.h; sourceTree = "<group>"; };
+		00CC97B32309704D003D5A3B /* EZDLogDisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDLogDisplayCell.m; sourceTree = "<group>"; };
+		00CC97B42309704D003D5A3B /* EZDOptionsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDOptionsCell.m; sourceTree = "<group>"; };
+		00CC97B52309704D003D5A3B /* EZDMessageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDMessageHUD.m; sourceTree = "<group>"; };
+		00CC97B62309704D003D5A3B /* EZDAppShortInfoLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAppShortInfoLabel.h; sourceTree = "<group>"; };
+		00CC97B72309704D003D5A3B /* EZDLogDisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDLogDisplayCell.h; sourceTree = "<group>"; };
+		00CC97B92309704D003D5A3B /* EZDDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDDefine.h; sourceTree = "<group>"; };
+		00CC980B23097134003D5A3B /* EZDSystemUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDSystemUtil.h; sourceTree = "<group>"; };
+		00CC980C23097134003D5A3B /* EZDSystemUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDSystemUtil.m; sourceTree = "<group>"; };
 		08CF38E734052FA2C619F5E00E8FB440 /* Pods-easydebug_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-easydebug_Tests-dummy.m"; sourceTree = "<group>"; };
 		0CB62127CEC79B2C28E5610BDD52A4A8 /* easydebug-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "easydebug-prefix.pch"; sourceTree = "<group>"; };
-		0FEC4575D1552C59D82CA50E7DB89590 /* Pods_easydebug_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_easydebug_Tests.framework; path = "Pods-easydebug_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FEC4575D1552C59D82CA50E7DB89590 /* Pods_easydebug_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_easydebug_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3082891ABA6496994505958E055628F1 /* easydebug-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "easydebug-dummy.m"; sourceTree = "<group>"; };
 		33688757FB0976317C3E1A35A5CA695A /* Pods-easydebug_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-easydebug_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		33D5AF151285263B92087F2975250735 /* easydebug.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = easydebug.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		33D5AF151285263B92087F2975250735 /* easydebug.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = easydebug.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		379F19D9D94D11C1F463C5BDCB96F413 /* Pods-easydebug_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-easydebug_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3C7839C3D95E2CE59CD3A901ACAC2D09 /* easydebug-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "easydebug-umbrella.h"; sourceTree = "<group>"; };
-		403884516FC4A47E152FB5586AD299FC /* Pods_easydebug_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_easydebug_Example.framework; path = "Pods-easydebug_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		43F0CEEC4AD035618EC326A4D67FF495 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		4AB3EF2FD107081767559FDBE8EF97E1 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = easydebug/Classes/ReplaceMe.m; sourceTree = "<group>"; };
+		403884516FC4A47E152FB5586AD299FC /* Pods_easydebug_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_easydebug_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43F0CEEC4AD035618EC326A4D67FF495 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5BE6AE57FD2C02012C466A035FF3409A /* Pods-easydebug_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-easydebug_Example.release.xcconfig"; sourceTree = "<group>"; };
 		65728052E3F9DE6D08F126C74237DFC2 /* Pods-easydebug_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-easydebug_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -57,8 +224,8 @@
 		7CECE778BCECE899CF04ED6F34D38260 /* Pods-easydebug_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-easydebug_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		800F14FB634114AA5ED81BBABFD7DAAB /* Pods-easydebug_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-easydebug_Example-resources.sh"; sourceTree = "<group>"; };
 		841438E6A08C87AEE50330F8765293F5 /* Pods-easydebug_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-easydebug_Tests.modulemap"; sourceTree = "<group>"; };
-		8C78195E8A03FF8ED342AEFD3641E7B8 /* easydebug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = easydebug.framework; path = easydebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8C78195E8A03FF8ED342AEFD3641E7B8 /* easydebug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = easydebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AA9A2C3F144E5E98AF2C38A293A9445E /* Pods-easydebug_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-easydebug_Example-umbrella.h"; sourceTree = "<group>"; };
 		AD43FEBEC07A60E1D066977EA6CFD7FD /* Pods-easydebug_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-easydebug_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		C1298982174A777B95DEEB15043333BB /* Pods-easydebug_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-easydebug_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -71,7 +238,7 @@
 		E0704D9433FF7ACCD8FB32197ED1A881 /* easydebug.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = easydebug.modulemap; sourceTree = "<group>"; };
 		E265E56A246867DC484AA9DB17B2C308 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9E1934E0142A7E99C76D9154CBF39D0 /* Pods-easydebug_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-easydebug_Example-frameworks.sh"; sourceTree = "<group>"; };
-		FC0B3B7A87AA28E598ADE8D42426973D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		FC0B3B7A87AA28E598ADE8D42426973D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +269,243 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00CC975423096FC7003D5A3B /* Easydebug */ = {
+			isa = PBXGroup;
+			children = (
+				00CC975523096FC7003D5A3B /* Classes */,
+				00CC975723096FC7003D5A3B /* Assets */,
+			);
+			path = Easydebug;
+			sourceTree = "<group>";
+		};
+		00CC975523096FC7003D5A3B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97592309704C003D5A3B /* EasyDebug.h */,
+				00CC975A2309704C003D5A3B /* EasyDebug.m */,
+				00CC977C2309704D003D5A3B /* EasyDebugItems */,
+				00CC975B2309704D003D5A3B /* EzayDebugAPM */,
+				00CC975623096FC7003D5A3B /* .gitkeep */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		00CC975723096FC7003D5A3B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				00CC975823096FC7003D5A3B /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		00CC975B2309704D003D5A3B /* EzayDebugAPM */ = {
+			isa = PBXGroup;
+			children = (
+				00CC975C2309704D003D5A3B /* EZDClientAPM.h */,
+				00CC975D2309704D003D5A3B /* Log Generate */,
+				00CC97662309704D003D5A3B /* Utils */,
+				00CC976D2309704D003D5A3B /* Hardware Monitor */,
+				00CC97722309704D003D5A3B /* EZDClientAPM.m */,
+				00CC97732309704D003D5A3B /* Network Monitor */,
+			);
+			path = EzayDebugAPM;
+			sourceTree = "<group>";
+		};
+		00CC975D2309704D003D5A3B /* Log Generate */ = {
+			isa = PBXGroup;
+			children = (
+				00CC975E2309704D003D5A3B /* BSBacktraceLogger.h */,
+				00CC975F2309704D003D5A3B /* EZDAPMBacktrace.h */,
+				00CC97602309704D003D5A3B /* EZDAPMReportFormatter.m */,
+				00CC97612309704D003D5A3B /* EZDAPMOperationRecorder.m */,
+				00CC97622309704D003D5A3B /* BSBacktraceLogger.m */,
+				00CC97632309704D003D5A3B /* EZDAPMBacktrace.m */,
+				00CC97642309704D003D5A3B /* EZDAPMReportFormatter.h */,
+				00CC97652309704D003D5A3B /* EZDAPMOperationRecorder.h */,
+			);
+			path = "Log Generate";
+			sourceTree = "<group>";
+		};
+		00CC97662309704D003D5A3B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97672309704D003D5A3B /* EZDReachability.h */,
+				00CC97682309704D003D5A3B /* EZDAPMUtil.m */,
+				00CC97692309704D003D5A3B /* EZDAPMHooker.m */,
+				00CC976A2309704D003D5A3B /* EZDReachability.m */,
+				00CC976B2309704D003D5A3B /* EZDAPMUtil.h */,
+				00CC976C2309704D003D5A3B /* EZDAPMHooker.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		00CC976D2309704D003D5A3B /* Hardware Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				00CC976E2309704D003D5A3B /* EZDAPMFPSMonitor.m */,
+				00CC976F2309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.m */,
+				00CC97702309704D003D5A3B /* EZDAPMFPSMonitor.h */,
+				00CC97712309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.h */,
+			);
+			path = "Hardware Monitor";
+			sourceTree = "<group>";
+		};
+		00CC97732309704D003D5A3B /* Network Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97742309704D003D5A3B /* EZDAPMSessionManager.m */,
+				00CC97752309704D003D5A3B /* EZDURLSessionChallengeSender.m */,
+				00CC97762309704D003D5A3B /* EZDAPMHTTPProtocol.h */,
+				00CC97772309704D003D5A3B /* EZDAPMURLSchemeHandler.m */,
+				00CC97782309704D003D5A3B /* EZDAPMSessionManager.h */,
+				00CC97792309704D003D5A3B /* EZDURLSessionChallengeSender.h */,
+				00CC977A2309704D003D5A3B /* EZDAPMURLSchemeHandler.h */,
+				00CC977B2309704D003D5A3B /* EZDAPMHTTPProtocol.m */,
+			);
+			path = "Network Monitor";
+			sourceTree = "<group>";
+		};
+		00CC977C2309704D003D5A3B /* EasyDebugItems */ = {
+			isa = PBXGroup;
+			children = (
+				00CC980F23097139003D5A3B /* Util */,
+				00CC977D2309704D003D5A3B /* Logger */,
+				00CC978A2309704D003D5A3B /* Categary */,
+				00CC97932309704D003D5A3B /* Server */,
+				00CC97A02309704D003D5A3B /* Displayer */,
+				00CC97B82309704D003D5A3B /* Common */,
+			);
+			path = EasyDebugItems;
+			sourceTree = "<group>";
+		};
+		00CC977D2309704D003D5A3B /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				00CC977E2309704D003D5A3B /* EZDConfig.h */,
+				00CC977F2309704D003D5A3B /* EZDOptionItem.h */,
+				00CC97802309704D003D5A3B /* EZDFilter.m */,
+				00CC97812309704D003D5A3B /* EZDLoggerModel.m */,
+				00CC97822309704D003D5A3B /* EZDOptions.m */,
+				00CC97832309704D003D5A3B /* EZDLogger.m */,
+				00CC97842309704D003D5A3B /* EZDConfig.m */,
+				00CC97852309704D003D5A3B /* EZDOptionItem.m */,
+				00CC97862309704D003D5A3B /* EZDLoggerModel.h */,
+				00CC97872309704D003D5A3B /* EZDFilter.h */,
+				00CC97882309704D003D5A3B /* EZDLogger.h */,
+				00CC97892309704D003D5A3B /* EZDOptions.h */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		00CC978A2309704D003D5A3B /* Categary */ = {
+			isa = PBXGroup;
+			children = (
+				00CC978B2309704D003D5A3B /* NSDate+EZDAddition.m */,
+				00CC978C2309704D003D5A3B /* UIViewController+EZDAddition.h */,
+				00CC978D2309704D003D5A3B /* UIView+EZDAddition_frame.m */,
+				00CC978E2309704D003D5A3B /* NSObject+EZDAddition.h */,
+				00CC978F2309704D003D5A3B /* NSDate+EZDAddition.h */,
+				00CC97902309704D003D5A3B /* UIViewController+EZDAddition.m */,
+				00CC97912309704D003D5A3B /* UIView+EZDAddition_frame.h */,
+				00CC97922309704D003D5A3B /* NSObject+EZDAddition.m */,
+			);
+			path = Categary;
+			sourceTree = "<group>";
+		};
+		00CC97932309704D003D5A3B /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97942309704D003D5A3B /* EZDDebugServer.m */,
+				00CC97952309704D003D5A3B /* EZDDebugServerHandler.h */,
+				00CC97962309704D003D5A3B /* URLNodes */,
+				00CC979B2309704D003D5A3B /* EZDDebugServerResource.bundle */,
+				00CC979C2309704D003D5A3B /* EZDDebugServerResponse.m */,
+				00CC979D2309704D003D5A3B /* EZDDebugServer.h */,
+				00CC979E2309704D003D5A3B /* EZDDebugServerHandler.m */,
+				00CC979F2309704D003D5A3B /* EZDDebugServerResponse.h */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		00CC97962309704D003D5A3B /* URLNodes */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97972309704D003D5A3B /* EZDBaseURLNode.h */,
+				00CC97982309704D003D5A3B /* EZDURLNodeEasyDebugLog.m */,
+				00CC97992309704D003D5A3B /* EZDBaseURLNode.m */,
+				00CC979A2309704D003D5A3B /* EZDURLNodeEasyDebugLog.h */,
+			);
+			path = URLNodes;
+			sourceTree = "<group>";
+		};
+		00CC97A02309704D003D5A3B /* Displayer */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97A52309704D003D5A3B /* EZDDisplayer.h */,
+				00CC97A12309704D003D5A3B /* EZDDisplayer.m */,
+				00CC97A22309704D003D5A3B /* ImageCell */,
+				00CC97A62309704D003D5A3B /* Controller */,
+				00CC97AF2309704D003D5A3B /* View */,
+			);
+			path = Displayer;
+			sourceTree = "<group>";
+		};
+		00CC97A22309704D003D5A3B /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97A32309704D003D5A3B /* EZDImage.m */,
+				00CC97A42309704D003D5A3B /* EZDImage.h */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		00CC97A62309704D003D5A3B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97A72309704D003D5A3B /* EZDOptionsController.h */,
+				00CC97A82309704D003D5A3B /* EZDDisplayController.h */,
+				00CC97A92309704D003D5A3B /* EZDBaseLogInfoController.h */,
+				00CC97AA2309704D003D5A3B /* EZDFilterController.h */,
+				00CC97AB2309704D003D5A3B /* EZDOptionsController.m */,
+				00CC97AC2309704D003D5A3B /* EZDBaseLogInfoController.m */,
+				00CC97AD2309704D003D5A3B /* EZDDisplayController.m */,
+				00CC97AE2309704D003D5A3B /* EZDFilterController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00CC97AF2309704D003D5A3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97B02309704D003D5A3B /* EZDMessageHUD.h */,
+				00CC97B12309704D003D5A3B /* EZDAppShortInfoLabel.m */,
+				00CC97B22309704D003D5A3B /* EZDOptionsCell.h */,
+				00CC97B32309704D003D5A3B /* EZDLogDisplayCell.m */,
+				00CC97B42309704D003D5A3B /* EZDOptionsCell.m */,
+				00CC97B52309704D003D5A3B /* EZDMessageHUD.m */,
+				00CC97B62309704D003D5A3B /* EZDAppShortInfoLabel.h */,
+				00CC97B72309704D003D5A3B /* EZDLogDisplayCell.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00CC97B82309704D003D5A3B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				00CC97B92309704D003D5A3B /* EZDDefine.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		00CC980F23097139003D5A3B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				00CC980B23097134003D5A3B /* EZDSystemUtil.h */,
+				00CC980C23097134003D5A3B /* EZDSystemUtil.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		10CBD61B6741423B3F441B0D86F410C6 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +595,7 @@
 		D5BBADCAE6AD43FD7C6F66CFE06B485B /* easydebug */ = {
 			isa = PBXGroup;
 			children = (
-				4AB3EF2FD107081767559FDBE8EF97E1 /* ReplaceMe.m */,
+				00CC975423096FC7003D5A3B /* Easydebug */,
 				8414EE2E447622CDF2075EED988E1F14 /* Pod */,
 				C8834812F0D36E936DDF931A00DA0DE8 /* Support Files */,
 			);
@@ -250,7 +654,49 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CC97CE2309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.h in Headers */,
+				00CC980A2309704D003D5A3B /* EZDDefine.h in Headers */,
+				00CC97BA2309704D003D5A3B /* EasyDebug.h in Headers */,
+				00CC97F92309704D003D5A3B /* EZDDisplayer.h in Headers */,
+				00CC97D42309704D003D5A3B /* EZDAPMSessionManager.h in Headers */,
+				00CC980D23097134003D5A3B /* EZDSystemUtil.h in Headers */,
+				00CC98082309704D003D5A3B /* EZDAppShortInfoLabel.h in Headers */,
+				00CC97FB2309704D003D5A3B /* EZDDisplayController.h in Headers */,
+				00CC97BE2309704D003D5A3B /* EZDAPMBacktrace.h in Headers */,
+				00CC97C92309704D003D5A3B /* EZDAPMUtil.h in Headers */,
+				00CC97D62309704D003D5A3B /* EZDAPMURLSchemeHandler.h in Headers */,
+				00CC97F82309704D003D5A3B /* EZDImage.h in Headers */,
+				00CC97ED2309704D003D5A3B /* EZDDebugServerHandler.h in Headers */,
+				00CC97D92309704D003D5A3B /* EZDOptionItem.h in Headers */,
+				00CC97F12309704D003D5A3B /* EZDURLNodeEasyDebugLog.h in Headers */,
+				00CC98042309704D003D5A3B /* EZDOptionsCell.h in Headers */,
+				00CC97F32309704D003D5A3B /* EZDDebugServer.h in Headers */,
+				00CC97FD2309704D003D5A3B /* EZDFilterController.h in Headers */,
+				00CC97E02309704D003D5A3B /* EZDLoggerModel.h in Headers */,
+				00CC97EE2309704D003D5A3B /* EZDBaseURLNode.h in Headers */,
+				00CC97CD2309704D003D5A3B /* EZDAPMFPSMonitor.h in Headers */,
+				00CC97FC2309704D003D5A3B /* EZDBaseLogInfoController.h in Headers */,
+				00CC97E32309704D003D5A3B /* EZDOptions.h in Headers */,
+				00CC97D52309704D003D5A3B /* EZDURLSessionChallengeSender.h in Headers */,
+				00CC97FA2309704D003D5A3B /* EZDOptionsController.h in Headers */,
+				00CC97E52309704D003D5A3B /* UIViewController+EZDAddition.h in Headers */,
+				00CC97E12309704D003D5A3B /* EZDFilter.h in Headers */,
+				00CC97C42309704D003D5A3B /* EZDAPMOperationRecorder.h in Headers */,
+				00CC97D22309704D003D5A3B /* EZDAPMHTTPProtocol.h in Headers */,
+				00CC97EA2309704D003D5A3B /* UIView+EZDAddition_frame.h in Headers */,
+				00CC97C52309704D003D5A3B /* EZDReachability.h in Headers */,
+				00CC97E22309704D003D5A3B /* EZDLogger.h in Headers */,
+				00CC98022309704D003D5A3B /* EZDMessageHUD.h in Headers */,
 				BB10F9E0C2F4F281139E70EE89675911 /* easydebug-umbrella.h in Headers */,
+				00CC97E82309704D003D5A3B /* NSDate+EZDAddition.h in Headers */,
+				00CC97BD2309704D003D5A3B /* BSBacktraceLogger.h in Headers */,
+				00CC97D82309704D003D5A3B /* EZDConfig.h in Headers */,
+				00CC97CA2309704D003D5A3B /* EZDAPMHooker.h in Headers */,
+				00CC97C32309704D003D5A3B /* EZDAPMReportFormatter.h in Headers */,
+				00CC97E72309704D003D5A3B /* NSObject+EZDAddition.h in Headers */,
+				00CC97BC2309704D003D5A3B /* EZDClientAPM.h in Headers */,
+				00CC98092309704D003D5A3B /* EZDLogDisplayCell.h in Headers */,
+				00CC97F52309704D003D5A3B /* EZDDebugServerResponse.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +770,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -359,8 +806,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CC97C02309704D003D5A3B /* EZDAPMOperationRecorder.m in Sources */,
+				00CC97DF2309704D003D5A3B /* EZDOptionItem.m in Sources */,
+				00CC97FE2309704D003D5A3B /* EZDOptionsController.m in Sources */,
+				00CC97F02309704D003D5A3B /* EZDBaseURLNode.m in Sources */,
+				00CC97CB2309704D003D5A3B /* EZDAPMFPSMonitor.m in Sources */,
+				00CC97FF2309704D003D5A3B /* EZDBaseLogInfoController.m in Sources */,
+				00CC97D72309704D003D5A3B /* EZDAPMHTTPProtocol.m in Sources */,
+				00CC97F72309704D003D5A3B /* EZDImage.m in Sources */,
+				00CC980E23097134003D5A3B /* EZDSystemUtil.m in Sources */,
+				00CC97C62309704D003D5A3B /* EZDAPMUtil.m in Sources */,
+				00CC98052309704D003D5A3B /* EZDLogDisplayCell.m in Sources */,
+				00CC97DE2309704D003D5A3B /* EZDConfig.m in Sources */,
+				00CC97C72309704D003D5A3B /* EZDAPMHooker.m in Sources */,
+				00CC97DB2309704D003D5A3B /* EZDLoggerModel.m in Sources */,
 				BFBF34310363F9600817C38CA7CE4A70 /* easydebug-dummy.m in Sources */,
-				2927784C14E27E65EC491B27F8241376 /* ReplaceMe.m in Sources */,
+				00CC97D12309704D003D5A3B /* EZDURLSessionChallengeSender.m in Sources */,
+				00CC97BF2309704D003D5A3B /* EZDAPMReportFormatter.m in Sources */,
+				00CC98012309704D003D5A3B /* EZDFilterController.m in Sources */,
+				00CC97D32309704D003D5A3B /* EZDAPMURLSchemeHandler.m in Sources */,
+				00CC97BB2309704D003D5A3B /* EasyDebug.m in Sources */,
+				00CC97EC2309704D003D5A3B /* EZDDebugServer.m in Sources */,
+				00CC97F22309704D003D5A3B /* EZDDebugServerResponse.m in Sources */,
+				00CC98072309704D003D5A3B /* EZDMessageHUD.m in Sources */,
+				00CC97DC2309704D003D5A3B /* EZDOptions.m in Sources */,
+				00CC98032309704D003D5A3B /* EZDAppShortInfoLabel.m in Sources */,
+				00CC97F42309704D003D5A3B /* EZDDebugServerHandler.m in Sources */,
+				00CC97D02309704D003D5A3B /* EZDAPMSessionManager.m in Sources */,
+				00CC97DD2309704D003D5A3B /* EZDLogger.m in Sources */,
+				00CC97C12309704D003D5A3B /* BSBacktraceLogger.m in Sources */,
+				00CC97DA2309704D003D5A3B /* EZDFilter.m in Sources */,
+				00CC97E62309704D003D5A3B /* UIView+EZDAddition_frame.m in Sources */,
+				00CC97E92309704D003D5A3B /* UIViewController+EZDAddition.m in Sources */,
+				00CC97CC2309704D003D5A3B /* EZDAPMDeviceConsumptionMonitor.m in Sources */,
+				00CC97F62309704D003D5A3B /* EZDDisplayer.m in Sources */,
+				00CC97CF2309704D003D5A3B /* EZDClientAPM.m in Sources */,
+				00CC97E42309704D003D5A3B /* NSDate+EZDAddition.m in Sources */,
+				00CC98062309704D003D5A3B /* EZDOptionsCell.m in Sources */,
+				00CC97C22309704D003D5A3B /* EZDAPMBacktrace.m in Sources */,
+				00CC97C82309704D003D5A3B /* EZDReachability.m in Sources */,
+				00CC97EF2309704D003D5A3B /* EZDURLNodeEasyDebugLog.m in Sources */,
+				00CC98002309704D003D5A3B /* EZDDisplayController.m in Sources */,
+				00CC97EB2309704D003D5A3B /* NSObject+EZDAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
