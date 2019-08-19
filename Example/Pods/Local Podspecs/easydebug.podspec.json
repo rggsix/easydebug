@@ -20,8 +20,8 @@
   },
   "source_files": "easydebug/Classes/**/*",
   "resource_bundles": {
-    "easydebug": [
-      "easydebug/Assets/*.png"
+    "ImageSource": [
+      "easydebug/Assets/**/*"
     ]
   },
   "dependencies": {
