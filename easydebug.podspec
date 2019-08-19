@@ -30,10 +30,10 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = ['easydebug/Classes/**/*','easydebug/Classes/Assets/*']
+  s.source_files = ['easydebug/Classes/**/*']
   
   s.resource_bundles = {
-      'easydebug' => ['easydebug/Classes/Assets/*.png']
+      'easydebug' => ['Assets/*.png']
   }
 
 #  s.resource = 'easydebug/Classes/Assets/EZDResource.bundle/*'
