@@ -247,6 +247,7 @@
 /* Begin PBXFileReference section */
 		00A8F856ED87D6616791F2E2FEFAEBB8 /* GCDWebServerFileResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFileResponse.m; path = GCDWebServer/Responses/GCDWebServerFileResponse.m; sourceTree = "<group>"; };
 		00EF50A0230A6401005AA1DE /* EZDResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EZDResource.bundle; sourceTree = "<group>"; };
+		00EF50A2230A7859005AA1DE /* tool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tool.png; sourceTree = "<group>"; };
 		035547405E59C0161BC6E9AD5BE6AA5D /* GCDWebServerMultiPartFormRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerMultiPartFormRequest.h; path = GCDWebServer/Requests/GCDWebServerMultiPartFormRequest.h; sourceTree = "<group>"; };
 		0447DC1D016ED7FA0A957988705A2E2E /* EZDReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDReachability.m; sourceTree = "<group>"; };
 		04D4AE1F43D82A0E711C186A73AC4455 /* EZDBaseURLNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDBaseURLNode.h; sourceTree = "<group>"; };
@@ -491,6 +492,7 @@
 		00EF509D230A629D005AA1DE /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				00EF50A2230A7859005AA1DE /* tool.png */,
 				00EF50A0230A6401005AA1DE /* EZDResource.bundle */,
 			);
 			name = Assets;
