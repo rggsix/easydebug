@@ -20,6 +20,44 @@ it, simply add the following line to your Podfile:
 pod 'easydebug'
 ```
 
+## Use
+
+### Debug log
+```Objective-C
+#import <EasyDebug.h> 
+EZDRecordEvent(@"Event Type", 
+                    @"abstractString, like:request.URL.absoluteString", 
+                    Event parameter, 
+                    timestamp(0 for now));
+``` 
+or use like "EZDRecordNetRequest(request_,param_,response_)" to record network.
+```Objective-C
+[agent GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)    {
+        EZDRecordNetRequest(task.originalRequest, param, responseObject);
+        callback ? callback(YES, responseObject, nil) : nil;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        EZDRecordNetRequest(task.originalRequest, param, error);
+        callback ? callback(YES, nil, error) : nil;
+}];
+```
+
+### Debug Options
+```Objective-C
+[EasyDebug regiestOptions:[EZDOptionsExample class]];
+```
+
+### APM
+```Objective-C
+    [EZDClientAPM startMonitoring];
+    [EZDClientAPM addLogObserver:self];
+```
+recieve APM log file:
+```Objective-C
+    NSData *fileData = [NSData dataWithContentsOfFile:filePath];
+    NSString *fileString = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
+    NSLog(@"APM new log : \n type : %@ \n content : %@", type, fileString);
+```
+
 ## Author
 
 RggComing, songhengdsg@sohu.com
