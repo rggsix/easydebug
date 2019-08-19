@@ -33,7 +33,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'easydebug/Classes/**/*'
   
   s.resource_bundles = {
-      'ImageSource' => ['easydebug/Assets/**/*']
+      'ImageSource' => ['easydebug/Classes/Assets/**/*']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
