@@ -84,7 +84,10 @@ static EZDDisplayer *displayer;
     self.displayerSwitch.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
     self.displayerSwitch.contentHorizontalAlignment = UIControlContentVerticalAlignmentFill;
     
-    NSString *iconPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"tool.png" ofType:@""];
+    NSURL *bundleURL = [[NSBundle bundleForClass:[self
+                                                    class]] URLForResource:@"easydebug.bundle" withExtension:@""];
+    NSBundle *easydebugBundle = [NSBundle bundleWithURL:bundleURL];
+    NSString *iconPath = [easydebugBundle pathForResource:@"tool.png" ofType:@""];
     
     [self.displayerSwitch setImage:[UIImage imageWithContentsOfFile:iconPath] forState:UIControlStateNormal];
     [self.displayerSwitch addTarget:self action:@selector(displayerSwitchClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -104,7 +107,7 @@ static EZDDisplayer *displayer;
     self.displayerSwitch.ezd_origin = CGPointMake(window.ezd_width * .1, window.ezd_height - displayer.displayerSwitch.ezd_height * .4);
     [self.curWindow addObserver:self forKeyPath:@"rootViewController" options:(NSKeyValueObservingOptionNew) context:nil];
     
-    [EZDDebugServer startServerWithPort:80];
+    [EZDDebugServer startServerWithPort:8081];
 }
 
 #pragma mark - private funcs

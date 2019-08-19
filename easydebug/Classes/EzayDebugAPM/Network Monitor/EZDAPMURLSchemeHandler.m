@@ -49,9 +49,9 @@ API_AVAILABLE(ios(11.0))
     [NSURLProtocol setProperty:@(YES) forKey:EZDAPMURLProtocolHandledKey inRequest:mrequest];
 //    NSLog(@"被拦截的wk url = %@ , self : %@",urlSchemeTask.request.URL.absoluteString,self);
     
-    @WeakObj(self);
+    @EZDWeakObj(self);
     NSURLSessionTask *task = nil;
-    @WeakObj(task);
+    @EZDWeakObj(task);
 //    NSLog(@"%@ ~--> start , task : %@",urlSchemeTask,task);
     task = [EZDAPMSessionManager dataTaskWithRequest:mrequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 //        NSLog(@"%@ ~--> stoped %s, task : %@",urlSchemeTask,"dataTaskWithRequest",task);

@@ -13,6 +13,14 @@
 #define EZDEBUG_DEBUGLOG DEBUG
 #endif
 
+#ifndef EZD_APM
+#define EZD_APM EZDEBUG_DEBUGLOG
+#endif
+
+#ifndef EZDDEBUG_SERVER_SUPPORT
+#define EZDDEBUG_SERVER_SUPPORT EZDEBUG_DEBUGLOG
+#endif
+
 #define kEZDUserDefaultSuiteName @"framework.eazydebug.kEZDUserDefaultSuiteName"
 
 #define EZDLog(string_) NSString *logstr_ = [NSString stringWithFormat:@"EZDebug -> %@",string_];\
@@ -27,6 +35,10 @@ NSLog(@"%@",logstr_)
 #define EZD_NotNullObj(obj_) obj_ ? obj_ : @{}
 
 #define EZDNavigationBarHeight (iPhoneX_Series ? 88 : 64)
+
+#ifndef EZDWeakObj
+#define EZDWeakObj(obj) autoreleasepool{} __weak typeof(obj) obj##Weak = obj;
+#endif
 
 #define EZDAPMURLProtocolHandledKey @"EZDAPM_URLProtocolHandledKey"
 

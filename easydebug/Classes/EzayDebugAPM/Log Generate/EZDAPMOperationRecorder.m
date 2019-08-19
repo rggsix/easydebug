@@ -34,7 +34,7 @@ static const int EZDAPMMaxOperationPathCount = 100;
     return ins;
 }
 
-+ (void)recordOperation:(NSString *)operationElementName operationType:(EZDAPMOperationType)operationType{
++ (void)recordOperation:(NSString *)operationElementName operationType:(EZDAPMOperationType)operationType filePath:(nonnull NSString *)filePath{
     EZDAPMOperationRecorder *ins = EZDAPMOperationRecorderIns;
     [ins.operationInfoLock lock];
     ins.operationPathModified = true;
@@ -42,6 +42,11 @@ static const int EZDAPMMaxOperationPathCount = 100;
 //    NSLog(@"Operation recorded : %@",ins.operations.lastObject);
     if (ins.operations.count > EZDAPMMaxOperationPathCount) {
         [ins.operations removeObjectsInRange:NSMakeRange(0, ins.operations.count - EZDAPMMaxOperationPathCount)];
+    }
+    
+    if ([EZD_NotNullString(filePath) length]
+        && [ins.delegate respondsToSelector:@selector(APMOperationRecorderDidRecordNewLog:filePath:)]) {
+        [ins.delegate APMOperationRecorderDidRecordNewLog:operationType filePath:filePath];
     }
     [ins.operationInfoLock unlock];
 }

@@ -108,7 +108,7 @@ static int64_t EZDAPM_memTriggerStep = 50;
     [myDevice setBatteryMonitoringEnabled:YES];
     
     float batteryLevel = [myDevice batteryLevel];
-    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%f",batteryLevel*100.] operationType:EZDAPMOperationStuck];
+    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%f",batteryLevel*100.] operationType:EZDAPMOperationStuck filePath:@""];
 }
 
 - (void)batteryStateChanged:(NSNotification *)noti{
@@ -126,7 +126,7 @@ static int64_t EZDAPM_memTriggerStep = 50;
         default:
             break;
     }
-    [EZDAPMOperationRecorder recordOperation:stateString operationType:EZDAPMOperationStuck];
+    [EZDAPMOperationRecorder recordOperation:stateString operationType:EZDAPMOperationStuck filePath:@""];
 }
 
 - (void)cpuHighUsageJudgeWithTS:(NSTimeInterval)curTS{
@@ -141,7 +141,7 @@ static int64_t EZDAPM_memTriggerStep = 50;
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",[EZDAPMUtil shareInstance].crashFilePath,fileName];
     [reportString writeToFile:filePath atomically:true encoding:NSUTF8StringEncoding error:nil];
 //    NSLog(@"cpu high usage! --> %@",filePath);
-    [EZDAPMOperationRecorder recordOperation:fileName operationType:EZDAPMOperationCPUHeigh];
+    [EZDAPMOperationRecorder recordOperation:fileName operationType:EZDAPMOperationCPUHeigh filePath:filePath];
 }
 
 - (void)memoryHighUsageJudgeWithTS:(NSTimeInterval)curTS{
@@ -168,7 +168,7 @@ static int64_t EZDAPM_memTriggerStep = 50;
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",[EZDAPMUtil shareInstance].crashFilePath,fileName];
     [reportString writeToFile:filePath atomically:true encoding:NSUTF8StringEncoding error:nil];
 //    NSLog(@"memory high usage! --> %@",filePath);
-    [EZDAPMOperationRecorder recordOperation:fileName operationType:EZDAPMOperationMemoryHeigh];
+    [EZDAPMOperationRecorder recordOperation:fileName operationType:EZDAPMOperationMemoryHeigh filePath:filePath];
 }
 
 @end

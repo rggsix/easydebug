@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "EZDOptionItem.h"
+#import "EZDDefine.h"
 
 @class EZDOptionItem;
 

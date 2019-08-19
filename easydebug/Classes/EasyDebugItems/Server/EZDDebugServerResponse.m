@@ -58,7 +58,7 @@ static EZDDebugServerResponse *_c_index;
 }
 
 + (EZDDebugServerResponse *)responseWithDict:(NSDictionary *)dict{
-    GCDWebServerDataResponse *GCDDataresponse = [GCDWebServerDataResponse responseWithJSONObject:NotNullDict(dict) contentType:kEZDHTMLContentTypeJson];
+    GCDWebServerDataResponse *GCDDataresponse = [GCDWebServerDataResponse responseWithJSONObject:EZD_NotNullDict(dict) contentType:kEZDHTMLContentTypeJson];
     EZDDebugServerResponse *response = [self new];
     response.GCDDataResponse = GCDDataresponse;
     return response;

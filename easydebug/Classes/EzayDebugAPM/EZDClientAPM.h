@@ -8,11 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+#import "EZDAPMOperationRecorder.h"
+
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol EZDClientAPMProtocol <NSObject>
+
+- (void)APMDidGenerateNewLogFile:(NSString *)filePath type:(EZDAPMOperationType)type;
+
+@end
 
 @interface EZDClientAPM : NSObject
 
 + (void)startMonitoring;
+
++ (void)addLogObserver:(id<EZDClientAPMProtocol>)observer;
++ (void)removeLogObserver:(id<EZDClientAPMProtocol>)observer;
 
 @end
 

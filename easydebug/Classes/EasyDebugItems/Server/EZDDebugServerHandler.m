@@ -38,7 +38,7 @@ static NSMutableDictionary *_c_nodeClasses;
     }
     
     NSString *key = [urlNodeClass performSelector:@selector(nodePath)];
-    key = key.length ? key : [urlNodeClass className];
+    key = key.length ? key : NSStringFromClass([urlNodeClass class]);
     
     Class spClass = urlNodeClass;
     NSMutableArray<Class> *classChain = [NSMutableArray new];

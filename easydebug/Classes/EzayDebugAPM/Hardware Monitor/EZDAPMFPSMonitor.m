@@ -112,7 +112,7 @@ static NSInteger stuckMonitorFrameCount = 3;
     [reportString writeToFile:filePath atomically:true encoding:NSUTF8StringEncoding error:nil];
 //    NSLog(@"stuck! --> %@",filePath);
     
-    [EZDAPMOperationRecorder recordOperation:fileName operationType:EZDAPMOperationStuck];
+    [EZDAPMOperationRecorder recordOperation:fileName operationType:EZDAPMOperationStuck  filePath:filePath];
 }
 
 @end

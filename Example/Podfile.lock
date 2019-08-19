@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - easydebug (0.1.0):
+  - easydebug (0.1.1):
     - GCDWebServer/WebUploader
     - PLCrashReporter
   - GCDWebServer/Core (3.5.3)
@@ -38,7 +38,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  easydebug: 3986770e01b249a5bf69cd7a960977ec7d9433bd
+  easydebug: d7341808732452a3d9c10052646e36232e536842
   GCDWebServer: c0ab22c73e1b84f358d1e2f74bf6afd1c60829f2
   PLCrashReporter: 16927d86a093d0b9cf110545dacb77cb0ed0f243
 

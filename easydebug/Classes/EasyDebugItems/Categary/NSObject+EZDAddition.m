@@ -53,11 +53,16 @@
         return [self description];
     } else if ([self isKindOfClass:[NSError class]]) {
         return [self description];
-    } else {
-        return [self description];
+    } 
+    
+    NSString *desStr = [self description];
+    @try {
+        desStr = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self options:(NSJSONWritingPrettyPrinted) error:nil] encoding:NSUTF8StringEncoding];
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        return desStr;
     }
-
-    return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self options:(NSJSONWritingPrettyPrinted) error:nil] encoding:NSUTF8StringEncoding];
 }
 
 + (bool)isSubClassAndNotItSelf:(Class)cls{

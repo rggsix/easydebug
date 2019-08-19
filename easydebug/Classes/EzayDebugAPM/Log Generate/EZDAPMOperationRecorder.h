@@ -24,11 +24,20 @@ static EZDAPMOperationType const EZDAPMOperationMemoryHeigh = @"MemoryHeighUsage
 static EZDAPMOperationType const EZDAPMOperationBatteryLv = @"BatteryLevelChange";
 static EZDAPMOperationType const EZDAPMOperationBatteryState = @"BatteryStateChange";
 
+@protocol EZDAPMOperationRecorderDelegate <NSObject>
+
+- (void)APMOperationRecorderDidRecordNewLog:(EZDAPMOperationType)type
+                                   filePath:(NSString *)filePath;
+
+@end
+
 @interface EZDAPMOperationRecorder : NSObject
+
+@property (nonatomic, weak) id<EZDAPMOperationRecorderDelegate> delegate;
 
 + (instancetype)shareInstance;
 + (NSString *)currentOperationPathInfo;
-+ (void)recordOperation:(NSString *)operationElementName operationType:(EZDAPMOperationType)operationType;
++ (void)recordOperation:(NSString *)operationElementName operationType:(EZDAPMOperationType)operationType filePath:(NSString *)filePath;
 
 @end
 

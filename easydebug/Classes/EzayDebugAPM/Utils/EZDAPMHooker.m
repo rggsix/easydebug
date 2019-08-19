@@ -87,7 +87,7 @@
 
 - (void)ezdapm_viewDidAppear:(bool)animated{
     
-    NSString *vcClassName = [self className];
+    NSString *vcClassName = NSStringFromClass([self class]);
     if ([vcClassName isEqualToString:@"UIInputWindowController"]
         || [vcClassName isEqualToString:@"UIAlertController"]
         || [self isKindOfClass:[UINavigationController class]]
@@ -97,7 +97,7 @@
     
     if (vcClassName.length) {
         [EZDAPMUtil shareInstance].lastVCName = [EZDAPMUtil shareInstance].currentVCName;
-        [EZDAPMOperationRecorder recordOperation:vcClassName operationType:EZDAPMOperationPageAppear];
+        [EZDAPMOperationRecorder recordOperation:vcClassName operationType:EZDAPMOperationPageAppear  filePath:@""];
         [EZDAPMUtil shareInstance].currentVCName = vcClassName;
     }
     
@@ -143,7 +143,7 @@
 }
 
 - (void)ezdapm_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event{
-    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@",[self className], NSStringFromSelector(action)] operationType:EZDAPMOperationClick];
+    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@",NSStringFromClass([self class]), NSStringFromSelector(action)] operationType:EZDAPMOperationClick  filePath:@""];
     
     [self ezdapm_sendAction:action to:target forEvent:event];
 }
@@ -175,7 +175,7 @@
 
 - (void)ezdapm_responseGesture:(UIGestureRecognizer *)ges{
     if (ges.state == UIGestureRecognizerStateBegan) {
-        [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@=>%@",[EZDAPMUtil shareInstance].currentVCName,[self className],[ges className]] operationType:EZDAPMOperationGesBegin];
+        [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@=>%@",[EZDAPMUtil shareInstance].currentVCName, NSStringFromClass([self class]), NSStringFromClass([ges class])] operationType:EZDAPMOperationGesBegin  filePath:@""];
     }
 }
 

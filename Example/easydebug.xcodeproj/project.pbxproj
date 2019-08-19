@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000B74A7230A8C4D00A7F6C2 /* EZDOptionsExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 000B74A6230A8C4D00A7F6C2 /* EZDOptionsExample.m */; };
 		00DB7B832309CCDD004C6DDE /* EZDRequestAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB7B822309CCDD004C6DDE /* EZDRequestAgent.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000B74A5230A8C4D00A7F6C2 /* EZDOptionsExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDOptionsExample.h; sourceTree = "<group>"; };
+		000B74A6230A8C4D00A7F6C2 /* EZDOptionsExample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDOptionsExample.m; sourceTree = "<group>"; };
 		00DB7B812309CCDD004C6DDE /* EZDRequestAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDRequestAgent.h; sourceTree = "<group>"; };
 		00DB7B822309CCDD004C6DDE /* EZDRequestAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDRequestAgent.m; sourceTree = "<group>"; };
 		429C4E78A5972D9B8DA763E8 /* Pods-easydebug_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easydebug_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easydebug_Tests/Pods-easydebug_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 			children = (
 				00DB7B812309CCDD004C6DDE /* EZDRequestAgent.h */,
 				00DB7B822309CCDD004C6DDE /* EZDRequestAgent.m */,
+				000B74A5230A8C4D00A7F6C2 /* EZDOptionsExample.h */,
+				000B74A6230A8C4D00A7F6C2 /* EZDOptionsExample.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -155,12 +160,12 @@
 		6003F593195388D20070C39A /* Example for easydebug */ = {
 			isa = PBXGroup;
 			children = (
-				00DB7B802309CC75004C6DDE /* Helper */,
 				6003F59C195388D20070C39A /* EZDAppDelegate.h */,
 				6003F59D195388D20070C39A /* EZDAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* EZDViewController.h */,
 				6003F5A6195388D20070C39A /* EZDViewController.m */,
+				00DB7B802309CC75004C6DDE /* Helper */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -355,12 +360,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-easydebug_Example/Pods-easydebug_Example-resources.sh",
 				"${PODS_ROOT}/GCDWebServer/GCDWebUploader/GCDWebUploader.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/easydebug/ImageSource.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/easydebug/easydebug.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GCDWebUploader.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ImageSource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/easydebug.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -378,6 +383,7 @@
 				6003F5A7195388D20070C39A /* EZDViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				00DB7B832309CCDD004C6DDE /* EZDRequestAgent.m in Sources */,
+				000B74A7230A8C4D00A7F6C2 /* EZDOptionsExample.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

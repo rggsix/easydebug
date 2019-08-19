@@ -36,9 +36,7 @@ TODO: Add long description of the pod here.
       'easydebug' => ['easydebug/Classes/Assets/*.png']
   }
 
-#  s.resource = 'easydebug/Classes/Assets/EZDResource.bundle/*'
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+#  s.public_header_files = 'Pod/Classes//EZDDefine.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'PLCrashReporter'
   s.dependency 'GCDWebServer/WebUploader'
