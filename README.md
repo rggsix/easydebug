@@ -44,14 +44,16 @@ or use like "EZDRecordNetRequest(request_,param_,response_)" to record network.
 ### Debug Options
 ```Objective-C
 [EasyDebug regiestOptions:[EZDOptionsExample class]];
-```
+``` 
+EZDOptionsExample implementation see Example code.
 
 ### APM
+start monitoring: 
 ```Objective-C
     [EZDClientAPM startMonitoring];
     [EZDClientAPM addLogObserver:self];
 ```
-recieve APM log file:
+recieve APM log file: 
 ```Objective-C
     NSData *fileData = [NSData dataWithContentsOfFile:filePath];
     NSString *fileString = [[NSString alloc] initWithData:fileData encoding:NSUTF8StringEncoding];
