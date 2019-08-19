@@ -32,9 +32,11 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'easydebug/Classes/**/*'
   
-  s.resource_bundles = {
-      'ImageSource' => ['easydebug/Classes/Assets/**/*']
-  }
+#  s.resource_bundles = {
+#      'ImageSource' => ['easydebug/Classes/Assets/**/*']
+#  }
+  
+  s.resource = 'easydebug/Classes/Assests/EZDResource.bundle'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
