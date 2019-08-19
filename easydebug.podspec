@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'easydebug'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of easydebug.'
 
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,7 @@ TODO: Add long description of the pod here.
   s.source_files = ['easydebug/Classes/**/*']
   
   s.resource_bundles = {
-      'easydebug' => ['Assets/*.png']
+      'easydebug' => ['easydebug/Classes/Assets/*.png']
   }
 
 #  s.resource = 'easydebug/Classes/Assets/EZDResource.bundle/*'
