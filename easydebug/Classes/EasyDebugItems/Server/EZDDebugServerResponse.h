@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#if EZDDEBUG_SERVER_SUPPORT
 #import <GCDWebServerDataResponse.h>
 
 typedef NSString * kEZDHTMLContentType NS_EXTENSIBLE_STRING_ENUM;
@@ -28,9 +27,4 @@ static kEZDHTMLContentType const kEZDHTMLContentTypeJson = @"application/json" ;
 + (EZDDebugServerResponse *)responseWithPath:(NSString *)path contentType:(kEZDHTMLContentType)contentType;
 
 @end
-
-#else
-@interface EZDDebugServerResponse : NSObject
-@end
-#endif
 

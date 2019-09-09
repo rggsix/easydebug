@@ -20,10 +20,8 @@
 
 @interface EZDDebugServerHandler : NSObject
 
-#if EZDDEBUG_SERVER_SUPPORT
 + (void)regiestURLNodeClass:(Class)urlNodeClass;
 
 + (EZDDebugServerResponse *)responseWithMethod:(NSString *)method GCDRequest:(GCDWebServerRequest *)request;
-#endif
 
 @end
