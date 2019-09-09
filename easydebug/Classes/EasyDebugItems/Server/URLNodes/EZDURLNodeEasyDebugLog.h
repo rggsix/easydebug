@@ -8,8 +8,6 @@
 
 #import "EZDBaseURLNode.h"
 
-#if EZDDEBUG_SERVER_SUPPORT
-
 @interface EZDURLNodeEasyDebugLog : EZDBaseURLNode
 
 @end
@@ -21,5 +19,3 @@
 @interface EZDURLNodeDetailDebugInfo : EZDBaseURLNode
 
 @end
-
-#endif

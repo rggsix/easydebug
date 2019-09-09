@@ -11,9 +11,9 @@
 #import "EZDLogger.h"
 #import "EZDDefine.h"
 
-#if EZDDEBUG_SERVER_SUPPORT
-
 @implementation EZDURLNodeEasyDebugLog
+
+#if EZDDEBUG_SERVER_SUPPORT
 
 EZDDebugServerRegiestNodeClass
 
@@ -21,11 +21,15 @@ EZDDebugServerRegiestNodeClass
     return @"easydebuglog";
 }
 
+#endif
+
 @end
 
 static NSMutableArray *_c_connectingLogListSTs;
 
 @implementation EZDURLNodeDebugNodeList
+
+#if EZDDEBUG_SERVER_SUPPORT
 
 EZDDebugServerRegiestNodeClass
 
@@ -85,10 +89,14 @@ EZDDebugServerRegiestNodeClass
     return _c_connectingLogListSTs;
 }
 
+#endif
+
 @end
 
 
 @implementation EZDURLNodeDetailDebugInfo
+
+#if EZDDEBUG_SERVER_SUPPORT
 
 EZDDebugServerRegiestNodeClass
 
@@ -112,6 +120,6 @@ EZDDebugServerRegiestNodeClass
     return [EZDDebugServerResponse responseWithDict:logs[index.integerValue].parameter];
 }
 
-@end
-
 #endif
+
+@end
