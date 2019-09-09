@@ -7,6 +7,7 @@
 //
 
 #import "EZDAPMOperationRecorder.h"
+#import "EZDDefine.h"
 
 #define EZDAPMOperationRecorderIns [EZDAPMOperationRecorder shareInstance]
 
