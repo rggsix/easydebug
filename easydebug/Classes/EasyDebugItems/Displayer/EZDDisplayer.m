@@ -19,6 +19,7 @@
 #import "UIView+EZDAddition_frame.h"
 
 static EZDDisplayer *displayer;
+static UIImage *EZDIconImage = nil;
 
 @interface EZDDisplayer()
 
@@ -26,6 +27,8 @@ static EZDDisplayer *displayer;
 
 @property (nonatomic, strong) UIButton *displayerSwitch;
 @property (strong,nonatomic) EZDAppShortInfoLabel *fpsLabel;
+
+@property (nonatomic, strong) UIImage *icon;
 
 @end
 
@@ -42,6 +45,14 @@ static EZDDisplayer *displayer;
 
 + (void)showFPSLabel:(bool)show{
     displayer.fpsLabel.hidden = !show;
+}
+
++ (void)setToolIcon:(UIImage *)icon {
+    EZDIconImage = icon;
+
+    if (displayer && icon) {
+        [displayer.displayerSwitch setImage:icon forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark - life circle
@@ -84,12 +95,19 @@ static EZDDisplayer *displayer;
     self.displayerSwitch.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
     self.displayerSwitch.contentHorizontalAlignment = UIControlContentVerticalAlignmentFill;
     
-    NSURL *bundleURL = [[NSBundle bundleForClass:[self
-                                                    class]] URLForResource:@"easydebug.bundle" withExtension:@""];
-    NSBundle *easydebugBundle = [NSBundle bundleWithURL:bundleURL];
-    NSString *iconPath = [easydebugBundle pathForResource:@"tool.png" ofType:@""];
+    UIImage *icon;
+    if (!EZDIconImage) {
+        NSURL *bundleURL = [[NSBundle bundleForClass:[self
+                                                        class]] URLForResource:@"easydebug.bundle" withExtension:@""];
+        NSBundle *easydebugBundle = [NSBundle bundleWithURL:bundleURL];
+        NSString *iconPath = [easydebugBundle pathForResource:@"tool.png" ofType:@""];
+
+        icon = [UIImage imageWithContentsOfFile:iconPath];
+    } else {
+        icon = EZDIconImage;
+    }
     
-    [self.displayerSwitch setImage:[UIImage imageWithContentsOfFile:iconPath] forState:UIControlStateNormal];
+    [self.displayerSwitch setImage:icon forState:UIControlStateNormal];
     [self.displayerSwitch addTarget:self action:@selector(displayerSwitchClicked) forControlEvents:UIControlEventTouchUpInside];
     self.displayerSwitch.ezd_size = CGSizeMake(60, 60);
 }

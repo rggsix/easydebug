@@ -14,6 +14,8 @@
 
 + (instancetype)setupDisplayerWithWindow:(UIWindow *)window;
 
++ (void)setToolIcon:(UIImage *)image;
+
 + (void)showFPSLabel:(bool)show;
 
 @end
