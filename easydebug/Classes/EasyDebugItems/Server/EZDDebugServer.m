@@ -40,6 +40,7 @@ static EZDDebugServer *server = nil;
         documentsPath = [documentsPath stringByAppendingPathComponent:@"uploadFile"];
         [[NSFileManager defaultManager] createDirectoryAtPath:documentsPath withIntermediateDirectories:YES attributes:nil error:nil];
         server.httpServer = [[GCDWebServer alloc] init];
+        [GCDWebServer setLogLevel:4];
         
         server.uploadServer = [[GCDWebUploader alloc] initWithUploadDirectory:documentsPath];
         server.uploadServer.delegate = server;
