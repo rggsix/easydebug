@@ -57,7 +57,7 @@
     
     NSString *desStr = [self description];
     @try {
-        NSDictionary *dictObj = [NSObject getObjectData:self];
+        NSDictionary *dictObj = [NSObject getObjectInternal:self];
         desStr = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:dictObj options:(NSJSONWritingPrettyPrinted) error:nil] encoding:NSUTF8StringEncoding];
     } @catch (NSException *exception) {
         
