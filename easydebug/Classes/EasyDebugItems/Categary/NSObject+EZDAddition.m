@@ -80,10 +80,15 @@
         NSString *propName = [NSString stringWithUTF8String:property_getName(prop)];
         id value = [obj valueForKey:propName];
         if(value == nil) {
-            value = [NSNull null];
-        }
-        else {
+            value = @"";
+        } else if ([obj isKindOfClass:[NSString class]]
+                 || [obj isKindOfClass:[NSNumber class]]
+                 || [obj isKindOfClass:[NSNull class]]
+                 || [obj isKindOfClass:[NSArray class]]
+                 || [obj isKindOfClass:[NSDictionary class]]){
             value = [self getObjectInternal:value];
+        } else {
+            value = [self getObjectData:value];
         }
         [dic setObject:value forKey:propName];
     }
