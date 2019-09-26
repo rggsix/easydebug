@@ -61,7 +61,8 @@
 }
 
 + (NSBundle *)baseHTMLBundle{
-    return [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"EZDDebugServerResource" ofType:@"bundle"]];
+    return [[NSBundle bundleForClass:[self
+                                      class]] URLForResource:@"EZDDebugServerResources.bundle" withExtension:@""];
 }
 
 + (kEZDHTMLContentType)contentTypeWithURL:(NSURL *)url{

@@ -684,7 +684,6 @@
 				CB3B77784C947043B9709DEDA2F99CBA /* EZDDebugServerHandler.m */,
 				C86675036426EDE6AC1C3466EC20AA5E /* EZDDebugServerResponse.h */,
 				ED60C1AD0C31D1DEAD6312EC2C2E78E9 /* EZDDebugServerResponse.m */,
-				9D33E850E093320EEEFD6D503207786B /* EZDDebugServerResource.bundle */,
 				C1256F65656A0C172927FCF1E93BB5AD /* URLNodes */,
 			);
 			path = Server;
@@ -709,6 +708,7 @@
 		7CDF34AAEFC36FE3C4BE24956CA57F4C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				9D33E850E093320EEEFD6D503207786B /* EZDDebugServerResources */,
 				29977DD47E6F6B03E2C797405F0F7F14 /* tool.png */,
 			);
 			name = Assets;
@@ -785,7 +785,7 @@
 			path = "Target Support Files/Pods-easydebug_Tests";
 			sourceTree = "<group>";
 		};
-		9D33E850E093320EEEFD6D503207786B /* EZDDebugServerResource.bundle */ = {
+		9D33E850E093320EEEFD6D503207786B /* EZDDebugServerResources */ = {
 			isa = PBXGroup;
 			children = (
 				344880E3C15B594E094BF19F82FF5620 /* _404.html */,
@@ -794,7 +794,7 @@
 				96781787C99A50DCD6288293A9729DCD /* easydebuglog */,
 				CF260D03A81FF23493FAF622C33DB91A /* easydebugoption */,
 			);
-			path = EZDDebugServerResource.bundle;
+			path = EZDDebugServerResources;
 			sourceTree = "<group>";
 		};
 		A4B0B1A26C6DAB2056D731983ECDE1F4 /* NSURLSession */ = {

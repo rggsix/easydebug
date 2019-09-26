@@ -33,7 +33,8 @@ TODO: Add long description of the pod here.
   s.source_files = ['easydebug/Classes/**/*']
   
   s.resource_bundles = {
-      'easydebug' => ['easydebug/Classes/Assets/*.png']
+      'easydebug' => ['easydebug/Classes/Assets/*.png'],
+      'EZDDebugServerResources' => ['easydebug/Classes/Assets/EZDDebugServerResources/*.*']
   }
 
   s.public_header_files = 'Pod/Classes/EasyDebugItems/Common/EZDDefine.h'
