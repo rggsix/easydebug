@@ -8,6 +8,7 @@
 
 #import "EZDDebugServerResponse.h"
 #import "EZDBaseURLNode.h"
+#import "EZDDefine.h"
 
 static EZDDebugServerResponse *_c_r404;
 static EZDDebugServerResponse *_c_index;
