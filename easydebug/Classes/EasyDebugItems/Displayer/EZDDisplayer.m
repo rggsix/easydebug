@@ -100,7 +100,7 @@ static UIImage *EZDIconImage = nil;
         NSURL *bundleURL = [[NSBundle bundleForClass:[self
                                                         class]] URLForResource:@"easydebug.bundle" withExtension:@""];
         NSBundle *easydebugBundle = [NSBundle bundleWithURL:bundleURL];
-        NSString *iconPath = [easydebugBundle pathForResource:@"tool.png" ofType:@""];
+        NSString *iconPath = [easydebugBundle pathForResource:@"tool.jpg" ofType:@""];
 
         icon = [UIImage imageWithContentsOfFile:iconPath];
     } else {
