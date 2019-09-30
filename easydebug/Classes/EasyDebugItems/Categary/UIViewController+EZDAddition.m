@@ -49,6 +49,7 @@
     
     if (needNav) {
         controller = [[UINavigationController alloc] initWithRootViewController:controller];
+        controller.modalPresentationStyle = UIModalPresentationFullScreen;
     }
     [presentVC presentViewController:controller animated:false completion:nil];
 }
