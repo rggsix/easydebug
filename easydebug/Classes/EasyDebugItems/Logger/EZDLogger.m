@@ -204,8 +204,8 @@
           if(innerError) {
              NSDictionary *innerUserInfo = [[NSDictionary alloc] initWithDictionary:innerError.userInfo];
              if(innerUserInfo) {
-                  if([innerUserInfo objectForKey:@"AFNetworkingOperationFailingURLResponseDataErrorKey"]) {
-                       errorDes = [[NSString alloc] initWithData:[innerUserInfo objectForKey:@"AFNetworkingOperationFailingURLResponseDataErrorKey"] encoding:NSUTF8StringEncoding];
+                  if([innerUserInfo objectForKey:@"com.alamofire.serialization.response.error.data"]) {
+                       errorDes = [[NSString alloc] initWithData:[innerUserInfo objectForKey:@"com.alamofire.serialization.response.error.data"] encoding:NSUTF8StringEncoding];
                   }
              }
           } else {
