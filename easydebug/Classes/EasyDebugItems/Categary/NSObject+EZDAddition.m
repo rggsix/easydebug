@@ -61,7 +61,7 @@
         if ([self respondsToSelector:@selector(yy_modelToJSONObject)]) {
             dataObj = [self performSelector:@selector(yy_modelToJSONObject)];
         }
-        desStr = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:dataObj options:(NSJSONWritingPrettyPrinted) error:nil] encoding:NSUTF8StringEncoding];
+        desStr = [[[[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:dataObj options:(NSJSONWritingPrettyPrinted) error:nil] encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"\\/" withString:@"/"] stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"];
     } @catch (NSException *exception) {
         
     } @finally {

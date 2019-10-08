@@ -50,7 +50,7 @@
         if (!resonseDict.allKeys.count) {
             NSError *err = (NSError *)response;
 
-            resonseDict = [err userInfo];
+            resonseDict = EZD_NotNullDict([err userInfo]);
         }
     }else{
         resonseDict = EZD_NotNullDict(response);
@@ -197,7 +197,8 @@
     
     NSDictionary *errorResponseDict = nil;
     
-    NSString *errorDes = nil;
+    NSString *htmlstr = nil;
+    NSString *errorDesc = @"unknow error.";
 
     if(userinfo) {
           NSError *innerError = [userinfo valueForKey:@"NSUnderlyingError"];
@@ -205,16 +206,22 @@
              NSDictionary *innerUserInfo = [[NSDictionary alloc] initWithDictionary:innerError.userInfo];
              if(innerUserInfo) {
                   if([innerUserInfo objectForKey:@"com.alamofire.serialization.response.error.data"]) {
-                       errorDes = [[NSString alloc] initWithData:[innerUserInfo objectForKey:@"com.alamofire.serialization.response.error.data"] encoding:NSUTF8StringEncoding];
+                       htmlstr = [[NSString alloc] initWithData:[innerUserInfo objectForKey:@"com.alamofire.serialization.response.error.data"] encoding:NSUTF8StringEncoding];
+                      errorDesc = [innerUserInfo objectForKey:NSLocalizedDescriptionKey];
                   }
              }
           } else {
-               errorDes = [[NSString alloc] initWithData:[userinfo valueForKey:@"AFNetworkingOperationFailingURLResponseDataErrorKey"] encoding:NSUTF8StringEncoding];
+               htmlstr = [[NSString alloc] initWithData:[userinfo valueForKey:@"AFNetworkingOperationFailingURLResponseDataErrorKey"] encoding:NSUTF8StringEncoding];
           }
     }
     
-    if (errorDes.length) {
-        errorResponseDict = @{@"error_msg":[[NSAttributedString alloc] initWithString:errorDes attributes:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}].string};
+    if (htmlstr.length) {
+        NSData *errDesData = [htmlstr dataUsingEncoding:(NSUTF8StringEncoding)];
+        NSError *htmlConvertErr = nil;
+        NSAttributedString *htmlstr = [[NSAttributedString alloc] initWithData:errDesData options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType} documentAttributes:nil error:&htmlConvertErr];
+        if (!htmlConvertErr) {
+            errorResponseDict = @{@"desc":EZD_NotNullString(errorDesc),@"html":EZD_NotNullString([htmlstr string])};
+        }
     }
     
     return errorResponseDict;
