@@ -45,9 +45,13 @@
 - (void)recordNetRequestWithRequest:(NSURLRequest *)request parameter:(NSDictionary *)param response:(id)response{
     NSDictionary *resonseDict = nil;
     if ([response isKindOfClass:[NSError class]]) {
-        NSError *err = (NSError *)response;
+        resonseDict = [EZDLogger errorResponseWithError:response];
+        
+        if (!resonseDict.allKeys.count) {
+            NSError *err = (NSError *)response;
 
-        resonseDict = [err userInfo];
+            resonseDict = [err userInfo];
+        }
     }else{
         resonseDict = EZD_NotNullDict(response);
     }
@@ -185,6 +189,35 @@
         _webV = [UIWebView new];
     }
     return _webV;
+}
+
+#pragma mark - util func
++ (NSDictionary *)errorResponseWithError:(NSError *)error {
+    NSDictionary *userinfo = [[NSDictionary alloc] initWithDictionary:error.userInfo];
+    
+    NSDictionary *errorResponseDict = nil;
+    
+    NSString *errorDes = nil;
+
+    if(userinfo) {
+          NSError *innerError = [userinfo valueForKey:@"NSUnderlyingError"];
+          if(innerError) {
+             NSDictionary *innerUserInfo = [[NSDictionary alloc] initWithDictionary:innerError.userInfo];
+             if(innerUserInfo) {
+                  if([innerUserInfo objectForKey:@"AFNetworkingOperationFailingURLResponseDataErrorKey"]) {
+                       errorDes = [[NSString alloc] initWithData:[innerUserInfo objectForKey:@"AFNetworkingOperationFailingURLResponseDataErrorKey"] encoding:NSUTF8StringEncoding];
+                  }
+             }
+          } else {
+               errorDes = [[NSString alloc] initWithData:[userinfo valueForKey:@"AFNetworkingOperationFailingURLResponseDataErrorKey"] encoding:NSUTF8StringEncoding];
+          }
+    }
+    
+    if (errorDes.length) {
+        errorResponseDict = @{@"error_msg":[[NSAttributedString alloc] initWithString:errorDes attributes:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}].string};
+    }
+    
+    return errorResponseDict;
 }
 
 @end
