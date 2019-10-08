@@ -117,6 +117,7 @@
     self.searchFeild.placeholder = @"Search";
     
     self.contentTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.searchFeild.ezd_maxY, self.view.ezd_width, self.view.ezd_height - self.searchFeild.ezd_maxY)];
+    self.contentTextView.backgroundColor = [UIColor whiteColor];
     self.contentTextView.editable = false;
     self.contentTextView.font = kEZDRegularFontSize(12);
     self.contentTextView.attributedText = [[NSMutableAttributedString alloc] initWithString:[self.logModel.parameter ezd_description]];

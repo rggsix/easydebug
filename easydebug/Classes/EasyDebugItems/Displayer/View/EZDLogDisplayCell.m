@@ -42,6 +42,8 @@
 }
 
 - (void)setupBaseUI{
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    
     self.typeLabel = [self newLabelWithFont:kEZDRegularFontSize(15)];
     self.typeLabel.textColor = [UIColor colorWithWhite:34.0/255.0 alpha:1];
 
