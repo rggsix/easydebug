@@ -87,7 +87,7 @@ static UIImage *EZDIconImage = nil;
 }
 
 - (void)setupBaseUI{
-    self.fpsLabel = [[EZDAppShortInfoLabel alloc] initWithFrame:CGRectMake(0, ([UIScreen mainScreen].bounds.size.height - 24), 0, 0)];
+    self.fpsLabel = [[EZDAppShortInfoLabel alloc] initWithFrame:CGRectMake(0, ([UIScreen mainScreen].bounds.size.height - 34), 0, 0)];
     self.fpsLabel.hidden = [[[NSUserDefaults alloc] initWithSuiteName:kEZDUserDefaultSuiteName] boolForKey:@"kEZDOptionHideFPSLabelKey"];
     
     self.displayerSwitch = [UIButton buttonWithType:UIButtonTypeCustom];
