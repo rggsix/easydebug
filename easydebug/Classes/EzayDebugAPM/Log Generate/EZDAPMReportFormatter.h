@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CrashReporter/CrashReporter.h>
+#import "CrashReporter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
