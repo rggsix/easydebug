@@ -72,6 +72,30 @@
 		4EE4B0FC3776C9BAE334226E637365AF /* EZDOptionsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C0764D1CB74DC97A562777E0A8F664 /* EZDOptionsController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		511D94CB64BE22F1E705E0EA0F7294BF /* EZDAPMBacktrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 483EADD33F6F3ACAF763360ED35279CA /* EZDAPMBacktrace.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		521CF1614D2EA9BC2FFEFCCCBA7A1801 /* EZDDebugServerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3B77784C947043B9709DEDA2F99CBA /* EZDDebugServerHandler.m */; platformFilter = ios; };
+		52423F9A23B4A2AE000B4F43 /* PLCrashNamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8223B4A2AD000B4F43 /* PLCrashNamespace.h */; };
+		52423F9B23B4A2AE000B4F43 /* PLCrashAsyncSignalInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8323B4A2AD000B4F43 /* PLCrashAsyncSignalInfo.h */; };
+		52423F9C23B4A2AE000B4F43 /* PLCrashFeatureConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8423B4A2AD000B4F43 /* PLCrashFeatureConfig.h */; };
+		52423F9D23B4A2AE000B4F43 /* PLCrashReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8523B4A2AD000B4F43 /* PLCrashReporter.h */; };
+		52423F9E23B4A2AE000B4F43 /* PLCrashReportRegisterInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8623B4A2AD000B4F43 /* PLCrashReportRegisterInfo.h */; };
+		52423F9F23B4A2AE000B4F43 /* PLCrashReportBinaryImageInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8723B4A2AD000B4F43 /* PLCrashReportBinaryImageInfo.h */; };
+		52423FA023B4A2AE000B4F43 /* PLCrashReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8823B4A2AD000B4F43 /* PLCrashReport.h */; };
+		52423FA123B4A2AE000B4F43 /* PLCrashMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8923B4A2AD000B4F43 /* PLCrashMacros.h */; };
+		52423FA223B4A2AE000B4F43 /* PLCrashReporterConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8A23B4A2AD000B4F43 /* PLCrashReporterConfig.h */; };
+		52423FA323B4A2AE000B4F43 /* PLCrashReportMachExceptionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8B23B4A2AD000B4F43 /* PLCrashReportMachExceptionInfo.h */; };
+		52423FA423B4A2AE000B4F43 /* PLCrashReportThreadInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8C23B4A2AD000B4F43 /* PLCrashReportThreadInfo.h */; };
+		52423FA523B4A2AE000B4F43 /* PLCrashReportStackFrameInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8D23B4A2AD000B4F43 /* PLCrashReportStackFrameInfo.h */; };
+		52423FA623B4A2AE000B4F43 /* PLCrashReportSystemInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8E23B4A2AD000B4F43 /* PLCrashReportSystemInfo.h */; };
+		52423FA723B4A2AE000B4F43 /* PLCrashReportExceptionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F8F23B4A2AD000B4F43 /* PLCrashReportExceptionInfo.h */; };
+		52423FA823B4A2AE000B4F43 /* PLCrashReportProcessorInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F9023B4A2AD000B4F43 /* PLCrashReportProcessorInfo.h */; };
+		52423FA923B4A2AE000B4F43 /* CrashReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F9123B4A2AD000B4F43 /* CrashReporter.h */; };
+		52423FAA23B4A2AE000B4F43 /* PLCrashReportSignalInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F9223B4A2AD000B4F43 /* PLCrashReportSignalInfo.h */; };
+		52423FAB23B4A2AE000B4F43 /* PLCrashReportApplicationInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F9323B4A2AD000B4F43 /* PLCrashReportApplicationInfo.h */; };
+		52423FAC23B4A2AE000B4F43 /* PLCrashReportMachineInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F9423B4A2AD000B4F43 /* PLCrashReportMachineInfo.h */; };
+		52423FAD23B4A2AE000B4F43 /* PLCrashReportTextFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F9523B4A2AD000B4F43 /* PLCrashReportTextFormatter.h */; };
+		52423FAE23B4A2AE000B4F43 /* PLCrashReportFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F9623B4A2AD000B4F43 /* PLCrashReportFormatter.h */; };
+		52423FAF23B4A2AE000B4F43 /* PLCrashReportProcessInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F9723B4A2AE000B4F43 /* PLCrashReportProcessInfo.h */; };
+		52423FB023B4A2AE000B4F43 /* PLCrashReportSymbolInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 52423F9823B4A2AE000B4F43 /* PLCrashReportSymbolInfo.h */; };
+		52423FB123B4A2AE000B4F43 /* libCrashReporter-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52423F9923B4A2AE000B4F43 /* libCrashReporter-iOS.a */; };
 		52D53A1F23B45F5D008B605F /* libCrashReporter-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D53A1E23B45F5D008B605F /* libCrashReporter-iOS.a */; platformFilter = ios; };
 		551EDABAFCE6F89BB75C7174D4D9D059 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9741C0F06E5C6B2A59A3985610C4B2A6 /* UIActivityIndicatorView+AFNetworking.m */; };
 		552E67D2425FA6D33E1AC8D1E8E669C8 /* EZDAPMOperationRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A98ABFF36543AA0E49B7CD2682A8DD6 /* EZDAPMOperationRecorder.m */; platformFilter = ios; };
@@ -302,6 +326,30 @@
 		4E119B5B7D4CB8434F5CF1528CF6658B /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		50F02D1C917754B03411F29EE5F09E08 /* GCDWebServerRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDWebServerRequest.h; path = GCDWebServer/Core/GCDWebServerRequest.h; sourceTree = "<group>"; };
 		519060005876678467AA05CD40D9A79B /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
+		52423F8223B4A2AD000B4F43 /* PLCrashNamespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashNamespace.h; sourceTree = "<group>"; };
+		52423F8323B4A2AD000B4F43 /* PLCrashAsyncSignalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashAsyncSignalInfo.h; sourceTree = "<group>"; };
+		52423F8423B4A2AD000B4F43 /* PLCrashFeatureConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashFeatureConfig.h; sourceTree = "<group>"; };
+		52423F8523B4A2AD000B4F43 /* PLCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReporter.h; sourceTree = "<group>"; };
+		52423F8623B4A2AD000B4F43 /* PLCrashReportRegisterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportRegisterInfo.h; sourceTree = "<group>"; };
+		52423F8723B4A2AD000B4F43 /* PLCrashReportBinaryImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportBinaryImageInfo.h; sourceTree = "<group>"; };
+		52423F8823B4A2AD000B4F43 /* PLCrashReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReport.h; sourceTree = "<group>"; };
+		52423F8923B4A2AD000B4F43 /* PLCrashMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashMacros.h; sourceTree = "<group>"; };
+		52423F8A23B4A2AD000B4F43 /* PLCrashReporterConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReporterConfig.h; sourceTree = "<group>"; };
+		52423F8B23B4A2AD000B4F43 /* PLCrashReportMachExceptionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportMachExceptionInfo.h; sourceTree = "<group>"; };
+		52423F8C23B4A2AD000B4F43 /* PLCrashReportThreadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportThreadInfo.h; sourceTree = "<group>"; };
+		52423F8D23B4A2AD000B4F43 /* PLCrashReportStackFrameInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportStackFrameInfo.h; sourceTree = "<group>"; };
+		52423F8E23B4A2AD000B4F43 /* PLCrashReportSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportSystemInfo.h; sourceTree = "<group>"; };
+		52423F8F23B4A2AD000B4F43 /* PLCrashReportExceptionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportExceptionInfo.h; sourceTree = "<group>"; };
+		52423F9023B4A2AD000B4F43 /* PLCrashReportProcessorInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportProcessorInfo.h; sourceTree = "<group>"; };
+		52423F9123B4A2AD000B4F43 /* CrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashReporter.h; sourceTree = "<group>"; };
+		52423F9223B4A2AD000B4F43 /* PLCrashReportSignalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportSignalInfo.h; sourceTree = "<group>"; };
+		52423F9323B4A2AD000B4F43 /* PLCrashReportApplicationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportApplicationInfo.h; sourceTree = "<group>"; };
+		52423F9423B4A2AD000B4F43 /* PLCrashReportMachineInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportMachineInfo.h; sourceTree = "<group>"; };
+		52423F9523B4A2AD000B4F43 /* PLCrashReportTextFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportTextFormatter.h; sourceTree = "<group>"; };
+		52423F9623B4A2AD000B4F43 /* PLCrashReportFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportFormatter.h; sourceTree = "<group>"; };
+		52423F9723B4A2AE000B4F43 /* PLCrashReportProcessInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportProcessInfo.h; sourceTree = "<group>"; };
+		52423F9823B4A2AE000B4F43 /* PLCrashReportSymbolInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLCrashReportSymbolInfo.h; sourceTree = "<group>"; };
+		52423F9923B4A2AE000B4F43 /* libCrashReporter-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCrashReporter-iOS.a"; sourceTree = "<group>"; };
 		525A54ECC03BFE38238B46291BC61842 /* EZDDisplayController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDDisplayController.h; sourceTree = "<group>"; };
 		52D53A1E23B45F5D008B605F /* libCrashReporter-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libCrashReporter-iOS.a"; path = "../../../Downloads/PLCrashReporter-Static-1.4.0/libCrashReporter-iOS.a"; sourceTree = "<group>"; };
 		56025A3625441A7F4CA7D3835EFD18DD /* EZDAPMURLSchemeHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EZDAPMURLSchemeHandler.h; sourceTree = "<group>"; };
@@ -442,6 +490,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52423FB123B4A2AE000B4F43 /* libCrashReporter-iOS.a in Frameworks */,
 				52D53A1F23B45F5D008B605F /* libCrashReporter-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,9 +663,49 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		52423F8023B4A28C000B4F43 /* PLCrashReport */ = {
+			isa = PBXGroup;
+			children = (
+				52423F8123B4A2AD000B4F43 /* include */,
+				52423F9923B4A2AE000B4F43 /* libCrashReporter-iOS.a */,
+			);
+			path = PLCrashReport;
+			sourceTree = "<group>";
+		};
+		52423F8123B4A2AD000B4F43 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				52423F8223B4A2AD000B4F43 /* PLCrashNamespace.h */,
+				52423F8323B4A2AD000B4F43 /* PLCrashAsyncSignalInfo.h */,
+				52423F8423B4A2AD000B4F43 /* PLCrashFeatureConfig.h */,
+				52423F8523B4A2AD000B4F43 /* PLCrashReporter.h */,
+				52423F8623B4A2AD000B4F43 /* PLCrashReportRegisterInfo.h */,
+				52423F8723B4A2AD000B4F43 /* PLCrashReportBinaryImageInfo.h */,
+				52423F8823B4A2AD000B4F43 /* PLCrashReport.h */,
+				52423F8923B4A2AD000B4F43 /* PLCrashMacros.h */,
+				52423F8A23B4A2AD000B4F43 /* PLCrashReporterConfig.h */,
+				52423F8B23B4A2AD000B4F43 /* PLCrashReportMachExceptionInfo.h */,
+				52423F8C23B4A2AD000B4F43 /* PLCrashReportThreadInfo.h */,
+				52423F8D23B4A2AD000B4F43 /* PLCrashReportStackFrameInfo.h */,
+				52423F8E23B4A2AD000B4F43 /* PLCrashReportSystemInfo.h */,
+				52423F8F23B4A2AD000B4F43 /* PLCrashReportExceptionInfo.h */,
+				52423F9023B4A2AD000B4F43 /* PLCrashReportProcessorInfo.h */,
+				52423F9123B4A2AD000B4F43 /* CrashReporter.h */,
+				52423F9223B4A2AD000B4F43 /* PLCrashReportSignalInfo.h */,
+				52423F9323B4A2AD000B4F43 /* PLCrashReportApplicationInfo.h */,
+				52423F9423B4A2AD000B4F43 /* PLCrashReportMachineInfo.h */,
+				52423F9523B4A2AD000B4F43 /* PLCrashReportTextFormatter.h */,
+				52423F9623B4A2AD000B4F43 /* PLCrashReportFormatter.h */,
+				52423F9723B4A2AE000B4F43 /* PLCrashReportProcessInfo.h */,
+				52423F9823B4A2AE000B4F43 /* PLCrashReportSymbolInfo.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		52D539EB23B45DA5008B605F /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				52423F8023B4A28C000B4F43 /* PLCrashReport */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -1147,28 +1236,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD4DD00821F38675E350BB8A9471F598 /* BSBacktraceLogger.h in Headers */,
+				52423FA523B4A2AE000B4F43 /* PLCrashReportStackFrameInfo.h in Headers */,
+				52423F9E23B4A2AE000B4F43 /* PLCrashReportRegisterInfo.h in Headers */,
 				9FED658595BA66ACDE77674064E909B7 /* EasyDebug.h in Headers */,
 				511D94CB64BE22F1E705E0EA0F7294BF /* EZDAPMBacktrace.h in Headers */,
+				52423F9B23B4A2AE000B4F43 /* PLCrashAsyncSignalInfo.h in Headers */,
+				52423FA723B4A2AE000B4F43 /* PLCrashReportExceptionInfo.h in Headers */,
 				64B0E491AD9693C74F6F06D126E86A86 /* EZDAPMDeviceConsumptionMonitor.h in Headers */,
 				BCBEB7ED1E66C6B9A262455FCF8B7DA9 /* EZDAPMFPSMonitor.h in Headers */,
+				52423FAA23B4A2AE000B4F43 /* PLCrashReportSignalInfo.h in Headers */,
 				1B971657D52C354F400E1EBCC1538A40 /* EZDAPMHooker.h in Headers */,
 				A7DC5AE4EB792A95ECE8E16BBF54C687 /* EZDAPMHTTPProtocol.h in Headers */,
 				D80DA1C82F88925C5A574065BA0137A8 /* EZDAPMOperationRecorder.h in Headers */,
 				7C2985F007B6F917317BE0E77FE0F56C /* EZDAPMReportFormatter.h in Headers */,
+				52423FA623B4A2AE000B4F43 /* PLCrashReportSystemInfo.h in Headers */,
 				ECCDF47A9C98121E498B1C5CB8A59099 /* EZDAPMSessionManager.h in Headers */,
+				52423FA923B4A2AE000B4F43 /* CrashReporter.h in Headers */,
 				9DDC0072ECBA66D16FD3CD742E68D9BC /* EZDAPMURLSchemeHandler.h in Headers */,
+				52423FB023B4A2AE000B4F43 /* PLCrashReportSymbolInfo.h in Headers */,
 				DF786915986826E16B86B32D9A16B7A4 /* EZDAPMUtil.h in Headers */,
 				94367E54F913F905C7A82901448CACA7 /* EZDAppShortInfoLabel.h in Headers */,
 				6B2917223DF3E2BFEC5D96045FBB8984 /* EZDBaseLogInfoController.h in Headers */,
+				52423FA423B4A2AE000B4F43 /* PLCrashReportThreadInfo.h in Headers */,
 				3BCFEB2D6659D69D13EA3A7C724287C7 /* EZDBaseURLNode.h in Headers */,
+				52423F9F23B4A2AE000B4F43 /* PLCrashReportBinaryImageInfo.h in Headers */,
 				DDBD6AE7661038F787BC6963925F0058 /* EZDClientAPM.h in Headers */,
 				1357A4C9FDF5DF361D7CC4B452009E2F /* EZDConfig.h in Headers */,
 				8967BA892E0C7BD79100D9953D7D13C8 /* EZDDebugServer.h in Headers */,
 				2D5E42F96D3024F1FFE15143B109AD64 /* EZDDebugServerHandler.h in Headers */,
 				AC12B813FB856299020C6CB8E1D09D48 /* EZDDebugServerResponse.h in Headers */,
 				9EFE4146A7EE1FCD491E9BA9FFD982F8 /* EZDDefine.h in Headers */,
+				52423FAD23B4A2AE000B4F43 /* PLCrashReportTextFormatter.h in Headers */,
+				52423FA223B4A2AE000B4F43 /* PLCrashReporterConfig.h in Headers */,
 				3ED6E888B812691866E52D8E0A790996 /* EZDDisplayController.h in Headers */,
+				52423FA323B4A2AE000B4F43 /* PLCrashReportMachExceptionInfo.h in Headers */,
+				52423FAE23B4A2AE000B4F43 /* PLCrashReportFormatter.h in Headers */,
 				79BD11F7605A82AB9672DC3C3EE78E9C /* EZDDisplayer.h in Headers */,
+				52423FAF23B4A2AE000B4F43 /* PLCrashReportProcessInfo.h in Headers */,
 				BA27FA0669EC9F31CB0989FB5A2CA44B /* EZDFilter.h in Headers */,
 				C0C025EE1A4DAB62B53CAC47EC222F74 /* EZDFilterController.h in Headers */,
 				033EAF8CF4FF7F800136696EBE58D091 /* EZDImage.h in Headers */,
@@ -1178,14 +1282,22 @@
 				F3D5BA202F3535FF2922A58231262073 /* EZDMessageHUD.h in Headers */,
 				2F45236F96144DD3E5F413043F14ADF8 /* EZDOptionItem.h in Headers */,
 				840BF35AC8B35DE56081212129A4A369 /* EZDOptions.h in Headers */,
+				52423F9A23B4A2AE000B4F43 /* PLCrashNamespace.h in Headers */,
 				AD4ACAFAE5CCDA69CE1C6C54EDFB901C /* EZDOptionsCell.h in Headers */,
+				52423FAB23B4A2AE000B4F43 /* PLCrashReportApplicationInfo.h in Headers */,
+				52423FA123B4A2AE000B4F43 /* PLCrashMacros.h in Headers */,
+				52423FAC23B4A2AE000B4F43 /* PLCrashReportMachineInfo.h in Headers */,
 				4EE4B0FC3776C9BAE334226E637365AF /* EZDOptionsController.h in Headers */,
 				22B6FF610D9D6B43665F61DFCCCD9D6D /* EZDReachability.h in Headers */,
 				F41B0818796B1FF3C74DDC479F49EEA6 /* EZDSystemUtil.h in Headers */,
 				EFE3F206744F4831167E6A722D2198C1 /* EZDURLNodeEasyDebugLog.h in Headers */,
 				1FEFA77A40E029C2394C1F68F267F9A9 /* EZDURLSessionChallengeSender.h in Headers */,
 				03A4E284711C5A4222E7F99CD3826311 /* NSDate+EZDAddition.h in Headers */,
+				52423FA023B4A2AE000B4F43 /* PLCrashReport.h in Headers */,
+				52423FA823B4A2AE000B4F43 /* PLCrashReportProcessorInfo.h in Headers */,
+				52423F9C23B4A2AE000B4F43 /* PLCrashFeatureConfig.h in Headers */,
 				0F81C6042E8A95917E78BF5F94A2D3A1 /* NSObject+EZDAddition.h in Headers */,
+				52423F9D23B4A2AE000B4F43 /* PLCrashReporter.h in Headers */,
 				46AC527F8517A8EC4AC8813A8285943C /* UIView+EZDAddition_frame.h in Headers */,
 				DD3DBB08B2B50D587FC44F98A547D355 /* UIViewController+EZDAddition.h in Headers */,
 			);
