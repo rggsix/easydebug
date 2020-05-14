@@ -60,6 +60,7 @@ static UIImage *EZDIconImage = nil;
     if (self = [super init]) {
         [self setupBaseUI];
         [self tryToAddToWindow:window];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
     }
     return self;
 }
@@ -83,7 +84,7 @@ static UIImage *EZDIconImage = nil;
 
 - (void)dealloc{
     [[UIApplication sharedApplication] removeObserver:self forKeyPath:@"keyWindow"];
-    [self.curWindow removeObserver:self forKeyPath:@"rootViewController"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setupBaseUI{
@@ -118,12 +119,19 @@ static UIImage *EZDIconImage = nil;
         return;
     }
     
-    [self.curWindow removeObserver:self forKeyPath:@"rootViewController"];
+    if (!self.curWindow) {
+        self.curWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        self.curWindow.backgroundColor = [UIColor redColor];
+        self.curWindow.windowLevel = UIWindowLevelAlert;
+        [self.curWindow makeKeyAndVisible];
+        [window makeKeyAndVisible];
+    }
+    
     self.curWindow = window;
     [self.curWindow addSubview:self.displayerSwitch];
     [self.curWindow addSubview:self.fpsLabel];
+    
     self.displayerSwitch.ezd_origin = CGPointMake(window.ezd_width * .1, window.ezd_height - displayer.displayerSwitch.ezd_height * .4);
-    [self.curWindow addObserver:self forKeyPath:@"rootViewController" options:(NSKeyValueObservingOptionNew) context:nil];
     
     [EZDDebugServer startServerWithPort:8081];
 }
@@ -144,7 +152,13 @@ static UIImage *EZDIconImage = nil;
         } completion:^(BOOL finished) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [UIView animateWithDuration:.25 animations:^{
-                    self.displayerSwitch.ezd_y += self.displayerSwitch.ezd_height * .6;
+                    CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
+                    CGFloat targetY = self.displayerSwitch.ezd_y + self.displayerSwitch.ezd_height * .6;
+                    if (targetY < screenH) {
+                        self.displayerSwitch.ezd_y = targetY;
+                    } else {
+                        self.displayerSwitch.ezd_y = screenH - self.displayerSwitch.ezd_height * .6;
+                    }
                 } completion:^(BOOL finished) {
                     comeOut = false;
                 }];
@@ -155,13 +169,22 @@ static UIImage *EZDIconImage = nil;
     }
 }
 
+- (void)keyboardChange:(NSNotification *)note{
+    
+    CGRect frame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
+    if (frame.origin.y < screenH) {
+        self.displayerSwitch.ezd_y = frame.origin.y - 40;
+    } else {
+        self.displayerSwitch.ezd_y = screenH - self.displayerSwitch.ezd_height * .4;
+    }
+}
+
 #pragma mark - observer
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     if ([keyPath isEqualToString:@"keyWindow"]) {
         [self setupToWindow:[EZDSystemUtil currentWindow]];
-    }else if ([keyPath isEqualToString:@"rootViewController"]) {
-        [self.curWindow bringSubviewToFront:self.displayerSwitch];
-        [self.curWindow bringSubviewToFront:self.fpsLabel];
     }
 }
 
