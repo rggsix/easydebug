@@ -7,7 +7,7 @@
 //
 
 #import "EZDRequestAgent.h"
-#import <EasyDebug.h>
+#import "EasyDebug.h"
 
 @implementation EZDRequestAgent
 
@@ -23,7 +23,7 @@
 
 + (NSURLSessionDataTask *)GetWithParam:(NSDictionary *)param url:(NSString *)url callback:(void (^)(BOOL, NSDictionary * _Nonnull, NSError * _Nonnull))callback{
     EZDRequestAgent *agent = [EZDRequestAgent shareAgent];
-    return [agent GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [agent GET:url parameters:param headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         EZDRecordNetRequest(task.originalRequest, param, responseObject);
         callback ? callback(YES, responseObject, nil) : nil;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

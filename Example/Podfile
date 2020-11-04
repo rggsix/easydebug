@@ -3,8 +3,10 @@
 platform :ios, '9.0'
 
 target 'easydebug_Example' do
-  pod 'easydebug', :path => '../'
+#  pod 'easydebug', :path => '../'
   pod 'AFNetworking'
+#  pod 'PLCrashReporter'
+  pod 'GCDWebServer/WebUploader'
 
   target 'easydebug_Tests' do
     inherit! :search_paths

@@ -8,9 +8,9 @@
 
 #import "EZDViewController.h"
 
-#import <EZDDebugServer.h>
-#import <EZDClientAPM.h>
-#import <EasyDebug.h>
+#import "EZDDebugServer.h"
+#import "EZDClientAPM.h"
+#import "EasyDebug.h"
 
 #import "EZDRequestAgent.h"
 #import "EZDOptionsExample.h"

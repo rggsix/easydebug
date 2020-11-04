@@ -7,7 +7,7 @@
 //
 
 #import "EZDAppDelegate.h"
-#import <EasyDebug.h>
+#import "EasyDebug.h"
 
 @implementation EZDAppDelegate
 

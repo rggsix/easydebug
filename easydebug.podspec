@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'easydebug'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'debug tool for iOS develop.'
 
 # This description is used to generate tags and improve search results.
@@ -30,15 +30,18 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = ['easydebug/Classes/**/*']
+  s.source_files = ['easydebug/Classes/**/*.{h,m,a}', 'easydebug/Classes/*.{h,m,a}']
+  s.resource = "easydebug/Classes/Assets/easydebug_asset.bundle"
   
   #
-  s.resource_bundles = {
-      'easydebug' => ['easydebug/Classes/Assets/*.png'],
-      'EZDDebugServerResources' => ['easydebug/Classes/Assets/EZDDebugServerResources/*']
-  }
+  #s.resource_bundles = {
+  #    'easydebug' => ['easydebug/Assets/*.png'],
+  #    'EZDDebugServerResources' => ['easydebug/Classes/Assets/EZDDebugServerResources/**/*']
+    #'EZDDebugServerResources.easydebuglog' => ['easydebug/Classes/Assets/EZDDebugServerResources/easydebuglog/*']
+  #    'EZDDebugServerResources' => ['easydebug/Classes/Assets/EZDDebugServerResources/*', 'easydebug/Classes/Assets/EZDDebugServerResources/easydebuglog/*', 'easydebug/Classes/Assets/EZDDebugServerResources/easydebugoption/fontUpload/*']
+  #}
 
-  s.public_header_files = 'Pod/Classes/EasyDebugItems/Common/EZDDefine.h'
+  s.public_header_files = 'easydebug/Classes/EasyDebugItems/Common/EZDDefine.h'
   # s.frameworks = 'UIKit', 'MapKit'
 #  s.dependency 'PLCrashReporter'
   s.dependency 'GCDWebServer/WebUploader'

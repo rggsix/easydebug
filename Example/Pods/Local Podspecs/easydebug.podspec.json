@@ -1,7 +1,7 @@
 {
   "name": "easydebug",
-  "version": "0.1.1",
-  "summary": "A short description of easydebug.",
+  "version": "0.1.2",
+  "summary": "debug tool for iOS develop.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/RggComing/easydebug",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/RggComing/easydebug.git",
-    "tag": "0.1.1"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "8.0"
@@ -23,13 +23,15 @@
   ],
   "resource_bundles": {
     "easydebug": [
-      "easydebug/Classes/Assets/*.png"
+      "easydebug/Assets/*.png"
+    ],
+    "EZDDebugServerResources": [
+      "easydebug/Classes/Assets/EZDDebugServerResources/*.*",
+      "easydebug/Classes/Assets/EZDDebugServerResources/**/*.*"
     ]
   },
+  "public_header_files": "easydebug/Classes/EasyDebugItems/Common/EZDDefine.h",
   "dependencies": {
-    "PLCrashReporter": [
-
-    ],
     "GCDWebServer/WebUploader": [
 
     ]

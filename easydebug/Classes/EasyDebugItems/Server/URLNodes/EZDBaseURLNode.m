@@ -63,7 +63,7 @@
 + (NSBundle *)baseHTMLBundle{
     NSBundle *curBundle = [NSBundle bundleForClass:[self
                                       class]];
-    NSURL *bundleURL = [curBundle URLForResource:@"EZDDebugServerResources" withExtension:@"bundle"];
+    NSURL *bundleURL = [curBundle URLForResource:@"easydebug_asset" withExtension:@"bundle" subdirectory:@"EZDDebugServerResources"];
     return [NSBundle bundleWithURL:bundleURL];
 }
 
