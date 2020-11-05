@@ -17,7 +17,7 @@ easydebug is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'easydebug'
+pod 'EasyDebugTool'
 ```
 
 ## Use
@@ -62,7 +62,7 @@ recieve APM log file:
 
 ## Author
 
-RggComing, songhengdsg@sohu.com
+RggComing, songhengdsg@outlook.com
 
 ## License
 
