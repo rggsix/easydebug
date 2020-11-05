@@ -20,8 +20,6 @@
 
 @interface EZDBaseURLNode : NSObject
 
-#if EZDDEBUG_SERVER_SUPPORT
-
 + (NSString *)nodePath;
 ///  default is nodePath
 + (NSString *)nodeDictPath;
@@ -29,7 +27,5 @@
 + (NSString *)pathWithRequest:(GCDWebServerRequest *)request;
 + (NSBundle *)baseHTMLBundle;
 + (kEZDHTMLContentType)contentTypeWithURL:(NSURL *)url;
-
-#endif
 
 @end

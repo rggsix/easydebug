@@ -14,10 +14,10 @@
 
 #if EZDDEBUG_SERVER_SUPPORT
 
-#import <GCDWebServer.h>
-#import <GCDWebUploader.h>
-#import <GCDWebServerDataResponse.h>
-#import <GCDWebServerMultiPartFormRequest.h>
+#import "GCDWebServer.h"
+#import "GCDWebUploader.h"
+#import "GCDWebServerDataResponse.h"
+#import "GCDWebServerMultiPartFormRequest.h"
 
 static EZDDebugServer *server = nil;
 

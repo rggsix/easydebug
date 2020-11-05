@@ -8,7 +8,7 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/RggComing/easydebug'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  # s.screenshots     = ''
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'RggComing' => 'songhengdsg@outlook.com' }
   s.source           = { :git => 'https://github.com/RggComing/easydebug.git', :tag => s.version.to_s }
@@ -18,6 +18,6 @@ TODO: Add long description of the pod here.
   s.source_files = ['easydebug/Classes/**/*.{h,m,a}', 'easydebug/Classes/*.{h,m,a}']
   s.resource = "easydebug/Classes/Assets/easydebug_asset.bundle"
 
-  s.public_header_files = 'easydebug/Classes/EasyDebugItems/Common/EZDDefine.h'
+  #s.public_header_files = 'easydebug/Classes/EasyDebugItems/Common/EZDDefine.h'
   s.dependency 'GCDWebServer/WebUploader'
 end

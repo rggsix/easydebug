@@ -14,7 +14,7 @@
 @implementation UIViewController (EZDAddition)
 
 + (instancetype)ezd_useableController{
-    UIViewController *rootVC = [UIApplication sharedApplication].delegate.window.rootViewController;
+    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
     if (!rootVC) {
         rootVC = [EZDSystemUtil currentWindow].rootViewController;
     }

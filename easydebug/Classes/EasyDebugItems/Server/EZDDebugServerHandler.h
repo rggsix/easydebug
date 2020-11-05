@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "EZDDebugServerResponse.h"
 
-#import <GCDWebServerRequest.h>
+#import "GCDWebServerRequest.h"
 
 
 #ifndef EZDDebugServerMaxPathDeep

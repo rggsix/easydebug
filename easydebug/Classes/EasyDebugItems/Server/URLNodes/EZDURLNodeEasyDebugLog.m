@@ -10,7 +10,7 @@
 #import "EasyDebug.h"
 #import "EZDLogger.h"
 #import "EZDDefine.h"
-#import <GCDWebServerRequest.h>
+#import "GCDWebServerRequest.h"
 
 @implementation EZDURLNodeEasyDebugLog
 

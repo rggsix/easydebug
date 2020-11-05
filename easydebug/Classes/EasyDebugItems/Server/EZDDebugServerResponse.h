@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <GCDWebServerDataResponse.h>
+#import "GCDWebServerDataResponse.h"
 
 typedef NSString * kEZDHTMLContentType NS_EXTENSIBLE_STRING_ENUM;
 static kEZDHTMLContentType const kEZDHTMLContentTypeTextHTML = @"text/html";

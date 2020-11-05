@@ -14,11 +14,11 @@
 #endif
 
 #ifndef EZD_APM
-#define EZD_APM EZDEBUG_DEBUGLOG
+#define EZD_APM DEBUG
 #endif
 
 #ifndef EZDDEBUG_SERVER_SUPPORT
-#define EZDDEBUG_SERVER_SUPPORT EZDEBUG_DEBUGLOG
+#define EZDDEBUG_SERVER_SUPPORT DEBUG
 #endif
 
 #define kEZDUserDefaultSuiteName @"framework.eazydebug.kEZDUserDefaultSuiteName"
