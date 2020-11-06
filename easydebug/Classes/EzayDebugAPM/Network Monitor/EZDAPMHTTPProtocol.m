@@ -14,7 +14,6 @@
 #import "EZDDefine.h"
 #import "EZDAPMSessionManager.h"
 #import "EZDURLSessionChallengeSender.h"
-#import "AFURLSessionManager.h"
 
 #import "NSURLRequest+EZDAddition.h"
 
