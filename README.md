@@ -21,8 +21,18 @@ pod 'EasyDebugTool'
 ```
 
 ## Use
+EasyDebugTool will run itself in DEBUG, just include it.
+```
+#import <EasyDebug.h>
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    return YES;
+}
+```
 
 ### Debug log
+EazyDebugTool hooked the network automatic, In normal times, you do not need to call "EZDRecordNetRequest" to observe net request.
+
 ```Objective-C
 #import <EasyDebug.h> 
 EZDRecordEvent(@"Event Type", 
@@ -30,16 +40,6 @@ EZDRecordEvent(@"Event Type",
                     Event parameter, 
                     timestamp(0 for now));
 ``` 
-or use like "EZDRecordNetRequest(request_,param_,response_)" to record network.
-```Objective-C
-[agent GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)    {
-        EZDRecordNetRequest(task.originalRequest, param, responseObject);
-        callback ? callback(YES, responseObject, nil) : nil;
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        EZDRecordNetRequest(task.originalRequest, param, error);
-        callback ? callback(YES, nil, error) : nil;
-}];
-```
 
 ### Debug Options
 ```Objective-C

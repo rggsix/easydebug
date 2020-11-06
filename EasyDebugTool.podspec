@@ -20,4 +20,5 @@ TODO: Add long description of the pod here.
 
   #s.public_header_files = 'easydebug/Classes/EasyDebugItems/Common/EZDDefine.h'
   s.dependency 'GCDWebServer/WebUploader'
+  s.dependency 'Aspects'
 end

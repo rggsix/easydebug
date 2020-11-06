@@ -14,23 +14,27 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
   - GCDWebServer/Core (3.5.4)
   - GCDWebServer/WebUploader (3.5.4):
     - GCDWebServer/Core
 
 DEPENDENCIES:
   - AFNetworking
+  - Aspects
   - GCDWebServer/WebUploader
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - Aspects
     - GCDWebServer
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
 
-PODFILE CHECKSUM: 89d58b227940e427da9ee2332893aebef515fcff
+PODFILE CHECKSUM: c7e820bd1eb316d4bacad239fd448ea417619207
 
 COCOAPODS: 1.9.3

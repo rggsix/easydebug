@@ -73,12 +73,12 @@ Network State: %@\n\n",
 }
 
 + (NSMutableString *)generateBacktraceInfo:(NSMutableString *)text onlyMainThread:(bool)onlyMainThread{
-    [text appendFormat:@"\n|------------------------------|Tread Info\n\n%@",onlyMainThread ? [BSBacktraceLogger bs_backtraceOfMainThread] : [BSBacktraceLogger bs_backtraceOfAllThread]];
+    [text appendFormat:@"\n|---------------Tread Info---------------|\n\n%@",onlyMainThread ? [BSBacktraceLogger bs_backtraceOfMainThread] : [BSBacktraceLogger bs_backtraceOfAllThread]];
     return text;
 }
 
 + (NSMutableString *)generateUserOperationPath:(NSMutableString *)text{
-    [text appendFormat:@"\n|------------------------------|Operation Info\n\n%@",[EZDAPMOperationRecorder currentOperationPathInfo]];
+    [text appendFormat:@"\n|---------------Operation Info---------------|\n\n%@",[EZDAPMOperationRecorder currentOperationPathInfo]];
     return text;
 }
 

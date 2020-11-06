@@ -8,8 +8,8 @@
 
 #import "EZDBaseURLNode.h"
 
-@implementation EZDBaseURLNode
 #if EZDDEBUG_SERVER_SUPPORT
+@implementation EZDBaseURLNode
 
 + (NSString *)nodePath{
 //    NSLog(@"*********************\nWarning : %@ didn't set nodePath,it will use class name as node path\n*********************\n",[self className]);
@@ -82,6 +82,28 @@
     }
     return contentType;
 }
-#endif
 
 @end
+
+#else
+
+@implementation EZDBaseURLNode
+
++ (NSString *)nodePath{return @"";}
+
++ (NSString *)nodeDictPath{return @"";}
+
++ (NSString *)_404Path{return @"";}
+
++ (EZDDebugServerResponse *)respondsForGCDRequest:(GCDWebServerRequest *)request{return nil;}
+
++ (NSString *)pathWithRequest:(GCDWebServerRequest *)request{return @"";}
+
++ (NSBundle *)baseHTMLBundle{return nil;}
+
++ (kEZDHTMLContentType)contentTypeWithURL:(NSURL *)url{return 0;}
+
+@end
+
+#endif
+

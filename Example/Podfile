@@ -7,6 +7,7 @@ target 'easydebug_Example' do
   pod 'AFNetworking'
 #  pod 'PLCrashReporter'
   pod 'GCDWebServer/WebUploader'
+  pod 'Aspects'
 
   target 'easydebug_Tests' do
     inherit! :search_paths

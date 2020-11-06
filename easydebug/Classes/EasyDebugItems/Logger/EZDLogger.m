@@ -43,24 +43,13 @@
 
 #pragma mark - record funcs
 - (void)recordNetRequestWithRequest:(NSURLRequest *)request parameter:(NSDictionary *)param response:(id)response{
-    NSDictionary *resonseDict = nil;
-    if ([response isKindOfClass:[NSError class]]) {
-        resonseDict = [EZDLogger errorResponseWithError:response];
-        
-        if (!resonseDict.allKeys.count) {
-            NSError *err = (NSError *)response;
-
-            resonseDict = EZD_NotNullDict([err userInfo]);
-        }
-    }else{
-        resonseDict = EZD_NotNullDict(response);
-    }
+    NSDictionary *responseDict = [self handleResponse:response];
     NSDictionary *rparameter = @{
                                 @"targetURL":EZD_NotNullString(request.URL.absoluteString),
                                 @"method":EZD_NotNullString(request.HTTPMethod),
                                 @"header":EZD_NotNullDict(request.allHTTPHeaderFields),
-                                @"param":EZD_NotNullDict(param),
-                                @"response":resonseDict,
+                                @"param":[self handleParamterWithParam:param request:request],
+                                @"response":responseDict,
                                 };
     [self recordEventWithTypeName:kEZDNetRequestType abstractString:request.URL.absoluteString parameter:rparameter timeStamp:[[NSDate date] timeIntervalSince1970]];
 }
@@ -225,6 +214,77 @@
     }
     
     return errorResponseDict;
+}
+
+- (NSDictionary *)handleParamterWithParam:(id)param request:(NSURLRequest *)request {
+    NSDictionary *paramDict = nil;
+    if ([param isKindOfClass:[NSDictionary class]]) {
+        paramDict = param;
+    } else if ([param isKindOfClass:[NSString class]]) {
+        NSString *paramStr = (NSString *)param;
+        if (paramStr.length) {
+            paramDict = [NSJSONSerialization JSONObjectWithData:[paramStr dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+            
+            if (!paramDict.allKeys.count && [paramStr containsString:@"="]) {
+                NSURLComponents *comp = [NSURLComponents componentsWithString:[NSString stringWithFormat:@"https://x?%@", paramStr]];
+                NSMutableDictionary *querys = [NSMutableDictionary dictionaryWithCapacity:comp.queryItems.count];
+                [comp.queryItems enumerateObjectsUsingBlock:^(NSURLQueryItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [querys setObject:EZD_NotNullString(obj.value) forKey:EZD_NotNullString(obj.name)];
+                }];
+                paramDict = [querys copy];
+            }
+            
+            if (!paramDict.allKeys.count) {
+                paramDict = @{@"__unknow_param":param};
+            }
+        } else {
+            paramDict = @{};
+        }
+
+    } else if(param){
+        paramDict = @{@"__unknow_param":EZD_NotNullString([param description])};
+    } else {
+        paramDict = @{};
+    }
+    
+    //  append parameter from url query
+    NSURLComponents *urlComp = [NSURLComponents componentsWithURL:request.URL resolvingAgainstBaseURL:YES];
+    NSMutableDictionary *cptmpdict = [paramDict mutableCopy];
+    [urlComp.queryItems enumerateObjectsUsingBlock:^(NSURLQueryItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [cptmpdict setObject:EZD_NotNullString(obj.value) forKey:EZD_NotNullString(obj.name)];
+    }];
+    
+    return [cptmpdict copy];
+}
+
+- (NSDictionary *)handleResponse:(id)response {
+    NSDictionary *responseDict = nil;
+    if ([response isKindOfClass:[NSError class]]) {
+        responseDict = [EZDLogger errorResponseWithError:response];
+        
+        if (!responseDict.allKeys.count) {
+            NSError *err = (NSError *)response;
+
+            responseDict = EZD_NotNullDict([err userInfo]);
+        }
+    } else if(![response isKindOfClass:[NSDictionary class]]) {
+        if ([response isKindOfClass:[NSString class]]) {
+            NSData *data = [(NSString *)response dataUsingEncoding:(NSUTF8StringEncoding)];
+            id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            if ([json isKindOfClass:[NSDictionary class]]) {
+                responseDict = json;
+            } else {
+                responseDict = @{@"__unknow_type_response":response};
+            }
+        } else {
+            response = EZD_NotNullString([response description]);
+            responseDict = @{@"__unknow_type_response":response};
+        }
+    } else{
+        responseDict = EZD_NotNullDict(response);
+    }
+    
+    return responseDict;
 }
 
 @end

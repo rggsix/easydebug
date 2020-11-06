@@ -69,6 +69,9 @@
 		748B6F102552C35C0098FD59 /* tool.png in Resources */ = {isa = PBXBuildFile; fileRef = 748B6ED92552C35C0098FD59 /* tool.png */; };
 		748B6F2D2552D1A80098FD59 /* libCrashReporter-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 748B6F2C2552D1A80098FD59 /* libCrashReporter-iOS.a */; };
 		748B6F2F2552D4FD0098FD59 /* easydebug_asset.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 748B6F2E2552D4FC0098FD59 /* easydebug_asset.bundle */; };
+		748B6F4B255409360098FD59 /* EasyDebugTool.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 748B6F4A255409360098FD59 /* EasyDebugTool.podspec */; };
+		748B6F4E2554FB820098FD59 /* NSURLRequest+EZDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6F4D2554FB820098FD59 /* NSURLRequest+EZDAddition.m */; };
+		748B6F6425552E4E0098FD59 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 748B6F6325552E4E0098FD59 /* README.md */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		9F433549298C14B2A434F554 /* libPods-easydebug_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABF760CBA37403ED8C6C0F5 /* libPods-easydebug_Tests.a */; };
 		F8D68D81381E0C18BE1442F9 /* libPods-easydebug_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E06057F31F689177BBD4BC1F /* libPods-easydebug_Example.a */; };
@@ -223,6 +226,10 @@
 		748B6F2A2552CB580098FD59 /* libCrashReporter-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCrashReporter-iOS.a"; sourceTree = "<group>"; };
 		748B6F2C2552D1A80098FD59 /* libCrashReporter-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCrashReporter-iOS.a"; sourceTree = "<group>"; };
 		748B6F2E2552D4FC0098FD59 /* easydebug_asset.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = easydebug_asset.bundle; sourceTree = "<group>"; };
+		748B6F4A255409360098FD59 /* EasyDebugTool.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = EasyDebugTool.podspec; path = ../../EasyDebugTool.podspec; sourceTree = "<group>"; };
+		748B6F4C2554FB820098FD59 /* NSURLRequest+EZDAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+EZDAddition.h"; sourceTree = "<group>"; };
+		748B6F4D2554FB820098FD59 /* NSURLRequest+EZDAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+EZDAddition.m"; sourceTree = "<group>"; };
+		748B6F6325552E4E0098FD59 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9ABF760CBA37403ED8C6C0F5 /* libPods-easydebug_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-easydebug_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA9ABF3C940E093F79FDB94 /* Pods-easydebug_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easydebug_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-easydebug_Tests/Pods-easydebug_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -316,6 +323,8 @@
 		6003F593195388D20070C39A /* Example for easydebug */ = {
 			isa = PBXGroup;
 			children = (
+				748B6F6325552E4E0098FD59 /* README.md */,
+				748B6F4A255409360098FD59 /* EasyDebugTool.podspec */,
 				748B6E462552C35B0098FD59 /* easydebug */,
 				6003F59C195388D20070C39A /* EZDAppDelegate.h */,
 				6003F59D195388D20070C39A /* EZDAppDelegate.m */,
@@ -597,6 +606,8 @@
 				748B6EC32552C35B0098FD59 /* EZDURLSessionChallengeSender.h */,
 				748B6EC42552C35B0098FD59 /* EZDAPMURLSchemeHandler.h */,
 				748B6EC52552C35B0098FD59 /* EZDAPMHTTPProtocol.m */,
+				748B6F4C2554FB820098FD59 /* NSURLRequest+EZDAddition.h */,
+				748B6F4D2554FB820098FD59 /* NSURLRequest+EZDAddition.m */,
 			);
 			path = "Network Monitor";
 			sourceTree = "<group>";
@@ -750,7 +761,9 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				748B6F102552C35C0098FD59 /* tool.png in Resources */,
+				748B6F6425552E4E0098FD59 /* README.md in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				748B6F4B255409360098FD59 /* EasyDebugTool.podspec in Resources */,
 				748B6EF42552C35C0098FD59 /* .gitkeep in Resources */,
 				748B6F0F2552C35C0098FD59 /* easydebug.podspec in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -857,6 +870,7 @@
 				748B6EDA2552C35C0098FD59 /* EZDFilter.m in Sources */,
 				00DB7B832309CCDD004C6DDE /* EZDRequestAgent.m in Sources */,
 				748B6EF62552C35C0098FD59 /* EZDAPMOperationRecorder.m in Sources */,
+				748B6F4E2554FB820098FD59 /* NSURLRequest+EZDAddition.m in Sources */,
 				748B6EDC2552C35C0098FD59 /* EZDOptions.m in Sources */,
 				748B6EE62552C35C0098FD59 /* EZDURLNodeEasyDebugLog.m in Sources */,
 				748B6EE02552C35C0098FD59 /* NSDate+EZDAddition.m in Sources */,
@@ -1011,6 +1025,7 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 					"EZDDEBUG_SERVER_SUPPORT=1",
+					"EZD_APM=1",
 				);
 				INFOPLIST_FILE = "easydebug/easydebug-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
