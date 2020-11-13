@@ -7,7 +7,7 @@
 
 #import "EZDDisplayer.h"
 
-#import "EZDDisplayController.h"
+#import "EZDMenuViewController.h"
 
 #import "EZDAppShortInfoLabel.h"
 
@@ -138,7 +138,7 @@ static UIImage *EZDIconImage = nil;
 
 #pragma mark - private funcs
 - (void)showDisplayer{
-    EZDDisplayController *displayController = [[EZDDisplayController alloc] initWithLogger:self.logger];
+    EZDMenuViewController *displayController = [[EZDMenuViewController alloc] initWithLogger:self.logger];
     [UIViewController presentIfCanWithController:displayController needNavigationController:true];
 }
 
