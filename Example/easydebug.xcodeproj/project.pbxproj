@@ -23,6 +23,8 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		7412E086255E703300368193 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 7412E084255E703200368193 /* fishhook.c */; };
+		7412E089255E72F300368193 /* EZDNSLogHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7412E088255E72F300368193 /* EZDNSLogHooker.m */; };
 		748B6EDA2552C35C0098FD59 /* EZDFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4C2552C35B0098FD59 /* EZDFilter.m */; };
 		748B6EDB2552C35C0098FD59 /* EZDLoggerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4D2552C35B0098FD59 /* EZDLoggerModel.m */; };
 		748B6EDC2552C35C0098FD59 /* EZDOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4E2552C35B0098FD59 /* EZDOptions.m */; };
@@ -114,6 +116,10 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6730B806EF64D856EA25BC8A /* Pods-easydebug_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easydebug_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easydebug_Example/Pods-easydebug_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7412E084255E703200368193 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		7412E085255E703300368193 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		7412E087255E72F300368193 /* EZDNSLogHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDNSLogHooker.h; sourceTree = "<group>"; };
+		7412E088255E72F300368193 /* EZDNSLogHooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDNSLogHooker.m; sourceTree = "<group>"; };
 		748B6E4A2552C35B0098FD59 /* EZDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDConfig.h; sourceTree = "<group>"; };
 		748B6E4B2552C35B0098FD59 /* EZDOptionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDOptionItem.h; sourceTree = "<group>"; };
 		748B6E4C2552C35B0098FD59 /* EZDFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDFilter.m; sourceTree = "<group>"; };
@@ -370,6 +376,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7412E083255E700300368193 /* fishhook */ = {
+			isa = PBXGroup;
+			children = (
+				7412E085255E703300368193 /* fishhook.h */,
+				7412E084255E703200368193 /* fishhook.c */,
+			);
+			path = fishhook;
+			sourceTree = "<group>";
+		};
 		748B6E462552C35B0098FD59 /* easydebug */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,17 +399,18 @@
 		748B6E472552C35B0098FD59 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				748B6E482552C35B0098FD59 /* EasyDebugItems */,
-				748B6E882552C35B0098FD59 /* .gitkeep */,
 				748B6E892552C35B0098FD59 /* EasyDebug.h */,
+				748B6ED52552C35C0098FD59 /* EasyDebug.m */,
+				748B6E952552C35B0098FD59 /* Framework */,
+				748B6E482552C35B0098FD59 /* EasyDebugMain */,
 				748B6E8A2552C35B0098FD59 /* EzayDebugAPM */,
 				748B6EC62552C35C0098FD59 /* Assets */,
-				748B6ED52552C35C0098FD59 /* EasyDebug.m */,
+				748B6E882552C35B0098FD59 /* .gitkeep */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		748B6E482552C35B0098FD59 /* EasyDebugItems */ = {
+		748B6E482552C35B0098FD59 /* EasyDebugMain */ = {
 			isa = PBXGroup;
 			children = (
 				748B6E492552C35B0098FD59 /* Logger */,
@@ -404,24 +420,26 @@
 				748B6E6E2552C35B0098FD59 /* Displayer */,
 				748B6E862552C35B0098FD59 /* Common */,
 			);
-			path = EasyDebugItems;
+			path = EasyDebugMain;
 			sourceTree = "<group>";
 		};
 		748B6E492552C35B0098FD59 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
 				748B6E4A2552C35B0098FD59 /* EZDConfig.h */,
-				748B6E4B2552C35B0098FD59 /* EZDOptionItem.h */,
-				748B6E4C2552C35B0098FD59 /* EZDFilter.m */,
-				748B6E4D2552C35B0098FD59 /* EZDLoggerModel.m */,
-				748B6E4E2552C35B0098FD59 /* EZDOptions.m */,
-				748B6E4F2552C35B0098FD59 /* EZDLogger.m */,
 				748B6E502552C35B0098FD59 /* EZDConfig.m */,
+				748B6E4B2552C35B0098FD59 /* EZDOptionItem.h */,
 				748B6E512552C35B0098FD59 /* EZDOptionItem.m */,
-				748B6E522552C35B0098FD59 /* EZDLoggerModel.h */,
 				748B6E532552C35B0098FD59 /* EZDFilter.h */,
-				748B6E542552C35B0098FD59 /* EZDLogger.h */,
+				748B6E4C2552C35B0098FD59 /* EZDFilter.m */,
+				748B6E522552C35B0098FD59 /* EZDLoggerModel.h */,
+				748B6E4D2552C35B0098FD59 /* EZDLoggerModel.m */,
 				748B6E552552C35B0098FD59 /* EZDOptions.h */,
+				748B6E4E2552C35B0098FD59 /* EZDOptions.m */,
+				748B6E542552C35B0098FD59 /* EZDLogger.h */,
+				748B6E4F2552C35B0098FD59 /* EZDLogger.m */,
+				7412E087255E72F300368193 /* EZDNSLogHooker.h */,
+				7412E088255E72F300368193 /* EZDNSLogHooker.m */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -539,7 +557,6 @@
 			children = (
 				748B6E8B2552C35B0098FD59 /* EZDClientAPM.h */,
 				748B6E8C2552C35B0098FD59 /* Log Generate */,
-				748B6E952552C35B0098FD59 /* Framework */,
 				748B6EB02552C35B0098FD59 /* Utils */,
 				748B6EB72552C35B0098FD59 /* Hardware Monitor */,
 				748B6EBC2552C35B0098FD59 /* EZDClientAPM.m */,
@@ -566,6 +583,7 @@
 		748B6E952552C35B0098FD59 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				7412E083255E700300368193 /* fishhook */,
 				748B6F112552CB580098FD59 /* PLCrashReport */,
 			);
 			path = Framework;
@@ -866,6 +884,7 @@
 				748B6F012552C35C0098FD59 /* EZDURLSessionChallengeSender.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				748B6EDB2552C35C0098FD59 /* EZDLoggerModel.m in Sources */,
+				7412E086255E703300368193 /* fishhook.c in Sources */,
 				748B6EE22552C35C0098FD59 /* UIViewController+EZDAddition.m in Sources */,
 				748B6EDA2552C35C0098FD59 /* EZDFilter.m in Sources */,
 				00DB7B832309CCDD004C6DDE /* EZDRequestAgent.m in Sources */,
@@ -880,6 +899,7 @@
 				748B6EE82552C35C0098FD59 /* EZDDebugServerResponse.m in Sources */,
 				748B6EF72552C35C0098FD59 /* BSBacktraceLogger.m in Sources */,
 				748B6F002552C35C0098FD59 /* EZDAPMSessionManager.m in Sources */,
+				7412E089255E72F300368193 /* EZDNSLogHooker.m in Sources */,
 				000B74A7230A8C4D00A7F6C2 /* EZDOptionsExample.m in Sources */,
 				748B6EDD2552C35C0098FD59 /* EZDLogger.m in Sources */,
 				748B6EDE2552C35C0098FD59 /* EZDConfig.m in Sources */,

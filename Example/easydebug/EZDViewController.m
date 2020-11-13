@@ -15,6 +15,8 @@
 #import "EZDRequestAgent.h"
 #import "EZDOptionsExample.h"
 
+#import "NSObject+EZDAddition.h"
+
 #import <WebKit/WebKit.h>
 
 @interface EZDViewController ()<EZDClientAPMProtocol>
@@ -38,6 +40,8 @@
     [EasyDebug regiestOptions:[EZDOptionsExample class]];
     
     [self setupUI];
+    
+    [self ezd_printAllMethod];
 }
 
 - (void)setupUI {
@@ -97,7 +101,7 @@
     [self.navigationController pushViewController:vc animated:YES];
     WKWebView *webview = [[WKWebView alloc] initWithFrame:self.view.bounds];
     [vc.view addSubview:webview];
-    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://github.com/RggComing/easydebug"]]];
+    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com/"]]];
 }
 
 #pragma mark - EZDClientAPMProtocol

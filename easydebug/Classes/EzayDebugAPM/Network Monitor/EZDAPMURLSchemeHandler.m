@@ -103,46 +103,40 @@ API_AVAILABLE(ios(11.0))
 @implementation WKWebView (EZDAPMHook)
 
 - (instancetype)ezd_initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)config{
-//    NSString *method = @"_urlSchemeHandlers";
-//    NSData *data = [method dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-//    char *bs = malloc(sizeof(char) * data.length);
-//    memcpy(bs, data.bytes, data.length);
-//    for (int i = 0 ; i< data.length; i++) {
-//        char c = bs[i] ^ 0x2;
-//        printf("0x%2x,",c);
-//    }
-    
-    unsigned char selByte[] = {0x5d,0x77,0x70,0x6e,0x51,0x61,0x6a,0x67,0x6f,0x67,0x4a,0x63,0x6c,0x66,0x6e,0x67,0x70,0x71};
-    char sel[19] = {0};
-    for (int i = 0; i< sizeof(selByte); i++) {
-        char b = selByte[i] ^ 0x2;
-        sel[i] = b;
-    }
-    sel[18] = '\0';
-    NSString *selStr = [NSString stringWithCString:sel encoding:NSUTF8StringEncoding];
-    
+#if DEBUG
     EZDAPMURLSchemeHandler *handler = [EZDAPMURLSchemeHandler new];
-//    BOOL hadProp = [config respondsToSelector:@selector(_urlSchemeHandlers)];
-    BOOL hadProp = [config respondsToSelector:NSSelectorFromString(selStr)];
-    if (hadProp) {
-        NSMutableDictionary *handlers = [config valueForKey:selStr];
-//        NSMutableDictionary *handlers = [config valueForKey:@"_urlSchemeHandlers"];
-        handlers[@"http"] = handler;
-        handlers[@"https"] = handler;
-        handlers[@"file"] = handler;
-        handlers[@"ezd"] = handler;
-    }
-    
     id _self = [self ezd_initWithFrame:frame configuration:config];
-    !hadProp ?: [_self addErrorListener];
-    
-    [config ezd_printAllPropertys];
-    
-//    auto pageCfg = [config performSelector:@selector(_pageConfiguration)];
-//
-//    [config setURLSchemeHandler:handler forURLScheme:@"http"];
-    
+    NSString *bcc1 = @"browsing";
+    NSString *bcc2 = @"Context";
+    NSString *bcc3 = @"Controller";
+
+    SEL bccSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@%@", bcc1, bcc2, bcc3]);
+    if ([self respondsToSelector:bccSEL]) {
+        id contextControllerCLS = [[_self valueForKey:NSStringFromSelector(bccSEL)] class];
+        
+        NSString *rscp1 = @"register";
+        NSString *rscp2 = @"Scheme";
+        NSString *rscp3 = @"ForCustom";
+        NSString *rscp4 = @"Protocol:";
+        SEL rscpSEL = NSSelectorFromString([NSString stringWithFormat:@"%@%@%@%@", rscp1, rscp2, rscp3, rscp4]);
+        if ([(id)contextControllerCLS respondsToSelector:rscpSEL]) {
+            [contextControllerCLS performSelector:rscpSEL withObject:@"http"];
+            [contextControllerCLS performSelector:rscpSEL withObject:@"https"];
+            [contextControllerCLS performSelector:rscpSEL withObject:@"file"];
+        }
+    }
+
+    //  Add JSError handler
+    if (@available(iOS 11.0, *)) {
+        [config setURLSchemeHandler:handler forURLScheme:@"ezd"];
+    } else {
+        // Fallback on earlier versions
+    }
     return _self;
+#else
+    id _self = [self ezd_initWithFrame:frame configuration:config];
+    return _self;
+#endif
 }
 
 - (void)addErrorListener{

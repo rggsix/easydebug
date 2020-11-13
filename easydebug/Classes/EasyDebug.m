@@ -6,6 +6,7 @@
 //
 
 #import "EasyDebug.h"
+#import "EZDNSLogHooker.h"
 #import "EZDDisplayer.h"
 #import "EZDSystemUtil.h"
 
@@ -19,9 +20,12 @@ static EasyDebug *EasyDebugIns;
 
 @implementation EasyDebug
 
+
+
 #if EZDEBUG_DEBUGLOG
 + (void)load{
     [self shareEasyDebug];
+    [EZDNSLogHooker hookNSLog];
 }
 #endif
 

@@ -15,7 +15,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = ['easydebug/Classes/**/*.{h,m,a}', 'easydebug/Classes/*.{h,m,a}']
+  s.source_files = ['easydebug/Classes/**/*.{h,m,a,c}', 'easydebug/Classes/*.{h,m,a,c}']
   s.resource = "easydebug/Classes/Assets/easydebug_asset.bundle"
 
   #s.public_header_files = 'easydebug/Classes/EasyDebugItems/Common/EZDDefine.h'
