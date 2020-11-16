@@ -26,7 +26,7 @@ static NSMutableSet<NSString *> *typeNameSet = nil;
     if (self = [super init]) {
         name = [@"EZDFilter->" stringByAppendingString:name];
         self.filterName = name;
-        self.filterUserDefault =[[NSUserDefaults alloc] initWithSuiteName:kEZDUserDefaultSuiteName];
+        self.filterUserDefault = [[NSUserDefaults alloc] initWithSuiteName:kEZDUserDefaultSuiteName];
         self.filterItems = [[self.filterUserDefault arrayForKey:name] mutableCopy];
         if (!self.filterItems) {
             self.filterItems = [NSMutableArray new];

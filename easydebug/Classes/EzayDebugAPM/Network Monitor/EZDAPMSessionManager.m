@@ -9,6 +9,8 @@
 #import "EZDAPMSessionManager.h"
 #import "EZDURLSessionChallengeSender.h"
 
+#import "NSURLRequest+EZDAddition.h"
+
 #import <objc/runtime.h>
 #import <objc/message.h>
 
@@ -59,6 +61,8 @@
 + (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request delegate:(id<NSURLSessionDelegate>)delegate{
     NSURLSessionDataTask *task = [[[EZDAPMSessionManager shareManager] session] dataTaskWithRequest:request];
     [self addSessionDelegate:delegate forTask:task];
+    task.originalRequest.ezd_fromEZDAPM = request.ezd_fromEZDAPM;
+    task.currentRequest.ezd_fromNative = request.ezd_fromNative;
     return task;
 }
 

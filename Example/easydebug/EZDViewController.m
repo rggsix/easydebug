@@ -8,6 +8,8 @@
 
 #import "EZDViewController.h"
 
+#import "EZDTestWebViewController.h"
+
 #import "EZDDebugServer.h"
 #import "EZDClientAPM.h"
 #import "EasyDebug.h"
@@ -97,11 +99,7 @@
 }
 
 - (void)goWebview {
-    UIViewController *vc = [UIViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
-    WKWebView *webview = [[WKWebView alloc] initWithFrame:self.view.bounds];
-    [vc.view addSubview:webview];
-    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com/"]]];
+    [self.navigationController pushViewController:[EZDTestWebViewController new] animated:YES];
 }
 
 #pragma mark - EZDClientAPMProtocol

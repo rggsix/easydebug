@@ -50,18 +50,14 @@ static NSString * const kEZDDisplayControllerDisplayCellID = @"kEZDDisplayContro
 
     NSAssert(self.logger != nil, @"EZDDisplayController.logger can't be nil!");
     self.navigationItem.title = @"Logs";
-    UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemCancel) target:self action:@selector(navCancelClicked)];
     UIBarButtonItem *clearItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:(UIBarButtonItemStylePlain) target:self action:@selector(navClearClicked)];
-    self.navigationItem.leftBarButtonItems = @[cancelItem,clearItem];
+    self.navigationItem.leftBarButtonItem = clearItem;
+    self.navigationItem.leftItemsSupplementBackButton = YES;
     UIBarButtonItem *filterItem = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:(UIBarButtonItemStylePlain) target:self action:@selector(navFilterClicked)];
-    UIBarButtonItem *optionItem = [[UIBarButtonItem alloc] initWithTitle:@"Options" style:(UIBarButtonItemStylePlain) target:self action:@selector(navOptionsClicked)];
-    self.navigationItem.rightBarButtonItems = @[optionItem,filterItem];
+    self.navigationItem.rightBarButtonItems = @[filterItem];
 }
 
 #pragma mark - response func
-- (void)navCancelClicked{
-    [self dismissViewControllerAnimated:true completion:nil];
-}
 
 - (void)navFilterClicked{
     EZDFilterController *filterController = [[EZDFilterController alloc] initWithLogger:self.logger ConfirmCallback:^{
@@ -72,16 +68,6 @@ static NSString * const kEZDDisplayControllerDisplayCellID = @"kEZDDisplayContro
 
 - (void)navClearClicked{
     [self.logger clearLogs];
-}
-
-- (void)navOptionsClicked{
-    if (![EZDOptions currentOptionInstance]) {
-        [EZDMessageHUD showMessageHUDWithText:@"No EZDOptions instance regiested ! use [Eazydebug regiestOptions:] to rigeist a instance and conform <EZDOptionProtocol> !" type:(EZDImageTypeError)];
-        return;
-    }
-    
-    EZDOptionsController *optionVC = [[EZDOptionsController alloc] initWithOptionInstace:[EZDOptions currentOptionInstance]];
-    [self.navigationController pushViewController:optionVC animated:true];
 }
 
 #pragma mark - UITableViewDataSource

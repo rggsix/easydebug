@@ -75,30 +75,44 @@
 }
 
 + (BOOL)canInitWithTask:(NSURLSessionTask *)task{
+    task.currentRequest.ezd_fromNative = task.originalRequest.ezd_fromNative;
     return [self canInitWithRequest:task.currentRequest];
 }
 
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request {
-    return [request ezd_getPostRequestWithBody];
+    NSMutableURLRequest *nrequest = [request ezd_getMutablePostRequestWithBody];
+    if (nrequest.ezd_fromNative) {
+        [nrequest setValue:@(request.ezd_fromNative).stringValue forHTTPHeaderField:kEZDURLRequestFromNative];
+    }
+    return nrequest;
 }
 
 - (id)initWithRequest:(NSURLRequest *)request cachedResponse:(NSCachedURLResponse *)cachedResponse client:(id <NSURLProtocolClient>)client {
+    //  Remove header value which added in "canonicalRequestForRequest:"
+    NSMutableURLRequest *mrequest;
+    if ([request isKindOfClass:[NSMutableURLRequest class]]) {
+        mrequest = (NSMutableURLRequest *)request;
+    } else {
+        mrequest = [request mutableCopy];
+    }
+    request.ezd_fromNative = [request valueForHTTPHeaderField:kEZDURLRequestFromNative].boolValue;
+    [mrequest setValue:nil forHTTPHeaderField:kEZDURLRequestFromNative];
+    request = mrequest;
+    
     return [super initWithRequest:request cachedResponse:cachedResponse client:client];
 }
 
 
 - (void)startLoading {
     NSMutableURLRequest *mrequest = [self.request mutableCopy];
+    //  把这个 request 标记为 APM 发起的request，防止新创建的task将其reuqest主动标记为fromNative
+    mrequest.ezd_fromEZDAPM = YES;
+    mrequest.ezd_fromNative = self.request.ezd_fromNative;
 
     [NSURLProtocol setProperty:@(YES) forKey:EZDAPMURLProtocolHandledKey inRequest:mrequest];
 
-    if ([UIDevice currentDevice].systemVersion.floatValue >=7.0) {
-        _task = [EZDAPMSessionManager dataTaskWithRequest:mrequest delegate:self];
-        [_task resume];
-    } else {
-        _connection = [[NSURLConnection alloc] initWithRequest:mrequest delegate:self startImmediately:YES];
-    }
-
+    _task = [EZDAPMSessionManager dataTaskWithRequest:mrequest delegate:self];
+    [_task resume];
 }
 
 - (void)stopLoading{
@@ -134,11 +148,11 @@
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
     [[self client] URLProtocol:self didLoadData:data];
     //  Try to get post body.
-    NSData *requestBody = dataTask.originalRequest.HTTPBody;
+    NSData *requestBody = self.request.HTTPBody;
     requestBody = requestBody ? requestBody : [NSData data];
     id param = [[NSString alloc] initWithData:requestBody encoding:NSUTF8StringEncoding];
     id response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    EZDRecordNetRequest(dataTask.currentRequest, param, response);
+    EZDRecordNetRequest(self.request, param, response);
 }
 
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{

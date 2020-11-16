@@ -30,7 +30,7 @@ void _EZDLog(NSString *format,...) {
     
     //  record to Eazydebug
     NSString *callfrom = ezd_methodCallInfo();
-    EZDRecordEvent(@"NSLog", str, (@{@"log":str, @"from":callfrom}), 0);
+    EZDRecordEvent(kEZDConsoleType, str, (@{@"log":str, @"from":callfrom}), 0);
 }
 
 NSString* ezd_methodCallInfo() {

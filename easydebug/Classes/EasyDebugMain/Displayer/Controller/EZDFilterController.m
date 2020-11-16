@@ -63,6 +63,7 @@
     [self.view addSubview:self.scrollV];
     [self.scrollV addSubview:self.inputField];
     
+    //  If which filter item not contain in typeNames, it is from user input.
     [[self.logger.filterItem filterItems] enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (![[EZDFilter typeNames] containsObject:obj]) {
             self.inputField.text = obj;
@@ -84,7 +85,7 @@
         [btn addTarget:self action:@selector(typeNameBtnClicked:) forControlEvents:(UIControlEventTouchUpInside)];
 
         btn.frame = CGRectMake(18, maxY + 18, btnW, 24);
-        NSString *title = self.logger.logConfig[obj];
+        NSString *title = obj;
         if (!title.length) {
             title = obj;
         }

@@ -10,9 +10,12 @@
 
 typedef enum : NSUInteger {
     //  Log
+    EZDMenuAllLog,
     EZDMenuNetworkLog,
     EZDMenuConsoleLog,
     EZDMenuAppInfoLog,
+    EZDMenuWebviewLoadURLLog,
+    EZDMenuWebviewRequestLog,
     EZDMenuClearalllog,
     //  APM
     EZDMenuAllAPMInfo,

@@ -9,11 +9,16 @@
 #import "EZDMenuViewController.h"
 
 #import "EZDLogListController.h"
+#import "EZDOptionsController.h"
 
 #import "EZDMenuViewCollectionViewCell.h"
 #import "EZDMenuTitleHeaderView.h"
+#import "EZDMessageHUD.h"
+
+#import "EasyDebug.h"
 
 #import "EZDMenuInfoModel.h"
+#import "EZDFilter.h"
 
 #import "UIView+EZDAddition_frame.h"
 
@@ -46,13 +51,19 @@
 - (void)setupUI {
     self.view.backgroundColor = [UIColor whiteColor];
     
+    UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemCancel) target:self action:@selector(navCancelClicked)];
+    self.navigationItem.leftBarButtonItems = @[cancelItem];
+
     self.menuInfos = @[
         @{
             @"title":@"Logs",
             @"menu":@[
-                    [[EZDMenuInfoModel alloc] initWithTitle:@"Network Log" type:(EZDMenuNetworkLog)],
-                    [[EZDMenuInfoModel alloc] initWithTitle:@"Console Log" type:(EZDMenuConsoleLog)],
-                    [[EZDMenuInfoModel alloc] initWithTitle:@"AppInfo Log" type:(EZDMenuAppInfoLog)],
+                    [[EZDMenuInfoModel alloc] initWithTitle:@"All Log" type:(EZDMenuAllLog)],
+                    [[EZDMenuInfoModel alloc] initWithTitle:kEZDNetRequestType type:(EZDMenuNetworkLog)],
+                    [[EZDMenuInfoModel alloc] initWithTitle:kEZDConsoleType type:(EZDMenuConsoleLog)],
+                    [[EZDMenuInfoModel alloc] initWithTitle:kEZDAppInfoType type:(EZDMenuAppInfoLog)],
+                    [[EZDMenuInfoModel alloc] initWithTitle:kEZDWebviewLoadURLType type:(EZDMenuAppInfoLog)],
+                    [[EZDMenuInfoModel alloc] initWithTitle:kEZDWebviewRequestType type:(EZDMenuAppInfoLog)],
                     [[EZDMenuInfoModel alloc] initWithTitle:@"Clear all log" type:(EZDMenuClearalllog)],
         ]},
         
@@ -88,6 +99,11 @@
     [self.view addSubview:self.collectionView];
 }
 
+#pragma mark - response func
+- (void)navCancelClicked{
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.menuInfos.count;
@@ -116,17 +132,17 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     EZDMenuViewCollectionViewCell *cell = (EZDMenuViewCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    todo : generate sub logger
     switch (cell.model.menuType) {
             //  log
+        case EZDMenuAllLog:
+            [self.navigationController pushViewController:[[EZDLogListController alloc] initWithLogger:_logger] animated:YES];
+            break;
         case EZDMenuNetworkLog:
-            [self.navigationController pushViewController:[[EZDLogListController alloc] initWithLogger:_logger] animated:YES];
-            break;
         case EZDMenuConsoleLog:
-            [self.navigationController pushViewController:[[EZDLogListController alloc] initWithLogger:_logger] animated:YES];
-            break;
         case EZDMenuAppInfoLog:
-            [self.navigationController pushViewController:[[EZDLogListController alloc] initWithLogger:_logger] animated:YES];
+        case EZDMenuWebviewLoadURLLog:
+        case EZDMenuWebviewRequestLog:
+            [self openLogListWithLogType:cell.model.title];
             break;
         case EZDMenuClearalllog:
             [self.logger clearLogs];
@@ -137,11 +153,29 @@
             break;
             //  Other
         case EZDMenuDebugoptions:
-
+            [self openOption];
             break;
         default:
             break;
     }
+}
+
+#pragma mark - private func
+- (void)openLogListWithLogType:(NSString *)logType {
+    EZDFilter *filter = [[EZDFilter alloc] initWithName:logType];
+    [filter addFilterItemsObject:logType];
+    EZDLogger *subLogger = [self.logger subLogerWithFilterItem:filter];
+    [self.navigationController pushViewController:[[EZDLogListController alloc] initWithLogger:subLogger] animated:YES];
+}
+
+- (void)openOption{
+    if (![EZDOptions currentOptionInstance]) {
+        [EZDMessageHUD showMessageHUDWithText:@"No EZDOptions instance regiested ! use [Eazydebug regiestOptions:] to rigeist a instance and conform <EZDOptionProtocol> !" type:(EZDImageTypeError)];
+        return;
+    }
+    
+    EZDOptionsController *optionVC = [[EZDOptionsController alloc] initWithOptionInstace:[EZDOptions currentOptionInstance]];
+    [self.navigationController pushViewController:optionVC animated:true];
 }
 
 @end

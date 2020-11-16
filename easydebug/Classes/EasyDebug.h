@@ -6,20 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EZDConfig.h"
 #import "EZDOptions.h"
 #import "EZDDefine.h"
 
 #if EZDEBUG_DEBUGLOG
 #define EZDRecordNetRequest(request_,param_,response_) [EasyDebug recordNetRequestWithRequest:request_ parameter:param_ response:response_]
 #define EZDRecordEventTrack(trackerName_,eventName_,param_) [EasyDebug recordEventTrackWithEventTrackerName:trackerName_ eventName:eventName_ param:param_]
-#define EZDRecordWebviewRequest(request_) [EasyDebug recordWebviewRequest:request_]
+#define EZDRecordWebviewLoadURL(request_) [EasyDebug recordWebviewLoadURL:request_]
 #define EZDRecordJSMessage(messageBody_) [EasyDebug recordJSMessageWithMessage:messageBody_]
 #define EZDRecordEvent(typeName_,abstractString_,parameter_,timeStamp_) [EasyDebug recordEventWithTypeName:typeName_ abstractString:abstractString_ parameter:parameter_ timeStamp:timeStamp_]
 #else
 #define EZDRecordNetRequest(request_,param_,response_) nil
 #define EZDRecordEventTrack(trackerName_,eventName_,param_) nil
-#define EZDRecordWebviewRequest(request_) nil
+#define EZDRecordWebviewLoadURL(request_) nil
 #define EZDRecordJSMessage(message_) nil
 #define EZDRecordEvent(typeName_,abstractString_,parameter_,timeStamp_) nil
 #endif
@@ -27,10 +26,16 @@
 @class EZDDisplayer;
 @class EZDLogger;
 
-static NSString * const kEZDNetRequestType = @"kEZDNetRequestType";
-static NSString * const kEZDEventTrackType = @"kEZDEventTrackType";
-static NSString * const kEZDWebviewRequestType = @"kEZDWebviewRequestType";
-static NSString * const kEZDJSMessageType = @"kEZDJSMessageType";
+
+static NSString * const kEZDNetRequestType = @"[Net request log]";
+static NSString * const kEZDConsoleType = @"[Console log]";
+static NSString * const kEZDAppInfoType = @"[App info log]";
+static NSString * const kEZDEventTrackType = @"[Event track log]";
+///  Webview加载了什么页面（URL）
+static NSString * const kEZDWebviewLoadURLType = @"[Webview load URL log]";
+///  Webview发出的所有请求(html/JS/image/css/...)
+static NSString * const kEZDWebviewRequestType = @"[Webview request log]";
+static NSString * const kEZDJSMessageType = @"[JS Message log]";
 
 @class WKScriptMessage;
 
@@ -67,7 +72,7 @@ static NSString * const kEZDJSMessageType = @"kEZDJSMessageType";
 
  @param request -> the NSURLRequest instance
  */
-+ (void)recordWebviewRequest:(NSURLRequest *)request;
++ (void)recordWebviewLoadURL:(NSURLRequest *)request;
 
 /**
  Record a js message
@@ -87,7 +92,6 @@ static NSString * const kEZDJSMessageType = @"kEZDJSMessageType";
                       parameter:(NSDictionary *)parameter
                       timeStamp:(NSTimeInterval)timeStamp;
 
-+ (void)regiestConfig:(EZDConfig *)config;
 + (void)regiestOptions:(Class)optionHandleClass;
 
 @end

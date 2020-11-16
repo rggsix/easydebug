@@ -14,8 +14,9 @@
 #import "EasyDebug.h"
 
 #import "NSObject+EZDAddition.h"
+#import "NSURLRequest+EZDAddition.h"
 
-@interface EZDLogger ()
+@interface EZDLogger () <EZDLoggerDelegate>
 
 @property (strong,nonatomic) NSMutableArray<EZDLoggerModel *> *originLogs;
 @property (strong,nonatomic) NSHashTable *loggerDelegates;
@@ -30,15 +31,18 @@
         self.logModels = [[NSMutableArray alloc] init];
         self.originLogs = [[NSMutableArray alloc] init];
         self.loggerDelegates = [NSHashTable weakObjectsHashTable];
-        self.logConfig =  @{
-                            kEZDNetRequestType:@"Net request",
-                            kEZDEventTrackType:@"Event track",
-                            kEZDWebviewRequestType:@"Webview request",
-                            kEZDJSMessageType:@"JS message",
-                            };
         self.filterItem = [[EZDFilter alloc] initWithName:@"EZDLoggerDefaultFilter"];
     }
     return self;
+}
+
+- (EZDLogger *)subLogerWithFilterItem:(EZDFilter *)filterItem {
+    EZDLogger *nloger = [[EZDLogger alloc] init];
+    nloger.originLogs = [self logModelsWithFilter:filterItem];
+    nloger.filterItem = filterItem;
+    nloger.sourceLogger = self;
+    [self addDelegate:nloger];
+    return nloger;
 }
 
 #pragma mark - record funcs
@@ -51,7 +55,9 @@
                                 @"param":[self handleParamterWithParam:param request:request],
                                 @"response":responseDict,
                                 };
-    [self recordEventWithTypeName:kEZDNetRequestType abstractString:request.URL.absoluteString parameter:rparameter timeStamp:[[NSDate date] timeIntervalSince1970]];
+    
+    NSString *logType = request.ezd_fromNative ? kEZDNetRequestType : kEZDWebviewRequestType;
+    [self recordEventWithTypeName:logType abstractString:request.URL.absoluteString parameter:rparameter timeStamp:[[NSDate date] timeIntervalSince1970]];
 }
 
 - (void)recordEventTrackWithEventTrackerName:(NSString *)trackerName
@@ -66,7 +72,7 @@
     [self recordEventWithTypeName:kEZDEventTrackType abstractString:abStr parameter:rparameter timeStamp:[[NSDate date] timeIntervalSince1970]];
 }
 
-- (void)recordWebviewRequest:(NSURLRequest *)request{
+- (void)recordWebviewLoadURL:(NSURLRequest *)request{
     NSString *userAgent = [self.webV stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
     NSDictionary *requestParam = request.HTTPBody.length ? [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil] : @{};
     NSDictionary *rparameter = @{
@@ -75,7 +81,7 @@
                                  @"param":EZD_NotNullDict(requestParam),
                                  @"user-agent":EZD_NotNullString(userAgent),
                                  };
-    [self recordEventWithTypeName:kEZDWebviewRequestType abstractString:request.URL.absoluteString parameter:rparameter timeStamp:[[NSDate date] timeIntervalSince1970]];
+    [self recordEventWithTypeName:kEZDWebviewLoadURLType abstractString:request.URL.absoluteString parameter:rparameter timeStamp:[[NSDate date] timeIntervalSince1970]];
 }
 
 - (void)recordJSMessageWithMessage:(WKScriptMessage *)message{
@@ -96,7 +102,7 @@
     [EZDFilter regiestTypeName:typeName];
     
     EZDLoggerModel *model = [EZDLoggerModel modelWithTypeName:typeName abstractString:abstractString parameter:parameter timeStamp:timeStamp];
-    model.displayTypeName = self.logConfig[typeName];
+    model.displayTypeName = typeName;
     
     [self.originLogs addObject:model];
     if ([self.filterItem judgeLogModel:model]) {
@@ -111,17 +117,21 @@
     if (!self.filterItem.filterItems.count) {
         self.logModels = [self.originLogs mutableCopy];
     }else{
-        [self.logModels removeAllObjects];
-        [self.originLogs enumerateObjectsUsingBlock:^(EZDLoggerModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.filterItem judgeLogModel:obj] ? [self.logModels addObject:obj] : nil;
-        }];
+        self.logModels = [self logModelsWithFilter:self.filterItem];
     }
 }
 
 - (void)clearLogs{
+    ///  如果是sublogger做了clear，这些被删除的log也要从主logger同步移除
+    [self.sourceLogger clearLogsFromArray:self.originLogs];
     [self.logModels removeAllObjects];
     [self.originLogs removeAllObjects];
     [self callDelegateMethodWithMethod:@selector(logger:logsDidChange:) params:self,@[],nil];
+}
+
+- (void)clearLogsFromArray:(NSArray<EZDLoggerModel *> *)logs {
+    [self.originLogs removeObjectsInArray:logs];
+    [self updateLogModelsWithFilter];
 }
 
 #pragma mark - delegate funcs
@@ -141,6 +151,13 @@
 
 - (void)removeAllDelegates{
     [self.loggerDelegates removeAllObjects];
+}
+
+#pragma mark - EZDLoggerDelegate
+- (void)logger:(EZDLogger *)logger logsDidChange:(NSArray<EZDLoggerModel *> *)chageLogs {
+    [chageLogs enumerateObjectsUsingBlock:^(EZDLoggerModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self recordEventWithTypeName:obj.typeName abstractString:obj.abstractString parameter:obj.parameter timeStamp:obj.timeStamp];
+    }];
 }
 
 - (void)callDelegateMethodWithMethod:(SEL)selector params:(id)firstObj,...{
@@ -180,7 +197,20 @@
     return _webV;
 }
 
+- (void)setFilterItem:(EZDFilter *)filterItem {
+    _filterItem = filterItem;
+    [self updateLogModelsWithFilter];
+}
+
 #pragma mark - util func
+- (NSMutableArray<EZDLoggerModel *> *)logModelsWithFilter:(EZDFilter *)filter {
+    NSMutableArray<EZDLoggerModel *> *filteredLogs = [NSMutableArray arrayWithCapacity:self.originLogs.count];
+    [self.originLogs enumerateObjectsUsingBlock:^(EZDLoggerModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [filter judgeLogModel:obj] ? [filteredLogs addObject:obj] : nil;
+    }];
+    return filteredLogs;
+}
+
 + (NSDictionary *)errorResponseWithError:(NSError *)error {
     NSDictionary *userinfo = [[NSDictionary alloc] initWithDictionary:error.userInfo];
     

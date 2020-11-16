@@ -39,10 +39,6 @@ static EasyDebug *EasyDebugIns;
     return self;
 }
 
-+ (void)regiestConfig:(EZDConfig *)config{
-    [EasyDebug shareEasyDebug].defaultLogger.logConfig = config.loggerDisplayNameConfig;
-}
-
 + (void)regiestOptions:(Class)optionHandleClass{
    [EZDOptions regiestOptionInstace:optionHandleClass];
 }
@@ -72,9 +68,9 @@ static EasyDebug *EasyDebugIns;
     [ins.displayer.logger recordEventTrackWithEventTrackerName:trackerName eventName:eventName param:param];
 }
 
-+ (void)recordWebviewRequest:(NSURLRequest *)request{
++ (void)recordWebviewLoadURL:(NSURLRequest *)request{
     EasyDebug *ins = [self shareEasyDebug];
-    [ins.displayer.logger recordWebviewRequest:request];
+    [ins.displayer.logger recordWebviewLoadURL:request];
 }
 
 + (void)recordJSMessageWithMessage:(WKScriptMessage *)message{

@@ -25,11 +25,11 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7412E086255E703300368193 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 7412E084255E703200368193 /* fishhook.c */; };
 		7412E089255E72F300368193 /* EZDNSLogHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7412E088255E72F300368193 /* EZDNSLogHooker.m */; };
+		74600DB3256287080055ADA6 /* EZDTestWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74600DB2256287080055ADA6 /* EZDTestWebViewController.m */; };
 		748B6EDA2552C35C0098FD59 /* EZDFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4C2552C35B0098FD59 /* EZDFilter.m */; };
 		748B6EDB2552C35C0098FD59 /* EZDLoggerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4D2552C35B0098FD59 /* EZDLoggerModel.m */; };
 		748B6EDC2552C35C0098FD59 /* EZDOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4E2552C35B0098FD59 /* EZDOptions.m */; };
 		748B6EDD2552C35C0098FD59 /* EZDLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4F2552C35B0098FD59 /* EZDLogger.m */; };
-		748B6EDE2552C35C0098FD59 /* EZDConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E502552C35B0098FD59 /* EZDConfig.m */; };
 		748B6EDF2552C35C0098FD59 /* EZDOptionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E512552C35B0098FD59 /* EZDOptionItem.m */; };
 		748B6EE02552C35C0098FD59 /* NSDate+EZDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E572552C35B0098FD59 /* NSDate+EZDAddition.m */; };
 		748B6EE12552C35C0098FD59 /* UIView+EZDAddition_frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E592552C35B0098FD59 /* UIView+EZDAddition_frame.m */; };
@@ -78,6 +78,7 @@
 		74B9679D255E996A00166A1E /* EZDMenuViewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9679C255E996A00166A1E /* EZDMenuViewCollectionViewCell.m */; };
 		74B967A0255E9BA300166A1E /* EZDMenuInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9679F255E9BA300166A1E /* EZDMenuInfoModel.m */; };
 		74B967A3255EA36100166A1E /* EZDMenuTitleHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B967A2255EA36100166A1E /* EZDMenuTitleHeaderView.m */; };
+		74B967A625625A8D00166A1E /* NSURLSession+EZDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B967A525625A8D00166A1E /* NSURLSession+EZDAddition.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		9F433549298C14B2A434F554 /* libPods-easydebug_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABF760CBA37403ED8C6C0F5 /* libPods-easydebug_Tests.a */; };
 		F8D68D81381E0C18BE1442F9 /* libPods-easydebug_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E06057F31F689177BBD4BC1F /* libPods-easydebug_Example.a */; };
@@ -124,13 +125,13 @@
 		7412E085255E703300368193 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		7412E087255E72F300368193 /* EZDNSLogHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDNSLogHooker.h; sourceTree = "<group>"; };
 		7412E088255E72F300368193 /* EZDNSLogHooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDNSLogHooker.m; sourceTree = "<group>"; };
-		748B6E4A2552C35B0098FD59 /* EZDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDConfig.h; sourceTree = "<group>"; };
+		74600DB1256287080055ADA6 /* EZDTestWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDTestWebViewController.h; sourceTree = "<group>"; };
+		74600DB2256287080055ADA6 /* EZDTestWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDTestWebViewController.m; sourceTree = "<group>"; };
 		748B6E4B2552C35B0098FD59 /* EZDOptionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDOptionItem.h; sourceTree = "<group>"; };
 		748B6E4C2552C35B0098FD59 /* EZDFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDFilter.m; sourceTree = "<group>"; };
 		748B6E4D2552C35B0098FD59 /* EZDLoggerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDLoggerModel.m; sourceTree = "<group>"; };
 		748B6E4E2552C35B0098FD59 /* EZDOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDOptions.m; sourceTree = "<group>"; };
 		748B6E4F2552C35B0098FD59 /* EZDLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDLogger.m; sourceTree = "<group>"; };
-		748B6E502552C35B0098FD59 /* EZDConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDConfig.m; sourceTree = "<group>"; };
 		748B6E512552C35B0098FD59 /* EZDOptionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDOptionItem.m; sourceTree = "<group>"; };
 		748B6E522552C35B0098FD59 /* EZDLoggerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDLoggerModel.h; sourceTree = "<group>"; };
 		748B6E532552C35B0098FD59 /* EZDFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDFilter.h; sourceTree = "<group>"; };
@@ -248,6 +249,8 @@
 		74B9679F255E9BA300166A1E /* EZDMenuInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDMenuInfoModel.m; sourceTree = "<group>"; };
 		74B967A1255EA36100166A1E /* EZDMenuTitleHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDMenuTitleHeaderView.h; sourceTree = "<group>"; };
 		74B967A2255EA36100166A1E /* EZDMenuTitleHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDMenuTitleHeaderView.m; sourceTree = "<group>"; };
+		74B967A425625A8D00166A1E /* NSURLSession+EZDAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+EZDAddition.h"; sourceTree = "<group>"; };
+		74B967A525625A8D00166A1E /* NSURLSession+EZDAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+EZDAddition.m"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9ABF760CBA37403ED8C6C0F5 /* libPods-easydebug_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-easydebug_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA9ABF3C940E093F79FDB94 /* Pods-easydebug_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easydebug_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-easydebug_Tests/Pods-easydebug_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -349,6 +352,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* EZDViewController.h */,
 				6003F5A6195388D20070C39A /* EZDViewController.m */,
+				74600DB1256287080055ADA6 /* EZDTestWebViewController.h */,
+				74600DB2256287080055ADA6 /* EZDTestWebViewController.m */,
 				00DB7B802309CC75004C6DDE /* Helper */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -438,8 +443,6 @@
 		748B6E492552C35B0098FD59 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
-				748B6E4A2552C35B0098FD59 /* EZDConfig.h */,
-				748B6E502552C35B0098FD59 /* EZDConfig.m */,
 				748B6E4B2552C35B0098FD59 /* EZDOptionItem.h */,
 				748B6E512552C35B0098FD59 /* EZDOptionItem.m */,
 				748B6E532552C35B0098FD59 /* EZDFilter.h */,
@@ -459,14 +462,14 @@
 		748B6E562552C35B0098FD59 /* Categary */ = {
 			isa = PBXGroup;
 			children = (
+				748B6E5A2552C35B0098FD59 /* NSObject+EZDAddition.h */,
+				748B6E5E2552C35B0098FD59 /* NSObject+EZDAddition.m */,
+				748B6E5B2552C35B0098FD59 /* NSDate+EZDAddition.h */,
 				748B6E572552C35B0098FD59 /* NSDate+EZDAddition.m */,
 				748B6E582552C35B0098FD59 /* UIViewController+EZDAddition.h */,
-				748B6E592552C35B0098FD59 /* UIView+EZDAddition_frame.m */,
-				748B6E5A2552C35B0098FD59 /* NSObject+EZDAddition.h */,
-				748B6E5B2552C35B0098FD59 /* NSDate+EZDAddition.h */,
 				748B6E5C2552C35B0098FD59 /* UIViewController+EZDAddition.m */,
 				748B6E5D2552C35B0098FD59 /* UIView+EZDAddition_frame.h */,
-				748B6E5E2552C35B0098FD59 /* NSObject+EZDAddition.m */,
+				748B6E592552C35B0098FD59 /* UIView+EZDAddition_frame.m */,
 			);
 			path = Categary;
 			sourceTree = "<group>";
@@ -613,11 +616,11 @@
 			isa = PBXGroup;
 			children = (
 				748B6EB12552C35B0098FD59 /* EZDReachability.h */,
-				748B6EB22552C35B0098FD59 /* EZDAPMUtil.m */,
-				748B6EB32552C35B0098FD59 /* EZDAPMHooker.m */,
 				748B6EB42552C35B0098FD59 /* EZDReachability.m */,
 				748B6EB52552C35B0098FD59 /* EZDAPMUtil.h */,
+				748B6EB22552C35B0098FD59 /* EZDAPMUtil.m */,
 				748B6EB62552C35B0098FD59 /* EZDAPMHooker.h */,
+				748B6EB32552C35B0098FD59 /* EZDAPMHooker.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -636,14 +639,16 @@
 		748B6EBD2552C35B0098FD59 /* Network Monitor */ = {
 			isa = PBXGroup;
 			children = (
+				748B6EC22552C35B0098FD59 /* EZDAPMSessionManager.h */,
 				748B6EBE2552C35B0098FD59 /* EZDAPMSessionManager.m */,
+				748B6EC32552C35B0098FD59 /* EZDURLSessionChallengeSender.h */,
 				748B6EBF2552C35B0098FD59 /* EZDURLSessionChallengeSender.m */,
 				748B6EC02552C35B0098FD59 /* EZDAPMHTTPProtocol.h */,
-				748B6EC12552C35B0098FD59 /* EZDAPMURLSchemeHandler.m */,
-				748B6EC22552C35B0098FD59 /* EZDAPMSessionManager.h */,
-				748B6EC32552C35B0098FD59 /* EZDURLSessionChallengeSender.h */,
-				748B6EC42552C35B0098FD59 /* EZDAPMURLSchemeHandler.h */,
 				748B6EC52552C35B0098FD59 /* EZDAPMHTTPProtocol.m */,
+				748B6EC42552C35B0098FD59 /* EZDAPMURLSchemeHandler.h */,
+				748B6EC12552C35B0098FD59 /* EZDAPMURLSchemeHandler.m */,
+				74B967A425625A8D00166A1E /* NSURLSession+EZDAddition.h */,
+				74B967A525625A8D00166A1E /* NSURLSession+EZDAddition.m */,
 				748B6F4C2554FB820098FD59 /* NSURLRequest+EZDAddition.h */,
 				748B6F4D2554FB820098FD59 /* NSURLRequest+EZDAddition.m */,
 			);
@@ -885,6 +890,7 @@
 				748B6EEE2552C35C0098FD59 /* EZDLogListController.m in Sources */,
 				748B6EF82552C35C0098FD59 /* EZDAPMBacktrace.m in Sources */,
 				748B6EF32552C35C0098FD59 /* EZDMessageHUD.m in Sources */,
+				74600DB3256287080055ADA6 /* EZDTestWebViewController.m in Sources */,
 				748B6EE42552C35C0098FD59 /* EZDSystemUtil.m in Sources */,
 				748B6EF52552C35C0098FD59 /* EZDAPMReportFormatter.m in Sources */,
 				6003F59E195388D20070C39A /* EZDAppDelegate.m in Sources */,
@@ -894,6 +900,7 @@
 				748B6EF22552C35C0098FD59 /* EZDOptionsCell.m in Sources */,
 				74B9679D255E996A00166A1E /* EZDMenuViewCollectionViewCell.m in Sources */,
 				748B6EFF2552C35C0098FD59 /* EZDClientAPM.m in Sources */,
+				74B967A625625A8D00166A1E /* NSURLSession+EZDAddition.m in Sources */,
 				748B6EE32552C35C0098FD59 /* NSObject+EZDAddition.m in Sources */,
 				748B6EDF2552C35C0098FD59 /* EZDOptionItem.m in Sources */,
 				6003F5A7195388D20070C39A /* EZDViewController.m in Sources */,
@@ -925,7 +932,6 @@
 				7412E089255E72F300368193 /* EZDNSLogHooker.m in Sources */,
 				000B74A7230A8C4D00A7F6C2 /* EZDOptionsExample.m in Sources */,
 				748B6EDD2552C35C0098FD59 /* EZDLogger.m in Sources */,
-				748B6EDE2552C35C0098FD59 /* EZDConfig.m in Sources */,
 				748B6EFA2552C35C0098FD59 /* EZDAPMUtil.m in Sources */,
 				748B6EEC2552C35C0098FD59 /* EZDOptionsController.m in Sources */,
 				748B6EE72552C35C0098FD59 /* EZDBaseURLNode.m in Sources */,

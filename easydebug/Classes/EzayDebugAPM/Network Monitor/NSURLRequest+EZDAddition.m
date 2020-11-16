@@ -9,15 +9,23 @@
 #import "NSURLRequest+EZDAddition.h"
 
 #import "EZDDefine.h"
+#import "EZDAPMHooker.h"
+
+#import <objc/runtime.h>
 
 @implementation NSURLRequest (EZDAddition)
 
-- (NSURLRequest *)ezd_getPostRequestWithBody {
-    return [[self ezd_getMutablePostRequestWithBody] copy];
+#pragma mark - public
+- (NSMutableURLRequest *)ezd_mutableCopy {
+    NSMutableURLRequest *nrequest = [self mutableCopy];
+    nrequest.ezd_fromEZDAPM = self.ezd_fromEZDAPM;
+    nrequest.ezd_fromNative = self.ezd_fromNative;
+    return nrequest;
 }
 
 - (NSMutableURLRequest *)ezd_getMutablePostRequestWithBody {
     NSMutableURLRequest *mtbR = [self mutableCopy];
+    mtbR.ezd_fromNative = self.ezd_fromNative;
     BOOL needConvert = [mtbR.HTTPMethod isEqual:@"POST"] && !self.HTTPBody;
     if (needConvert) {
         NSInteger maxLen = 1024;
@@ -42,6 +50,23 @@
         [stream close];
     }
     return mtbR;
+}
+
+#pragma mark - getter && setter
+- (BOOL)ezd_fromNative {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setEzd_fromNative:(BOOL)ezd_fromNative {
+    objc_setAssociatedObject(self, @selector(ezd_fromNative), @(ezd_fromNative), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)ezd_fromEZDAPM {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setEzd_fromEZDAPM:(BOOL)ezd_fromEZDAPM {
+    objc_setAssociatedObject(self, @selector(ezd_fromEZDAPM), @(ezd_fromEZDAPM), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

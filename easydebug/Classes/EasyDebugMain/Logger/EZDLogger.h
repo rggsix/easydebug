@@ -22,14 +22,16 @@
 @interface EZDLogger : NSObject
 
 @property (strong,nonatomic) NSMutableArray<EZDLoggerModel *> *logModels;
-@property (strong,nonatomic) NSDictionary *logConfig;
 @property (strong,nonatomic) EZDFilter *filterItem;
+@property (nonatomic, weak) EZDLogger *sourceLogger;
+
+- (EZDLogger *)subLogerWithFilterItem:(EZDFilter *)filterItem;
 
 - (void)recordNetRequestWithRequest:(NSURLRequest *)request parameter:(NSDictionary *)param response:(id)response;
 - (void)recordEventTrackWithEventTrackerName:(NSString *)trackerName
                                    eventName:(NSString *)eventName
                                        param:(NSDictionary *)param;
-- (void)recordWebviewRequest:(NSURLRequest *)request;
+- (void)recordWebviewLoadURL:(NSURLRequest *)request;
 - (void)recordJSMessageWithMessage:(WKScriptMessage *)message;
 
 - (void)recordEventWithTypeName:(NSString *)typeName
