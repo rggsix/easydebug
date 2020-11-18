@@ -26,6 +26,7 @@
 		7412E086255E703300368193 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 7412E084255E703200368193 /* fishhook.c */; };
 		7412E089255E72F300368193 /* EZDNSLogHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7412E088255E72F300368193 /* EZDNSLogHooker.m */; };
 		74600DB3256287080055ADA6 /* EZDTestWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74600DB2256287080055ADA6 /* EZDTestWebViewController.m */; };
+		74688F242563AF0700606C5A /* WKWebView+EZDAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 74688F232563AF0700606C5A /* WKWebView+EZDAddition.m */; };
 		748B6EDA2552C35C0098FD59 /* EZDFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4C2552C35B0098FD59 /* EZDFilter.m */; };
 		748B6EDB2552C35C0098FD59 /* EZDLoggerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4D2552C35B0098FD59 /* EZDLoggerModel.m */; };
 		748B6EDC2552C35C0098FD59 /* EZDOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6E4E2552C35B0098FD59 /* EZDOptions.m */; };
@@ -64,7 +65,6 @@
 		748B6EFF2552C35C0098FD59 /* EZDClientAPM.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6EBC2552C35B0098FD59 /* EZDClientAPM.m */; };
 		748B6F002552C35C0098FD59 /* EZDAPMSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6EBE2552C35B0098FD59 /* EZDAPMSessionManager.m */; };
 		748B6F012552C35C0098FD59 /* EZDURLSessionChallengeSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6EBF2552C35B0098FD59 /* EZDURLSessionChallengeSender.m */; };
-		748B6F022552C35C0098FD59 /* EZDAPMURLSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6EC12552C35B0098FD59 /* EZDAPMURLSchemeHandler.m */; };
 		748B6F032552C35C0098FD59 /* EZDAPMHTTPProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6EC52552C35B0098FD59 /* EZDAPMHTTPProtocol.m */; };
 		748B6F0E2552C35C0098FD59 /* EasyDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 748B6ED52552C35C0098FD59 /* EasyDebug.m */; };
 		748B6F0F2552C35C0098FD59 /* easydebug.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 748B6ED72552C35C0098FD59 /* easydebug.podspec */; };
@@ -127,6 +127,8 @@
 		7412E088255E72F300368193 /* EZDNSLogHooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDNSLogHooker.m; sourceTree = "<group>"; };
 		74600DB1256287080055ADA6 /* EZDTestWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDTestWebViewController.h; sourceTree = "<group>"; };
 		74600DB2256287080055ADA6 /* EZDTestWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDTestWebViewController.m; sourceTree = "<group>"; };
+		74688F222563AF0700606C5A /* WKWebView+EZDAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+EZDAddition.h"; sourceTree = "<group>"; };
+		74688F232563AF0700606C5A /* WKWebView+EZDAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+EZDAddition.m"; sourceTree = "<group>"; };
 		748B6E4B2552C35B0098FD59 /* EZDOptionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDOptionItem.h; sourceTree = "<group>"; };
 		748B6E4C2552C35B0098FD59 /* EZDFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDFilter.m; sourceTree = "<group>"; };
 		748B6E4D2552C35B0098FD59 /* EZDLoggerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDLoggerModel.m; sourceTree = "<group>"; };
@@ -203,10 +205,8 @@
 		748B6EBE2552C35B0098FD59 /* EZDAPMSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMSessionManager.m; sourceTree = "<group>"; };
 		748B6EBF2552C35B0098FD59 /* EZDURLSessionChallengeSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDURLSessionChallengeSender.m; sourceTree = "<group>"; };
 		748B6EC02552C35B0098FD59 /* EZDAPMHTTPProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMHTTPProtocol.h; sourceTree = "<group>"; };
-		748B6EC12552C35B0098FD59 /* EZDAPMURLSchemeHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMURLSchemeHandler.m; sourceTree = "<group>"; };
 		748B6EC22552C35B0098FD59 /* EZDAPMSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMSessionManager.h; sourceTree = "<group>"; };
 		748B6EC32552C35B0098FD59 /* EZDURLSessionChallengeSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDURLSessionChallengeSender.h; sourceTree = "<group>"; };
-		748B6EC42552C35B0098FD59 /* EZDAPMURLSchemeHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZDAPMURLSchemeHandler.h; sourceTree = "<group>"; };
 		748B6EC52552C35B0098FD59 /* EZDAPMHTTPProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZDAPMHTTPProtocol.m; sourceTree = "<group>"; };
 		748B6ED52552C35C0098FD59 /* EasyDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyDebug.m; sourceTree = "<group>"; };
 		748B6ED72552C35C0098FD59 /* easydebug.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = easydebug.podspec; sourceTree = "<group>"; };
@@ -592,13 +592,13 @@
 			isa = PBXGroup;
 			children = (
 				748B6E8D2552C35B0098FD59 /* BSBacktraceLogger.h */,
-				748B6E8E2552C35B0098FD59 /* EZDAPMBacktrace.h */,
-				748B6E8F2552C35B0098FD59 /* EZDAPMReportFormatter.m */,
-				748B6E902552C35B0098FD59 /* EZDAPMOperationRecorder.m */,
 				748B6E912552C35B0098FD59 /* BSBacktraceLogger.m */,
+				748B6E8E2552C35B0098FD59 /* EZDAPMBacktrace.h */,
 				748B6E922552C35B0098FD59 /* EZDAPMBacktrace.m */,
 				748B6E932552C35B0098FD59 /* EZDAPMReportFormatter.h */,
+				748B6E8F2552C35B0098FD59 /* EZDAPMReportFormatter.m */,
 				748B6E942552C35B0098FD59 /* EZDAPMOperationRecorder.h */,
+				748B6E902552C35B0098FD59 /* EZDAPMOperationRecorder.m */,
 			);
 			path = "Log Generate";
 			sourceTree = "<group>";
@@ -628,10 +628,10 @@
 		748B6EB72552C35B0098FD59 /* Hardware Monitor */ = {
 			isa = PBXGroup;
 			children = (
-				748B6EB82552C35B0098FD59 /* EZDAPMFPSMonitor.m */,
-				748B6EB92552C35B0098FD59 /* EZDAPMDeviceConsumptionMonitor.m */,
 				748B6EBA2552C35B0098FD59 /* EZDAPMFPSMonitor.h */,
+				748B6EB82552C35B0098FD59 /* EZDAPMFPSMonitor.m */,
 				748B6EBB2552C35B0098FD59 /* EZDAPMDeviceConsumptionMonitor.h */,
+				748B6EB92552C35B0098FD59 /* EZDAPMDeviceConsumptionMonitor.m */,
 			);
 			path = "Hardware Monitor";
 			sourceTree = "<group>";
@@ -645,12 +645,12 @@
 				748B6EBF2552C35B0098FD59 /* EZDURLSessionChallengeSender.m */,
 				748B6EC02552C35B0098FD59 /* EZDAPMHTTPProtocol.h */,
 				748B6EC52552C35B0098FD59 /* EZDAPMHTTPProtocol.m */,
-				748B6EC42552C35B0098FD59 /* EZDAPMURLSchemeHandler.h */,
-				748B6EC12552C35B0098FD59 /* EZDAPMURLSchemeHandler.m */,
 				74B967A425625A8D00166A1E /* NSURLSession+EZDAddition.h */,
 				74B967A525625A8D00166A1E /* NSURLSession+EZDAddition.m */,
 				748B6F4C2554FB820098FD59 /* NSURLRequest+EZDAddition.h */,
 				748B6F4D2554FB820098FD59 /* NSURLRequest+EZDAddition.m */,
+				74688F222563AF0700606C5A /* WKWebView+EZDAddition.h */,
+				74688F232563AF0700606C5A /* WKWebView+EZDAddition.m */,
 			);
 			path = "Network Monitor";
 			sourceTree = "<group>";
@@ -894,7 +894,6 @@
 				748B6EE42552C35C0098FD59 /* EZDSystemUtil.m in Sources */,
 				748B6EF52552C35C0098FD59 /* EZDAPMReportFormatter.m in Sources */,
 				6003F59E195388D20070C39A /* EZDAppDelegate.m in Sources */,
-				748B6F022552C35C0098FD59 /* EZDAPMURLSchemeHandler.m in Sources */,
 				748B6EE12552C35C0098FD59 /* UIView+EZDAddition_frame.m in Sources */,
 				748B6EFB2552C35C0098FD59 /* EZDAPMHooker.m in Sources */,
 				748B6EF22552C35C0098FD59 /* EZDOptionsCell.m in Sources */,
@@ -936,6 +935,7 @@
 				748B6EEC2552C35C0098FD59 /* EZDOptionsController.m in Sources */,
 				748B6EE72552C35C0098FD59 /* EZDBaseURLNode.m in Sources */,
 				74B967A0255E9BA300166A1E /* EZDMenuInfoModel.m in Sources */,
+				74688F242563AF0700606C5A /* WKWebView+EZDAddition.m in Sources */,
 				748B6EFD2552C35C0098FD59 /* EZDAPMFPSMonitor.m in Sources */,
 				748B6EEF2552C35C0098FD59 /* EZDFilterController.m in Sources */,
 				748B6EEA2552C35C0098FD59 /* EZDDisplayer.m in Sources */,

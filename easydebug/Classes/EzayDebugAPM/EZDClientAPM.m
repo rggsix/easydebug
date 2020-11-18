@@ -15,7 +15,6 @@
 #import "EZDAPMDeviceConsumptionMonitor.h"
 #import "EZDAPMFPSMonitor.h"
 #import "EZDAPMHTTPProtocol.h"
-#import "EZDAPMURLSchemeHandler.h"
 
 @interface EZDClientAPM ()<EZDAPMOperationRecorderDelegate>
 
@@ -41,9 +40,7 @@
     [EZDAPMHTTPProtocol setupHTTPProtocol];
     [EZDAPMFPSMonitor startFPSMonitoring];
     [EZDAPMDeviceConsumptionMonitor startMonitoring];
-    #ifdef __IPHONE_11_0
-    [EZDAPMURLSchemeHandler startMonitoring];
-    #endif
+    [EZDAPMHTTPProtocol WKWebViewNetworkMonitoring:YES];
 #endif
 }
 

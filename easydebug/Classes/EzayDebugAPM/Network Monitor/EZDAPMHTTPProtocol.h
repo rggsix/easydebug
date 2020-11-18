@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EZDAPMHTTPProtocol : NSURLProtocol
 
 + (void)setupHTTPProtocol;
++ (void)WKWebViewNetworkMonitoring:(BOOL)open;
 
 @end
 

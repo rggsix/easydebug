@@ -17,6 +17,8 @@
 
 #import "NSURLRequest+EZDAddition.h"
 
+static BOOL kEZDWKWebViewNetworkHook = NO;
+
 @interface NSURLSessionConfiguration (EZDAPMHook)
 
 + (void)setEZDURLSessionProtocolEnabled:(BOOL)enabled forSessionConfiguration:(NSURLSessionConfiguration *)configuration;
@@ -66,7 +68,16 @@
     [NSURLProtocol registerClass:[EZDAPMHTTPProtocol class]];
 }
 
++ (void)WKWebViewNetworkMonitoring:(BOOL)open {
+    kEZDWKWebViewNetworkHook = open;
+}
+
 + (BOOL)canInitWithRequest:(NSURLRequest *)request{
+    if (!request.ezd_fromNative && !kEZDWKWebViewNetworkHook) {
+        //   未开启webview监听，不处理来自非native的请求
+        return NO;
+    }
+    
     if ([[NSURLProtocol propertyForKey:EZDAPMURLProtocolHandledKey inRequest:request] boolValue]) {
         return false;
     }
