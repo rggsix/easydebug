@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EasyDebugTool'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'debug tool for iOS develop.'
 
   s.description      = <<-DESC
