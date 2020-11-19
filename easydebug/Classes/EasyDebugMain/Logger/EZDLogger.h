@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "EZDLoggerModel.h"
 #import "EZDFilter.h"
+#import "EasyDebug.h"
 
 @class WKScriptMessage;
 
@@ -28,6 +29,7 @@
 - (EZDLogger *)subLogerWithFilterItem:(EZDFilter *)filterItem;
 
 - (void)recordNetRequestWithRequest:(NSURLRequest *)request parameter:(NSDictionary *)param response:(id)response;
+- (void)recordBusinessLogicWithTag:(NSString *)tag level:(kEZDLogLevel)level param:(NSDictionary *)param log:(NSString *)log,...;
 - (void)recordEventTrackWithEventTrackerName:(NSString *)trackerName
                                    eventName:(NSString *)eventName
                                        param:(NSDictionary *)param;

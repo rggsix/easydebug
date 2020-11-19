@@ -11,7 +11,7 @@
 #import <objc/runtime.h>
 
 #import "EZDDefine.h"
-#import "EasyDebug.h"
+#import "EazyDebug+Private.h"
 
 #import "NSObject+EZDAddition.h"
 #import "NSURLRequest+EZDAddition.h"
@@ -27,6 +27,7 @@
 @implementation EZDLogger
 
 - (instancetype)init{
+#if EZDEBUG_DEBUGLOG
     if (self = [super init]) {
         self.logModels = [[NSMutableArray alloc] init];
         self.originLogs = [[NSMutableArray alloc] init];
@@ -34,15 +35,22 @@
         self.filterItem = [[EZDFilter alloc] initWithName:@"EZDLoggerDefaultFilter"];
     }
     return self;
+#else
+    return nil;
+#endif
 }
 
 - (EZDLogger *)subLogerWithFilterItem:(EZDFilter *)filterItem {
+#if EZDEBUG_DEBUGLOG
     EZDLogger *nloger = [[EZDLogger alloc] init];
     nloger.originLogs = [self logModelsWithFilter:filterItem];
     nloger.filterItem = filterItem;
     nloger.sourceLogger = self;
     [self addDelegate:nloger];
     return nloger;
+#else
+    return nil;
+#endif
 }
 
 #pragma mark - record funcs
@@ -72,6 +80,22 @@
     [self recordEventWithTypeName:kEZDEventTrackType abstractString:abStr parameter:rparameter timeStamp:[[NSDate date] timeIntervalSince1970]];
 }
 
+- (void)recordBusinessLogicWithTag:(NSString *)tag level:(kEZDLogLevel)level param:(NSDictionary *)param log:(NSString *)log, ... {
+    va_list va;
+    va_start(va, log);
+    NSString *str = [[NSString alloc] initWithFormat:log arguments:va];
+    va_end(va);
+    
+    NSDictionary *rparameter = @{
+        @"log":str,
+        @"tag":EZD_NotNullString(tag),
+        @"level":EZD_NotNullString(level),
+        @"param":EZD_NotNullDict(param),
+    };
+    
+    [self recordEventWithTypeName:kEZDBusinessLogicType abstractString:log parameter:rparameter timeStamp:[[NSDate date] timeIntervalSince1970]];
+}
+
 - (void)recordWebviewLoadURL:(NSURLRequest *)request{
     NSString *userAgent = [self.webV stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
     NSDictionary *requestParam = request.HTTPBody.length ? [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:0 error:nil] : @{};
@@ -85,7 +109,6 @@
 }
 
 - (void)recordJSMessageWithMessage:(WKScriptMessage *)message{
-#if EZDEBUG_DEBUGLOG
     NSString *abStr = EZD_NotNullString(message.name);
     NSString *userAgent = [self.webV stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
     NSDictionary *rparameter = @{
@@ -109,7 +132,6 @@
         [self.logModels addObject:model];
         [self callDelegateMethodWithMethod:@selector(logger:logsDidChange:) params:self,@[model],nil];
     }
-#endif
 }
 
 - (void)updateLogModelsWithFilter{

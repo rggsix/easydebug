@@ -15,8 +15,10 @@
 @implementation NSURLSession (EZDAddition)
 
 + (void)load {
+#if EZD_APM
     [EZDAPMHooker exchangeOriginMethod:@selector(dataTaskWithRequest:completionHandler:) newMethod:@selector(ezd_dataTaskWithRequest:completionHandler:) mclass:[NSURLSession class]];
     [EZDAPMHooker exchangeOriginMethod:@selector(dataTaskWithRequest:) newMethod:@selector(ezd_dataTaskWithRequest:) mclass:[NSURLSession class]];
+#endif
 }
 
 - (NSURLSessionDataTask *)ezd_dataTaskWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))completionHandler {

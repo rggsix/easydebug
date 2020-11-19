@@ -27,6 +27,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 TBD :
 - 设备信息
+- 中控台
+- 热更新实时调试
+- ELK
 - [AOP] WKWebview页面浏览记录log
 - [AOP] WKWebview JS Message log
 - [AOP] Crash log
@@ -51,14 +54,14 @@ EasyDebugTool 在debug环境会自动运行，无需执行任何代码。
 如果你需要一些进阶性的功能，才需要导入部分头文件，比如："Debug Options"、打点信息记录等。
 
 ### Debug log
-EZDRecord<Type>方法是用于记录log的， 但是EazyDebugTool 采用AOP形式，通常情况下，你不需要调用任何record方法。 只在某些特殊情况（比如记录打点）时才可能需要用到EazyDebug的记录方法。
+[EasyDebug record...]方法是用于记录log的， 但是EazyDebugTool 采用AOP形式，通常情况下，你不需要调用任何record方法。 只在某些特殊情况（比如记录打点、业务逻辑）时才可能需要用到EazyDebug的记录方法。
 
 ```Objective-C
 #import <EasyDebug.h> 
-EZDRecordEvent(@"Event Type", 
-                    @"abstractString, like:request.URL.absoluteString", 
-                    Event parameter, 
-                    timestamp(0 for now));
+[EasyDebug recordEventWithTypeName:@"EventType" 
+                    abstractString:@"abstractString, like:request.URL.absoluteString" 
+                         parameter:@{@"key":value} 
+                         timeStamp:timestamp(0 for now)];
 ``` 
 
 ### Debug Options

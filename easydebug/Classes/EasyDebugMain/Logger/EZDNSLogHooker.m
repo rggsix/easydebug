@@ -11,11 +11,16 @@
 #import "fishhook.h"
 
 #import "EasyDebug.h"
+#import "EazyDebug+Private.h"
 
 #include <libkern/OSAtomic.h>
 #include <execinfo.h>
 
+static NSArray<kEZDLogLevel> *ezd_logRefuseLevels = nil;
+
 @implementation EZDNSLogHooker
+
+#if EZDEBUG_DEBUGLOG
 
 ///  orgin NSLog
 static void (*ezd_origin_NSLog)(NSString *format,...);
@@ -30,7 +35,7 @@ void _EZDLog(NSString *format,...) {
     
     //  record to Eazydebug
     NSString *callfrom = ezd_methodCallInfo();
-    EZDRecordEvent(kEZDConsoleType, str, (@{@"log":str, @"from":callfrom}), 0);
+    [EasyDebug recordEventWithTypeName:kEZDConsoleType abstractString:str parameter:@{@"log":str, @"from":callfrom} timeStamp:0];
 }
 
 NSString* ezd_methodCallInfo() {
@@ -69,5 +74,25 @@ NSString* ezd_methodCallInfo() {
         rebind_symbols(rebinds, 1);
     });
 }
+
++ (void)setLogLevel:(NSString *)level {
+    NSArray<kEZDLogLevel> *levels = @[
+        kEZDLogLevelDebug,
+        kEZDLogLevelInfo,
+        kEZDLogLevelWarning,
+        kEZDLogLevelError,
+        kEZDLogLevelFatal
+    ];
+    
+    NSInteger index = [levels indexOfObject:level];
+    ezd_logRefuseLevels = [levels subarrayWithRange:NSMakeRange(0, index)];
+}
+
+#else
+
++ (void)hookNSLog {}
++ (void)setLogLevel:(NSString *)level {}
+
+#endif
 
 @end

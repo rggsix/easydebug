@@ -9,89 +9,57 @@
 #import "EZDOptions.h"
 #import "EZDDefine.h"
 
-#if EZDEBUG_DEBUGLOG
-#define EZDRecordNetRequest(request_,param_,response_) [EasyDebug recordNetRequestWithRequest:request_ parameter:param_ response:response_]
-#define EZDRecordEventTrack(trackerName_,eventName_,param_) [EasyDebug recordEventTrackWithEventTrackerName:trackerName_ eventName:eventName_ param:param_]
-#define EZDRecordWebviewLoadURL(request_) [EasyDebug recordWebviewLoadURL:request_]
-#define EZDRecordJSMessage(messageBody_) [EasyDebug recordJSMessageWithMessage:messageBody_]
-#define EZDRecordEvent(typeName_,abstractString_,parameter_,timeStamp_) [EasyDebug recordEventWithTypeName:typeName_ abstractString:abstractString_ parameter:parameter_ timeStamp:timeStamp_]
-#else
-#define EZDRecordNetRequest(request_,param_,response_) nil
-#define EZDRecordEventTrack(trackerName_,eventName_,param_) nil
-#define EZDRecordWebviewLoadURL(request_) nil
-#define EZDRecordJSMessage(message_) nil
-#define EZDRecordEvent(typeName_,abstractString_,parameter_,timeStamp_) nil
-#endif
-
 @class EZDDisplayer;
 @class EZDLogger;
 
+typedef NSString * _Nonnull const kEZDLogLevel;
 
-static NSString * const kEZDNetRequestType = @"[Net request log]";
-static NSString * const kEZDConsoleType = @"[Console log]";
-static NSString * const kEZDAppInfoType = @"[App info log]";
-static NSString * const kEZDEventTrackType = @"[Event track log]";
-///  Webview加载了什么页面（URL）
-static NSString * const kEZDWebviewLoadURLType = @"[Webview load URL log]";
-///  Webview发出的所有请求(html/JS/image/css/...)
-static NSString * const kEZDWebviewRequestType = @"[Webview request log]";
-static NSString * const kEZDJSMessageType = @"[JS Message log]";
+//  --------------  Log level  --------------
+///  DEBUG : 开发调试用的log
+static kEZDLogLevel kEZDLogLevelDebug = @"[D]";
+///  INFO : 程序的业务逻辑过程
+static kEZDLogLevel kEZDLogLevelInfo = @"[I]";
+///  WARN : 潜在问题，不影响运行
+static kEZDLogLevel kEZDLogLevelWarning = @"[W]";
+///  ERROR : 严重错误，不影响运行
+static kEZDLogLevel kEZDLogLevelError = @"[E]";
+///  FATAL : 已经影响运行，会导致crash
+static kEZDLogLevel kEZDLogLevelFatal = @"[F]";
 
-@class WKScriptMessage;
 
-@interface EasyDebug : NSObject
-
-@property (strong,nonatomic) EZDOptions *options;
-@property (strong,nonatomic) EZDDisplayer *displayer;
-@property (strong,nonatomic) EZDLogger *defaultLogger;
-
-+ (instancetype)shareEasyDebug;
+//  --------------  Log method  --------------
 
 /**
- Record a net request log
-
- @param request -> the NSURLRequest instance of network request
- @param param -> the Parameters of network request
- @param response -> pass NSError if request failed
+ 记录一个业务逻辑log
+ BLL : Bussiness logic layer
+ 
+ @param log log描述，不建议为空
  */
-+ (void)recordNetRequestWithRequest:(NSURLRequest *)request parameter:(NSDictionary *)param response:(id)response;
+void EZDBLLLog(NSString * _Nonnull log,...);
 
 /**
- Record a event track
-
- @param trackerName -> the name of the SDK or anything to distinguish the track type , such as "Amplitude"、"Adjust" and so on.
- @param eventName -> the name of event.
- @param param the -> parameters dictionary of event.
+ 记录一个业务逻辑log
+ 
+ @param tag log相关tag，方便进行过滤，如果无需要可以不写
+ @param level log等级，可为空，默认为Info等级
+ @param param log具体参数，可为空
+ @param log log描述，不建议为空
  */
-+ (void)recordEventTrackWithEventTrackerName:(NSString *)trackerName
-                                   eventName:(NSString *)eventName
-                                       param:(NSDictionary *)param;
+void EZDBLLLog_D(NSString * _Nullable tag,
+                 kEZDLogLevel level,
+                 NSDictionary *_Nullable param,
+                 NSString * _Nonnull log,...);
 
 /**
- Record a webview request
-
- @param request -> the NSURLRequest instance
+ 注册Debug option handler，这个类需要继承自 EZDOptions
+ @see EZDOptions
+ 
+ @param optionHandleClass -> 自定义的 debug option 类，自行在内部返回"optionItems"列表，并在didOperaionOptionCell:atRow:callback:中执行具体操作
+ 
  */
-+ (void)recordWebviewLoadURL:(NSURLRequest *)request;
+void EZDRegiestDebugOptions(Class _Nonnull optionHandleClass);
 
 /**
- Record a js message
+ 设置控制台显示的Log等级，低于这个等级的将不显示
  */
-+ (void)recordJSMessageWithMessage:(WKScriptMessage *)message;
-
-/**
- Record a log
-
- @param typeName -> The name of the log
- @param abstractString -> A short description of the log , just like "Net Request -> google" , or null .
- @param parameter -> The parameter of the log , such as @{ @"requestParam":@{...}, @"response":@{...} }, or any info want to record
- @param timeStamp -> Time of the log , if zero , default is [NSDate date].
- */
-+ (void)recordEventWithTypeName:(NSString *)typeName
-                 abstractString:(NSString *)abstractString
-                      parameter:(NSDictionary *)parameter
-                      timeStamp:(NSTimeInterval)timeStamp;
-
-+ (void)regiestOptions:(Class)optionHandleClass;
-
-@end
+void EZDSetConsoleDisplayLogLevel(kEZDLogLevel level);

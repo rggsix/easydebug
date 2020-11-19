@@ -10,6 +10,8 @@
 #import "EZDDisplayer.h"
 #import "EZDSystemUtil.h"
 
+#import "EazyDebug+Private.h"
+
 static EasyDebug *EasyDebugIns;
 
 @interface EasyDebug()
@@ -20,8 +22,6 @@ static EasyDebug *EasyDebugIns;
 
 @implementation EasyDebug
 
-
-
 #if EZDEBUG_DEBUGLOG
 + (void)load{
     [self shareEasyDebug];
@@ -31,16 +31,24 @@ static EasyDebug *EasyDebugIns;
 
 #pragma mark - init funcs
 - (instancetype)initWithWindow:(UIWindow *)window{
+#if EZDEBUG_DEBUGLOG
     if (self = [super init]) {
         self.displayer = [EZDDisplayer setupDisplayerWithWindow:window];
         self.defaultLogger = [[EZDLogger alloc] init];
         self.displayer.logger = self.defaultLogger;
     }
     return self;
+#else
+    return nil;
+#endif
 }
 
-+ (void)regiestOptions:(Class)optionHandleClass{
-   [EZDOptions regiestOptionInstace:optionHandleClass];
+void EZDRegiestDebugOptions(Class _Nonnull optionHandleClass) {
+    [EZDOptions regiestOptionInstace:optionHandleClass];
+}
+
+void EZDSetConsoleDisplayLogLevel(kEZDLogLevel level) {
+    
 }
 
 + (instancetype)shareEasyDebug{
@@ -56,16 +64,45 @@ static EasyDebug *EasyDebugIns;
 }
 
 #pragma mark - record funcs
-+ (void)recordNetRequestWithRequest:(NSURLRequest *)request parameter:(NSDictionary *)param response:(id)response{
-    EasyDebug *ins = [self shareEasyDebug];
-    [ins.displayer.logger recordNetRequestWithRequest:request parameter:param response:response];
-}
-
 + (void)recordEventTrackWithEventTrackerName:(NSString *)trackerName
                                    eventName:(NSString *)eventName
                                        param:(NSDictionary *)param{
     EasyDebug *ins = [self shareEasyDebug];
     [ins.displayer.logger recordEventTrackWithEventTrackerName:trackerName eventName:eventName param:param];
+}
+
+void EZDBLLLog(NSString * _Nonnull log,...) {
+#if EZDEBUG_DEBUGLOG
+    va_list va;
+    va_start(va, log);
+    NSString *str = [[NSString alloc] initWithFormat:log arguments:va];
+    va_end(va);
+
+    EZDBLLLog_D(nil,
+                kEZDLogLevelInfo,
+                nil,
+                str);
+#endif
+}
+
+void EZDBLLLog_D(NSString * _Nullable tag,
+                 kEZDLogLevel level,
+                 NSDictionary *_Nullable param,
+                 NSString * _Nonnull log,...) {
+#if EZDEBUG_DEBUGLOG
+    va_list va;
+    va_start(va, log);
+    NSString *str = [[NSString alloc] initWithFormat:log arguments:va];
+    va_end(va);
+    
+    EasyDebug *ins = [EasyDebug shareEasyDebug];
+    [ins.displayer.logger recordBusinessLogicWithTag:tag level:level param:param log:str];
+#endif
+}
+
++ (void)recordNetRequestWithRequest:(NSURLRequest *)request parameter:(NSDictionary *)param response:(id)response{
+    EasyDebug *ins = [self shareEasyDebug];
+    [ins.displayer.logger recordNetRequestWithRequest:request parameter:param response:response];
 }
 
 + (void)recordWebviewLoadURL:(NSURLRequest *)request{
@@ -79,10 +116,8 @@ static EasyDebug *EasyDebugIns;
 }
 
 + (void)recordEventWithTypeName:(NSString *)typeName abstractString:(NSString *)abstractString parameter:(NSDictionary *)parameter timeStamp:(NSTimeInterval)timeStamp{
-#if EZDEBUG_DEBUGLOG
     EasyDebug *ins = [self shareEasyDebug];
     [ins.displayer.logger recordEventWithTypeName:typeName abstractString:abstractString parameter:parameter timeStamp:timeStamp];
-#endif
 }
 
 @end

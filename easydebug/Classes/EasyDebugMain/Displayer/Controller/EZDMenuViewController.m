@@ -16,6 +16,7 @@
 #import "EZDMessageHUD.h"
 
 #import "EasyDebug.h"
+#import "EazyDebug+Private.h"
 
 #import "EZDMenuInfoModel.h"
 #import "EZDFilter.h"
@@ -82,7 +83,7 @@
     ];
     
     self.flowLayout = [UICollectionViewFlowLayout new];
-    self.flowLayout.itemSize = CGSizeMake(self.view.ezd_width * .4, self.view.ezd_width * .4);
+    self.flowLayout.itemSize = CGSizeMake(self.view.ezd_width * .4, self.view.ezd_width * .2);
     CGFloat horSecMar = self.view.ezd_width - self.flowLayout.itemSize.width * 2 - 10;
     horSecMar /= 2;
     self.flowLayout.sectionInset = UIEdgeInsetsMake(10, 20, 10, 20);

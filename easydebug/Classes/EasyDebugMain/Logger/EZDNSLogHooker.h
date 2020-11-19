@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EZDNSLogHooker : NSObject
 
 + (void)hookNSLog;
++ (void)setLogLevel:(NSString *)level;
 
 @end
 

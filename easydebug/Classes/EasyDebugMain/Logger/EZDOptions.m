@@ -15,16 +15,20 @@ static EZDOptions *ins = nil;
 
 + (instancetype)shareOptionInstance{
     static id options = nil;
+#if EZDEBUG_DEBUGLOG
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         options = [[self alloc] init];
     });
+#endif
     return options;
 }
 
 + (void)regiestOptionInstace:(Class)optionHandleClass{
+#if EZDEBUG_DEBUGLOG
     NSAssert([optionHandleClass isSubclassOfClass:[self class]], @"Option Instance must be subclass of [EZDOptions] !");
     ins = [[optionHandleClass alloc] init];
+#endif
 }
 
 + (instancetype)currentOptionInstance{

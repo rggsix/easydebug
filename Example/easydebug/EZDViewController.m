@@ -39,7 +39,7 @@
     [EZDClientAPM addLogObserver:self];
     
     //  regiest options class(if need)
-    [EasyDebug regiestOptions:[EZDOptionsExample class]];
+    EZDRegiestDebugOptions([EZDOptionsExample class]);
     
     [self setupUI];
     

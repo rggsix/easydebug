@@ -12,12 +12,14 @@
 
 @implementation WKWebView (EZDAddition)
 
+#if EZD_APM
 + (void)load{
     [EZDAPMHooker exchangeOriginMethod:NSSelectorFromString(@"initWithFrame:configuration:") newMethod:NSSelectorFromString(@"ezd_initWithFrame:configuration:") mclass:[WKWebView class]];
 }
+#endif
 
 - (instancetype)ezd_initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration *)config{
-#if DEBUG
+#if EZD_APM
     id _self = [self ezd_initWithFrame:frame configuration:config];
     NSString *bcc1 = @"browsing";
     NSString *bcc2 = @"Context";

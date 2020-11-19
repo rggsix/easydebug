@@ -119,14 +119,6 @@ static UIImage *EZDIconImage = nil;
         return;
     }
     
-    if (!self.curWindow) {
-        self.curWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        self.curWindow.backgroundColor = [UIColor redColor];
-        self.curWindow.windowLevel = UIWindowLevelAlert;
-        [self.curWindow makeKeyAndVisible];
-        [window makeKeyAndVisible];
-    }
-    
     self.curWindow = window;
     [self.curWindow addSubview:self.displayerSwitch];
     [self.curWindow addSubview:self.fpsLabel];
@@ -190,6 +182,8 @@ static UIImage *EZDIconImage = nil;
 
 #else
 + (instancetype)setupDisplayerWithWindow:(UIWindow *)window{return nil;}
++ (void)setToolIcon:(UIImage *)image {}
++ (void)showFPSLabel:(bool)show {}
 
 #endif
 

@@ -18,6 +18,7 @@
 @implementation EZDAPMHooker
 
 + (void)exchangeOriginMethod:(SEL)originSEL newMethod:(SEL)newSEL mclass:(Class)mclass{
+#if EZDEBUG_DEBUGLOG
     Method originalMethod = class_getInstanceMethod(mclass, originSEL);
     Method newMethod = class_getInstanceMethod(mclass, newSEL);
     
@@ -32,9 +33,12 @@
     } else {
         method_exchangeImplementations(originalMethod, newMethod);
     }
+#endif
 }
 
-+ (void)exchangeClassOriginMethod:(SEL)originSEL newMethod:(SEL)newSEL mclass:(Class)mclass{
++ (void)exchangeClassOriginMethod:(SEL)originSEL newMethod:(SEL)newSEL
+                           mclass:(Class)mclass{
+#if EZDEBUG_DEBUGLOG
     mclass = object_getClass(mclass);
     
     Method originalMethod = class_getClassMethod(mclass, originSEL);
@@ -51,26 +55,12 @@
     } else {
         method_exchangeImplementations(originalMethod, newMethod);
     }
+#endif
 }
 
 @end
 
 #if EZD_APM
-@implementation NSObject (EZDAPMHook)
-
-//- (void)ezdapm_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%ld",[self className],indexPath.item] operationType:EZDAPMOperationTableViewSelect];
-//
-//    [self ezdapm_tableView:tableView didSelectRowAtIndexPath:indexPath];
-//}
-//
-//- (void)ezdapm_collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%ld",[self className],indexPath.item] operationType:EZDAPMOperationCollectionViewSelect];
-//
-//    [self ezdapm_collectionView:collectionView didSelectItemAtIndexPath:indexPath];
-//}
-
-@end
 
 #pragma mark - Exchaged methods
 @implementation UIViewController (EZDAPMHook)
@@ -110,31 +100,39 @@
 
 @end
 
-//@implementation UITableView (EZDAPMHook)
-//
-//+ (void)load{
-//    [EZDAPMHooker exchangeOriginMethod:@selector(setDelegate:) newMethod:@selector(ezdapm_setDelegate:) mclass:[UITableView class]];
-//}
-//
-//- (void)ezdapm_setDelegate:(id<UITableViewDelegate>)delegate{
-//    [EZDAPMHooker exchangeOriginMethod:@selector(tableView:didSelectRowAtIndexPath:) newMethod:@selector(ezdapm_tableView:didSelectRowAtIndexPath:) mclass:[delegate class]];
-//    [self ezdapm_setDelegate:delegate];
-//}
-//
-//@end
-//
-//@implementation UICollectionView (EZDAPMHook)
-//
-//+ (void)load{
-//    [EZDAPMHooker exchangeOriginMethod:@selector(setDelegate:) newMethod:@selector(ezdapm_setDelegate:) mclass:[UICollectionView class]];
-//}
-//
-//- (void)ezdapm_setDelegate:(id<UITableViewDelegate>)delegate{
-//    [EZDAPMHooker exchangeOriginMethod:@selector(collectionView:didSelectItemAtIndexPath:) newMethod:@selector(ezdapm_collectionView:didSelectItemAtIndexPath:) mclass:[delegate class]];
-//    [self ezdapm_setDelegate:delegate];
-//}
-//
-//@end
+@implementation UITableView (EZDAPMHook)
+
++ (void)load{
+    NSString *selPart1 = @"_userSelectRowAtPending";
+    NSString *selPart2 = @"SelectionIndexPath:";
+    SEL selectMethod = NSSelectorFromString([NSString stringWithFormat:@"%@%@", selPart1, selPart2]);
+    [EZDAPMHooker exchangeOriginMethod:selectMethod newMethod:@selector(ezd_userSelectRowAtPendingSelectionIndexPath:) mclass:[UITableView class]];
+}
+
+- (void)ezd_userSelectRowAtPendingSelectionIndexPath:(NSIndexPath *)indexPath {
+    [self ezd_userSelectRowAtPendingSelectionIndexPath:indexPath];
+    UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
+    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@[i:%ld]=>%@", [EZDAPMUtil shareInstance].currentVCName,NSStringFromClass([cell class]), indexPath.row, @"tableViewSelectRow"] operationType:EZDAPMOperationClick  filePath:@""];
+}
+
+@end
+
+@implementation UICollectionView (EZDAPMHook)
+
++ (void)load{
+    NSString *selPart1 = @"_userSelectItem";
+    NSString *selPart2 = @"AtIndexPath:";
+    SEL selectMethod = NSSelectorFromString([NSString stringWithFormat:@"%@%@", selPart1, selPart2]);
+    [EZDAPMHooker exchangeOriginMethod:selectMethod newMethod:@selector(ezd_userSelectItemAtIndexPath:) mclass:[UICollectionView class]];
+}
+
+- (void)ezd_userSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self ezd_userSelectItemAtIndexPath:indexPath];
+    UICollectionViewCell *cell = [self cellForItemAtIndexPath:indexPath];
+    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@[i:%ld]=>%@", [EZDAPMUtil shareInstance].currentVCName, NSStringFromClass([cell class]), indexPath.row, @"collectionViewSelectRow"] operationType:EZDAPMOperationClick  filePath:@""];
+}
+
+@end
 
 @implementation UIControl (EZDAPMHook)
 
@@ -143,7 +141,7 @@
 }
 
 - (void)ezdapm_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event{
-    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@",NSStringFromClass([self class]), NSStringFromSelector(action)] operationType:EZDAPMOperationClick  filePath:@""];
+    [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@=>%@", [EZDAPMUtil shareInstance].currentVCName,NSStringFromClass([self class]), NSStringFromSelector(action)] operationType:EZDAPMOperationClick  filePath:@""];
     
     [self ezdapm_sendAction:action to:target forEvent:event];
 }
@@ -157,43 +155,32 @@
 
 @end
 
-@implementation UIView (EZDAPMHook)
-
-+ (void)load{
-    [EZDAPMHooker exchangeOriginMethod:@selector(addGestureRecognizer:) newMethod:@selector(ezdapm_addGestureRecognizer:) mclass:[UIView class]];
-}
-
-- (void)ezdapm_addGestureRecognizer:(UIGestureRecognizer *)ges{
-    if ([ges isKindOfClass:[UITapGestureRecognizer class]] ||
-        [ges isKindOfClass:[UILongPressGestureRecognizer class]] ||
-        [ges isKindOfClass:[UIPinchGestureRecognizer class]]) {
-        [ges addTarget:self action:@selector(ezdapm_responseGesture:)];
-    }
-    
-    [self ezdapm_addGestureRecognizer:ges];
-}
-
-- (void)ezdapm_responseGesture:(UIGestureRecognizer *)ges{
-    if (ges.state == UIGestureRecognizerStateBegan) {
-        [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@=>%@",[EZDAPMUtil shareInstance].currentVCName, NSStringFromClass([self class]), NSStringFromClass([ges class])] operationType:EZDAPMOperationGesBegin  filePath:@""];
-    }
-}
-
-@end
-
 @implementation UIGestureRecognizer (EZDAPMHook)
 
-+ (void)load{
-    [EZDAPMHooker exchangeOriginMethod:@selector(addTarget:action:) newMethod:@selector(ezdapm_addTarget:action:) mclass:[UIGestureRecognizer class]];
++ (void)load {
+    [EZDAPMHooker exchangeOriginMethod:@selector(initWithTarget:action:) newMethod:@selector(ezd_initWithTarget:action:) mclass:[UIGestureRecognizer class]];
+    [EZDAPMHooker exchangeOriginMethod:@selector(addTarget:action:) newMethod:@selector(ezd_addTarget:action:) mclass:[UIGestureRecognizer class]];
 }
 
-- (void)ezdapm_addTarget:(id)target action:(SEL)action{
-    if (![NSStringFromSelector(action) isEqualToString:@"trackGestureRecognizerAppClick:"] &&
-        [target isKindOfClass:[UIView class]]) {
-        [self ezdapm_addTarget:(UIView *)target action:@selector(ezdapm_responseGesture:)];
+- (void)ezd_trackGestureRecognizerAppClick:(UIGestureRecognizer *)ges {
+    if (ges.state == UIGestureRecognizerStateEnded) {
+        [EZDAPMOperationRecorder recordOperation:[NSString stringWithFormat:@"%@=>%@=>%@",[EZDAPMUtil shareInstance].currentVCName, NSStringFromClass([ges.view class]), NSStringFromClass([ges class])] operationType:EZDAPMOperationGesBegin  filePath:@""];
     }
-    
-    [self ezdapm_addTarget:target action:action];
+}
+
+- (instancetype)ezd_initWithTarget:(id)target action:(SEL)action {
+    [self ezd_initWithTarget:target action:action];
+    [self removeTarget:target action:action];
+    [self addTarget:target action:action];
+    return self;
+}
+
+- (void)ezd_addTarget:(id)target action:(SEL)action {
+    if ([self isKindOfClass:[UITapGestureRecognizer class]]
+        || [self isKindOfClass:[UILongPressGestureRecognizer class]]) {
+        [self ezd_addTarget:self action:@selector(ezd_trackGestureRecognizerAppClick:)];
+    }
+    [self ezd_addTarget:target action:action];
 }
 
 @end

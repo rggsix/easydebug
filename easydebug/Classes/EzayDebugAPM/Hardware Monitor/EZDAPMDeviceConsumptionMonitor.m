@@ -35,11 +35,14 @@ static int64_t EZDAPM_memTriggerStep = 50;
 @implementation EZDAPMDeviceConsumptionMonitor
 
 + (void)startMonitoring{
+#if EZD_APM
     [[self shareInstance] monitoring_start];
+#endif
 }
 
 + (instancetype)shareInstance{
     static EZDAPMDeviceConsumptionMonitor *ins = nil;
+#if EZD_APM
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         ins = [self new];
@@ -49,6 +52,7 @@ static int64_t EZDAPM_memTriggerStep = 50;
         ins.monitor_timer = [[NSTimer alloc] initWithFireDate:[NSDate distantFuture] interval:.1 target:ins selector:@selector(monitorTimer:) userInfo:nil repeats:true];
         ins.nextMemHighTriggerValue = EZDAPM_memMinTriggerValue;
     });
+#endif
     return ins;
 }
 
@@ -58,6 +62,7 @@ static int64_t EZDAPM_memTriggerStep = 50;
 }
 
 - (void)monitoring_start{
+#if EZD_APM
     dispatch_async(self.monitor_queue, ^{
         self.isSuspension = false;
         NSDate *curDate = [NSDate date];
@@ -71,6 +76,7 @@ static int64_t EZDAPM_memTriggerStep = 50;
     });
     
     [self startBatteryMonitoring];
+#endif
 }
 
 - (void)monitoring_pause{
@@ -89,6 +95,7 @@ static int64_t EZDAPM_memTriggerStep = 50;
 }
 
 - (void)startBatteryMonitoring{
+#if EZD_APM
     UIDevice *device = [UIDevice currentDevice];
     
     device.batteryMonitoringEnabled = YES;
@@ -96,6 +103,7 @@ static int64_t EZDAPM_memTriggerStep = 50;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryLevelChanged:) name:UIDeviceBatteryLevelDidChangeNotification object:device];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batteryStateChanged:) name:UIDeviceBatteryStateDidChangeNotification object:device];
+#endif
 }
 
 - (void)pauseBatteryMonitoring{

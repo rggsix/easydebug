@@ -9,7 +9,7 @@
 #import "EZDAPMHTTPProtocol.h"
 #import <objc/runtime.h>
 
-#import "EasyDebug.h"
+#import "EazyDebug+Private.h"
 #import "EZDAPMHooker.h"
 #import "EZDDefine.h"
 #import "EZDAPMSessionManager.h"
@@ -65,13 +65,18 @@ static BOOL kEZDWKWebViewNetworkHook = NO;
 @implementation EZDAPMHTTPProtocol
 
 + (void)setupHTTPProtocol{
+#if EZD_APM
     [NSURLProtocol registerClass:[EZDAPMHTTPProtocol class]];
+#endif
 }
 
 + (void)WKWebViewNetworkMonitoring:(BOOL)open {
+#if EZD_APM
     kEZDWKWebViewNetworkHook = open;
+#endif
 }
 
+#if EZD_APM
 + (BOOL)canInitWithRequest:(NSURLRequest *)request{
     if (!request.ezd_fromNative && !kEZDWKWebViewNetworkHook) {
         //   未开启webview监听，不处理来自非native的请求
@@ -163,7 +168,7 @@ static BOOL kEZDWKWebViewNetworkHook = NO;
     requestBody = requestBody ? requestBody : [NSData data];
     id param = [[NSString alloc] initWithData:requestBody encoding:NSUTF8StringEncoding];
     id response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    EZDRecordNetRequest(self.request, param, response);
+    [EasyDebug recordNetRequestWithRequest:self.request parameter:param response:response];
 }
 
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
@@ -188,6 +193,8 @@ static BOOL kEZDWKWebViewNetworkHook = NO;
         [[self client] URLProtocol:self wasRedirectedToRequest:request redirectResponse:response];
     }
 }
+
+#endif
 
 @end
 

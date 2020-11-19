@@ -38,11 +38,14 @@ static NSInteger stuckMonitorFrameCount = 3;
 @implementation EZDAPMFPSMonitor
 
 + (void)startFPSMonitoring{
+#if EZD_APM
     [[self shareInstance] monitoring_start];
+#endif
 }
 
 + (instancetype)shareInstance{
     static EZDAPMFPSMonitor *ins = nil;
+#if EZD_APM
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         ins = [self new];
@@ -55,6 +58,7 @@ static NSInteger stuckMonitorFrameCount = 3;
         ins.fps_queue = dispatch_queue_create([clsName cStringUsingEncoding:(NSUTF8StringEncoding)], DISPATCH_QUEUE_SERIAL);
         ins.fps_timer = [[NSTimer alloc] initWithFireDate:[NSDate distantFuture] interval:.1 target:ins selector:@selector(monitorTimer:) userInfo:nil repeats:true];
     });
+#endif
     return ins;
 }
 
@@ -66,6 +70,7 @@ static NSInteger stuckMonitorFrameCount = 3;
 }
 
 - (void)monitoring_start{
+#if EZD_APM
     self.displayLink.paused = false;
     
     dispatch_async(self.fps_queue, ^{
@@ -80,6 +85,7 @@ static NSInteger stuckMonitorFrameCount = 3;
         [runloop addTimer:self.fps_timer forMode:NSRunLoopCommonModes];
         [runloop run];
     });
+#endif
 }
 
 - (void)monitoring_pause{

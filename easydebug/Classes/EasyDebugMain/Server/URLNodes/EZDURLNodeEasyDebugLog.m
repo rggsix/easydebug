@@ -12,6 +12,8 @@
 #import "EZDDefine.h"
 #import "GCDWebServerRequest.h"
 
+#import "EazyDebug+Private.h"
+
 @implementation EZDURLNodeEasyDebugLog
 
 #if EZDDEBUG_SERVER_SUPPORT

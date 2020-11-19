@@ -26,12 +26,14 @@
 
 + (instancetype)shareInstance{
     static EZDClientAPM *ins = nil;
+#if EZD_APM
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         ins = [self new];
         ins.ezd_observers = [NSHashTable weakObjectsHashTable];
         [EZDAPMOperationRecorder shareInstance].delegate = ins;
     });
+#endif
     return ins;
 }
 
@@ -45,16 +47,20 @@
 }
 
 + (void)addLogObserver:(id<EZDClientAPMProtocol>)observer{
+#if EZD_APM
     EZDClientAPM *apm = [EZDClientAPM shareInstance];
     if ([observer conformsToProtocol:NSProtocolFromString(@"EZDClientAPMProtocol")]
         && ![apm.ezd_observers containsObject:observer]) {
         [apm.ezd_observers addObject:observer];
     }
+#endif
 }
 
 + (void)removeLogObserver:(id<EZDClientAPMProtocol>)observer{
+#if EZD_APM
     EZDClientAPM *apm = [EZDClientAPM shareInstance];
     [apm.ezd_observers removeObject:observer];
+#endif
 }
 
 #pragma mark - EZDAPMOperationRecorderDelegate

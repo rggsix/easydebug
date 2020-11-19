@@ -14,7 +14,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    EZDRecordEvent(kEZDAppInfoType, @"abstractString, like:[launchOptions description]", launchOptions, [[NSDate date] timeIntervalSince1970]);
 #if EZDEBUG_DEBUGLOG
     NSLog(@"EazyDebug on.");
 #endif

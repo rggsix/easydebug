@@ -125,6 +125,7 @@
 		7412E085255E703300368193 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		7412E087255E72F300368193 /* EZDNSLogHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDNSLogHooker.h; sourceTree = "<group>"; };
 		7412E088255E72F300368193 /* EZDNSLogHooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDNSLogHooker.m; sourceTree = "<group>"; };
+		74540A5B2566761D0025EFDE /* EazyDebug+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EazyDebug+Private.h"; sourceTree = "<group>"; };
 		74600DB1256287080055ADA6 /* EZDTestWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDTestWebViewController.h; sourceTree = "<group>"; };
 		74600DB2256287080055ADA6 /* EZDTestWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZDTestWebViewController.m; sourceTree = "<group>"; };
 		74688F222563AF0700606C5A /* WKWebView+EZDAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+EZDAddition.h"; sourceTree = "<group>"; };
@@ -418,6 +419,7 @@
 			children = (
 				748B6E892552C35B0098FD59 /* EasyDebug.h */,
 				748B6ED52552C35C0098FD59 /* EasyDebug.m */,
+				74540A5B2566761D0025EFDE /* EazyDebug+Private.h */,
 				748B6E952552C35B0098FD59 /* Framework */,
 				748B6E482552C35B0098FD59 /* EasyDebugMain */,
 				748B6E8A2552C35B0098FD59 /* EzayDebugAPM */,
@@ -486,13 +488,13 @@
 		748B6E622552C35B0098FD59 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				748B6E6B2552C35B0098FD59 /* EZDDebugServer.h */,
 				748B6E632552C35B0098FD59 /* EZDDebugServer.m */,
 				748B6E642552C35B0098FD59 /* EZDDebugServerHandler.h */,
-				748B6E652552C35B0098FD59 /* URLNodes */,
-				748B6E6A2552C35B0098FD59 /* EZDDebugServerResponse.m */,
-				748B6E6B2552C35B0098FD59 /* EZDDebugServer.h */,
 				748B6E6C2552C35B0098FD59 /* EZDDebugServerHandler.m */,
 				748B6E6D2552C35B0098FD59 /* EZDDebugServerResponse.h */,
+				748B6E6A2552C35B0098FD59 /* EZDDebugServerResponse.m */,
+				748B6E652552C35B0098FD59 /* URLNodes */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -579,10 +581,10 @@
 			isa = PBXGroup;
 			children = (
 				748B6E8B2552C35B0098FD59 /* EZDClientAPM.h */,
+				748B6EBC2552C35B0098FD59 /* EZDClientAPM.m */,
 				748B6E8C2552C35B0098FD59 /* Log Generate */,
 				748B6EB02552C35B0098FD59 /* Utils */,
 				748B6EB72552C35B0098FD59 /* Hardware Monitor */,
-				748B6EBC2552C35B0098FD59 /* EZDClientAPM.m */,
 				748B6EBD2552C35B0098FD59 /* Network Monitor */,
 			);
 			path = EzayDebugAPM;
