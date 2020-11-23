@@ -31,6 +31,20 @@ void _EZDLog(NSString *format,...) {
     va_start(va, format);
     NSString *str = [[NSString alloc] initWithFormat:format arguments:va];
     va_end(va);
+    
+    if (str.length < 4) {
+        //  不符合规范的Log
+        EZDBLLLog(@"%@", str);
+        return;
+    }
+    
+    NSString *levelStr = [str substringWithRange:NSMakeRange(0, 4)];
+    if (![levelStr hasPrefix:@"["] || ![levelStr hasSuffix:@"] "]) {
+        //  不符合规范的Log
+        EZDBLLLog(@"%@", str);
+        return;
+    }
+    
     ezd_origin_NSLog(str);
     
     //  record to Eazydebug
@@ -43,8 +57,8 @@ NSString* ezd_methodCallInfo() {
     int frames = backtrace(callstack, 128);
     char **strs = backtrace_symbols(callstack, frames);
     NSString *callInfo;
-    if (strs[2]) {
-        callInfo = [NSString stringWithUTF8String:strs[2]];
+    if (strs[3]) {
+        callInfo = [NSString stringWithUTF8String:strs[3]];
     }
 
     if ([callInfo containsString:@" -["]) {

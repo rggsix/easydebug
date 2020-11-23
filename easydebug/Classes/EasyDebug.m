@@ -95,8 +95,18 @@ void EZDBLLLog_D(NSString * _Nullable tag,
     NSString *str = [[NSString alloc] initWithFormat:log arguments:va];
     va_end(va);
     
+    kEZDLogLevel lg_level = level.length ? level : kEZDLogLevelInfo;
+    
     EasyDebug *ins = [EasyDebug shareEasyDebug];
-    [ins.displayer.logger recordBusinessLogicWithTag:tag level:level param:param log:str];
+    [ins.displayer.logger recordBusinessLogicWithTag:tag
+                                               level:lg_level
+                                               param:param
+                                                 log:str];
+    if (tag.length) {
+        NSLog(@"%@ <%@> %@", level, tag, str);
+    } else {
+        NSLog(@"%@ %@", level, str);
+    }
 #endif
 }
 

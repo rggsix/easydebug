@@ -15,7 +15,8 @@
 {
     // Override point for customization after application launch.
 #if EZDEBUG_DEBUGLOG
-    NSLog(@"EazyDebug on.");
+    EZDBLLLog_D(@"app launch", kEZDLogLevelInfo, launchOptions, @"EazyDebug on.");
+    EZDBLLLog_D(@"type", kEZDLogLevelInfo, @{@"pk":@"pv"}, @"log content with cmd : %@", _cmd);
 #endif
     return YES;
 }
