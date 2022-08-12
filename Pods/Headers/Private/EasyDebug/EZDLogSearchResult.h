@@ -1,0 +1,1 @@
+../../../../Source/Core/Models/EZDLogSearchResult.h

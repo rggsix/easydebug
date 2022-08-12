@@ -1,6 +1,0 @@
-framework module Pods_easydebug_Example {
-  umbrella header "Pods-easydebug_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}

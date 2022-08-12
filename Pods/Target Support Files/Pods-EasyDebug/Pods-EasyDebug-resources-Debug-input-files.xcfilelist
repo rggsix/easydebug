@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-EasyDebug/Pods-EasyDebug-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/EasyDebug/EasyDebug.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB_Privacy.bundle

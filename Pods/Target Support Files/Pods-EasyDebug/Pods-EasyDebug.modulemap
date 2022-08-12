@@ -1,0 +1,6 @@
+module Pods_EasyDebug {
+  umbrella header "Pods-EasyDebug-umbrella.h"
+
+  export *
+  module * { export * }
+}

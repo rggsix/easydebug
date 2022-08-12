@@ -1,0 +1,61 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - EasyDebug (3.6.0.0):
+    - EasyDebug/Core (= 3.6.0.0)
+    - EasyDebug/CrashMonitor (= 3.6.0.0)
+    - EasyDebug/NetworkMonitor (= 3.6.0.0)
+    - EasyDebug/Performance (= 3.6.0.0)
+  - EasyDebug/Core (3.6.0.0):
+    - FMDB
+  - EasyDebug/CrashMonitor (3.6.0.0):
+    - EasyDebug/Core
+  - EasyDebug/NetworkMonitor (3.6.0.0):
+    - EasyDebug/Core
+  - EasyDebug/Performance (3.6.0.0):
+    - EasyDebug/Core
+  - FMDB (2.7.12):
+    - FMDB/standard (= 2.7.12)
+  - FMDB/Core (2.7.12)
+  - FMDB/standard (2.7.12):
+    - FMDB/Core
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - EasyDebug (from `./`)
+  - FMDB
+  - Masonry
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - FMDB
+    - Masonry
+
+EXTERNAL SOURCES:
+  EasyDebug:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  EasyDebug: 228e2d77a4190d8726d18b9a547046cd39c7f0c6
+  FMDB: 728731dd336af3936ce00f91d9d8495f5718a0e6
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: ded1b681e3ccc7095f05c5f3e13a943ff2648a2f
+
+COCOAPODS: 1.16.2
