@@ -111,9 +111,9 @@
 }
 
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
-    NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
-    NSURLCredential *credential = nil;
-    credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+    BOOL isServChallenge = [challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+    NSURLSessionAuthChallengeDisposition disposition = isServChallenge ? NSURLSessionAuthChallengeUseCredential : NSURLSessionAuthChallengePerformDefaultHandling;
+    NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
     completionHandler(disposition,credential);
 }
 
@@ -121,9 +121,10 @@
     bool ret = [self sessiontask:task checkIfDelegateHandleDelegateFunc:@selector(URLSession:task:didReceiveChallenge:completionHandler:) withObject:task object:challenge object:[completionHandler copy]];
 
     if (ret) return;
-    NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
-    NSURLCredential *credential = nil;
-    credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+    
+    BOOL isServChallenge = [challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+    NSURLSessionAuthChallengeDisposition disposition = isServChallenge ? NSURLSessionAuthChallengeUseCredential : NSURLSessionAuthChallengePerformDefaultHandling;
+    NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
     completionHandler(disposition,credential);
 }
 
@@ -167,9 +168,8 @@
 
 - (void)performDefaultHandlingForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
-    NSURLCredential *credential = nil;
-    credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
-    _sessionCompletionHandler(NSURLSessionAuthChallengePerformDefaultHandling, credential);
+    NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+    _sessionCompletionHandler(NSURLSessionAuthChallengeUseCredential, credential);
 }
 
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(NSURLAuthenticationChallenge *)challenge

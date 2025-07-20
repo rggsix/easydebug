@@ -138,16 +138,16 @@ static NSString * _Nonnull const DebugURLProtocolHandledKey = @"DebugURLProtocol
     NSURLAuthenticationChallenge* challengeWrapper = [[NSURLAuthenticationChallenge alloc] initWithAuthenticationChallenge:challenge sender:[[DebugURLSessionChallengeSender alloc] initWithSessionCompletionHandler:completionHandler]];
     [self.client URLProtocol:self didReceiveAuthenticationChallenge:challengeWrapper];
     
-    NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
-    NSURLCredential *credential = nil;
-    credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+    BOOL isServChallenge = [challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+    NSURLSessionAuthChallengeDisposition disposition = isServChallenge ? NSURLSessionAuthChallengeUseCredential : NSURLSessionAuthChallengePerformDefaultHandling;
+    NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
     completionHandler(disposition,credential);
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
-    NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
-    NSURLCredential *credential = nil;
-    credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+    BOOL isServChallenge = [challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+    NSURLSessionAuthChallengeDisposition disposition = isServChallenge ? NSURLSessionAuthChallengeUseCredential : NSURLSessionAuthChallengePerformDefaultHandling;
+    NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
     completionHandler(disposition,credential);
 }
 
