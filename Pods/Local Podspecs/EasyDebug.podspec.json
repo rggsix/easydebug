@@ -1,6 +1,6 @@
 {
   "name": "EasyDebug",
-  "version": "3.6.0.0",
+  "version": "1.0.0.0",
   "summary": "EasyDebug",
   "description": "Debug tool for iOS🚀, Custom log, Network monitoring, CPU/FPS/MEM monitoring, log dashboard...",
   "homepage": "https://github.com/rggsix/EasyDebug",
@@ -16,6 +16,10 @@
   },
   "platforms": {
     "ios": "12.0"
+  },
+  "pod_target_xcconfig": {
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+    "CLANG_CXX_LIBRARY": "libc++"
   },
   "subspecs": [
     {

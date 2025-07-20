@@ -14,7 +14,6 @@
 		630C52A0289BF0BB007F2A81 /* EasyDebugTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C529F289BF0BB007F2A81 /* EasyDebugTests.m */; };
 		630C52AA289BF0BB007F2A81 /* EasyDebugUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C52A9289BF0BB007F2A81 /* EasyDebugUITests.m */; };
 		630C52AC289BF0BB007F2A81 /* EasyDebugUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 630C52AB289BF0BB007F2A81 /* EasyDebugUITestsLaunchTests.m */; };
-		630C52BC289BF704007F2A81 /* package.json in Resources */ = {isa = PBXBuildFile; fileRef = 630C52B8289BF704007F2A81 /* package.json */; };
 		630C52BD289BF704007F2A81 /* config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 630C52B9289BF704007F2A81 /* config.xcconfig */; };
 		630C52BE289BF704007F2A81 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 630C52BA289BF704007F2A81 /* CHANGELOG.md */; };
 		630C52BF289BF704007F2A81 /* EasyDebug.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 630C52BB289BF704007F2A81 /* EasyDebug.podspec */; };
@@ -51,7 +50,6 @@
 		630C52A5289BF0BB007F2A81 /* EasyDebugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyDebugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		630C52A9289BF0BB007F2A81 /* EasyDebugUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyDebugUITests.m; sourceTree = "<group>"; };
 		630C52AB289BF0BB007F2A81 /* EasyDebugUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyDebugUITestsLaunchTests.m; sourceTree = "<group>"; };
-		630C52B8289BF704007F2A81 /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		630C52B9289BF704007F2A81 /* config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = config.xcconfig; sourceTree = "<group>"; };
 		630C52BA289BF704007F2A81 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		630C52BB289BF704007F2A81 /* EasyDebug.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EasyDebug.podspec; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 			children = (
 				630C52BA289BF704007F2A81 /* CHANGELOG.md */,
 				630C52B9289BF704007F2A81 /* config.xcconfig */,
-				630C52B8289BF704007F2A81 /* package.json */,
 				630C52BB289BF704007F2A81 /* EasyDebug.podspec */,
 				630C5282289BF0B9007F2A81 /* EasyDebug */,
 				630C529E289BF0BB007F2A81 /* EasyDebugTests */,
@@ -274,7 +271,6 @@
 				630C52BE289BF704007F2A81 /* CHANGELOG.md in Resources */,
 				630C5293289BF0BA007F2A81 /* LaunchScreen.storyboard in Resources */,
 				630C5290289BF0BA007F2A81 /* Assets.xcassets in Resources */,
-				630C52BC289BF704007F2A81 /* package.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

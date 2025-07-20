@@ -38,7 +38,7 @@
 		3865480E9723FEA4169B8383311C80E3 /* NSURLSessionConfiguration+EasyDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4A8084DBEADCEF530DDFAD2E0E8199 /* NSURLSessionConfiguration+EasyDebug.m */; };
 		3887C10CF1213D6E586F1BA369B26786 /* EZDStartupListController.h in Headers */ = {isa = PBXBuildFile; fileRef = 29BC25FE5F69236AEFE80D42E7596F92 /* EZDStartupListController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3A674FCB242825923727E4B1B861FEBB /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F69879A25412382A5B2EAA2D5865F674 /* AFNetworking-dummy.m */; };
-		3D43DB5A180C154C694A01AD1D9DCE18 /* EZDStartupListController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B484CD95DF3E13E7D19CCAB050F9E88A /* EZDStartupListController.mm */; };
+		3D43DB5A180C154C694A01AD1D9DCE18 /* EZDStartupListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B484CD95DF3E13E7D19CCAB050F9E88A /* EZDStartupListController.m */; };
 		40C8124199AC60FC3D6BA96D76CD67BF /* EasyDebug-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3670029A0FFE4B3134AD8176D69F2C1E /* EasyDebug-dummy.m */; };
 		43CAF2E3BD298EAEDADBEE7FABB13511 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9C1A8786528C5CB59EB789238AA228 /* AFAutoPurgingImageCache.m */; };
 		44317AC663F6439B250BB18B9070D8AC /* EZDTagListSelectController.h in Headers */ = {isa = PBXBuildFile; fileRef = 598ED8936766316A556D82866714887A /* EZDTagListSelectController.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -314,7 +314,7 @@
 		AE87BECF34C47071D196B19BF9E8149E /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
 		B1B4EAC870E94BA049B5A4E0A01EBF15 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
 		B4654BBBAC817E31B6E4E4CE9F2C9FDA /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		B484CD95DF3E13E7D19CCAB050F9E88A /* EZDStartupListController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = EZDStartupListController.mm; sourceTree = "<group>"; };
+		B484CD95DF3E13E7D19CCAB050F9E88A /* EZDStartupListController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDStartupListController.m; sourceTree = "<group>"; };
 		B4A5F68B8D5A6DA8309DB325810D11E0 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		B5AD44BA03CB5F67F5898E11CE5C3A09 /* EZDLogSearchResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EZDLogSearchResult.m; sourceTree = "<group>"; };
 		B739CF2296F674527725BB7E069AF0EC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -579,7 +579,7 @@
 				ABFFC2304006FF094606D795F05A4AF8 /* EZDLogSearchListController.h */,
 				74D401154F97B36B4BB68C897B726E48 /* EZDLogSearchListController.m */,
 				29BC25FE5F69236AEFE80D42E7596F92 /* EZDStartupListController.h */,
-				B484CD95DF3E13E7D19CCAB050F9E88A /* EZDStartupListController.mm */,
+				B484CD95DF3E13E7D19CCAB050F9E88A /* EZDStartupListController.m */,
 				598ED8936766316A556D82866714887A /* EZDTagListSelectController.h */,
 				CA718C3E0137825FC21733071AD5C333 /* EZDTagListSelectController.m */,
 			);
@@ -1246,7 +1246,7 @@
 				EEE4142ABE24ED40E03F000366599F9B /* EZDOnceStart.m in Sources */,
 				50DC2A288D71022AEF13C9AE7B4DA5A6 /* EZDPerformance.m in Sources */,
 				9A37263B711BCE972315D7A621FF1863 /* EZDSessionManager.m in Sources */,
-				3D43DB5A180C154C694A01AD1D9DCE18 /* EZDStartupListController.mm in Sources */,
+				3D43DB5A180C154C694A01AD1D9DCE18 /* EZDStartupListController.m in Sources */,
 				C931E5FAA09D300C7321EFE554D95701 /* EZDTagListSelectController.m in Sources */,
 				BF64474D44F46A0A4856CB904089BAA5 /* JMLogRecentSearchView.m in Sources */,
 				3865480E9723FEA4169B8383311C80E3 /* NSURLSessionConfiguration+EasyDebug.m in Sources */,
