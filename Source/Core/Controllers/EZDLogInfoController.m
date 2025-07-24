@@ -109,7 +109,7 @@
     self.searchBar.searchBarStyle = UISearchBarStyleDefault;
     self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
     self.searchBar.delegate = self;
-    self.searchBar.scopeButtonTitles = @[@"上一个", @"JMLog", @"下一个"];
+    self.searchBar.scopeButtonTitles = @[@"上一个", @"EasyDebug", @"下一个"];
     self.searchBar.showsScopeBar = YES;
     self.searchBar.selectedScopeButtonIndex = 1;
     self.searchBar.inputAccessoryView = self.recentSearchView;
